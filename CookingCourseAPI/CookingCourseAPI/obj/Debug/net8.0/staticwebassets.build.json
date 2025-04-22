@@ -1,0 +1,331 @@
+{
+  "Version": 1,
+  "Hash": "DD0u4vAWVDp2QcjCHj9A6VaVSMCJaXjAQlscKVdWTQY=",
+  "Source": "CookingCourseAPI",
+  "BasePath": "_content/CookingCourseAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CookingCourseAPI\\wwwroot",
+      "Source": "CookingCourseAPI",
+      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "BasePath": "_content/CookingCourseAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
+      "SourceId": "CookingCourseAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "BasePath": "_content/CookingCourseAPI",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "znravwmzbq",
+      "Integrity": "cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
+      "SourceId": "CookingCourseAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "BasePath": "_content/CookingCourseAPI",
+      "RelativePath": "JavaScrip#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ctztyyb4hy",
+      "Integrity": "cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JavaScrip.js"
+    },
+    {
+      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
+      "SourceId": "CookingCourseAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "BasePath": "_content/CookingCourseAPI",
+      "RelativePath": "Login#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7rtakmdldn",
+      "Integrity": "I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Login.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9491"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U="
+        }
+      ]
+    },
+    {
+      "Route": "index.znravwmzbq.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9491"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "znravwmzbq"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U="
+        }
+      ]
+    },
+    {
+      "Route": "JavaScrip.ctztyyb4hy.js",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3260"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ctztyyb4hy"
+        },
+        {
+          "Name": "label",
+          "Value": "JavaScrip.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw="
+        }
+      ]
+    },
+    {
+      "Route": "JavaScrip.js",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3260"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw="
+        }
+      ]
+    },
+    {
+      "Route": "Login.7rtakmdldn.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "616"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 07:04:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7rtakmdldn"
+        },
+        {
+          "Name": "label",
+          "Value": "Login.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE="
+        }
+      ]
+    },
+    {
+      "Route": "Login.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "616"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 15 Apr 2025 07:04:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE="
+        }
+      ]
+    }
+  ]
+}

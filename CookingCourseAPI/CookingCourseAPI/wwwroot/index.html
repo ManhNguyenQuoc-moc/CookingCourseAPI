@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TobeChef - Web Dạy Nấu Ăn</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="JavaScrip.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+
+        /* Sidebar style */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #ffe0b2; /* Cam nhạt */
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            z-index: 1040;
+        }
+
+            .sidebar .form-control {
+                margin: 10px;
+            }
+
+            .sidebar a {
+                padding: 10px 20px;
+                display: block;
+                color: #333;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    background-color: #ffcc80;
+                    color: #bf360c;
+                }
+
+                .sidebar a.active {
+                    background-color: #ffcc80;
+                    color: #bf360c;
+                }
+
+        /* Offset content to the right of sidebar */
+        .content {
+            margin-left: 250px;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1546069901-eacef0df6022') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 4rem;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            }
+
+        .btn-main {
+            background-color: #ff7043;
+            color: white;
+            border: none;
+        }
+
+            .btn-main:hover {
+                background-color: #e64a19;
+            }
+
+        .modal-footer .switch-action {
+            cursor: pointer;
+            color: #007bff;
+        }
+
+            .modal-footer .switch-action:hover {
+                text-decoration: underline;
+            }
+
+        /* Navbar fix top với màu xanh đậm */
+        .navbar {
+            margin-left: 250px;
+            background-color: #1e88e5 !important;
+        }
+
+            .navbar .navbar-brand,
+            .navbar .nav-link,
+            .navbar input {
+                color: white !important;
+            }
+
+                .navbar .nav-link:hover {
+                    text-decoration: underline;
+                }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            min-height: 100vh; /* Đảm bảo rằng nội dung chiếm toàn bộ chiều cao của trang */
+        }
+
+        footer {
+            margin-top: auto; /* Đảm bảo footer được đẩy xuống cuối cùng nếu có */
+        }
+    </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#" class="active">Trang chủ</a>
+    <a href="#">Món ăn phổ biến</a>
+    <a href="#">Blog</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+    <div class="container-fluid">
+      <button class="btn d-lg-none" id="menuToggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand fw-bold ms-2" href="#">TobeChef</a>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <form class="d-flex ms-auto me-3">
+          <input type="text" class="form-control" placeholder="Tìm kiếm món ăn...">
+        </form>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="content">
+    <section class="hero">
+      <div class="container">
+        <h1>Học nấu ăn cùng TobeChef</h1>
+        <p>Khám phá hàng trăm công thức món ngon mỗi ngày</p>
+        <a href="#" class="btn btn-main mt-3">Khám phá ngay</a>
+      </div>
+    </section>
+  </div>
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form onsubmit="event.preventDefault();loginUser()">
+        <div class="modal-header">
+          <h5 class="modal-title">Đăng nhập</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="loginEmail" required />
+            </div>
+            <div class="mb-3">
+                <label for="loginPassword" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="loginPassword" required />
+            </div>
+            <div class="mb-3">
+                <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Quên mật khẩu?</a>
+            </div>
+            <div id="message" class="mb-2 text-center fw-bold"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-main">Đăng nhập</button>
+          <span class="switch-action" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">Chưa có tài khoản? Đăng ký</span>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <form onsubmit="event.preventDefault(); registerUser();">
+              <div class="modal-header">
+                  <h5 class="modal-title">Đăng ký</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="mb-3">
+                      <label for="regName" class="form-label">Họ và tên</label>
+                      <input type="text" class="form-control" id="regName" required />
+                  </div>
+                  <div class="mb-3">
+                      <label for="regEmail" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="regEmail" required />
+                  </div>
+                  <div class="mb-3">
+                      <label for="regPassword" class="form-label">Mật khẩu</label>
+                      <input type="password" class="form-control" id="regPassword" required />
+                  </div>
+                  <div class="mb-3">
+                      <label for="regConfirmPassword" class="form-label">Nhập lại mật khẩu</label>
+                      <input type="password" class="form-control" id="regConfirmPassword" required />
+                  </div>
+                  <p id="message" class="text-center mt-2"></p> <!-- Thông báo lỗi/thành công -->
+              </div>
+              <div class="modal-footer">
+                  <button type="submit" class="btn btn-main">Đăng ký</button>
+                  <span class="switch-action" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Đã có tài khoản? Đăng nhập</span>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form >
+          <div class="modal-header">
+            <h5 class="modal-title">Quên mật khẩu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="forgotEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="forgotEmail" required />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-main">Gửi yêu cầu</button>
+            <span class="switch-action" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Quay lại đăng nhập</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Toggle sidebar for mobile
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('sidebar').classList.toggle('show');
+    });
+  </script>
+  
+</body>
+</html>
