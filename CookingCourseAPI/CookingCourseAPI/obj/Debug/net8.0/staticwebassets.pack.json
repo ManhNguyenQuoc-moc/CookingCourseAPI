@@ -1,15 +1,15 @@
 {
   "Files": [
     {
-      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
+      "Id": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
       "PackagePath": "staticwebassets\\JavaScrip.js"
     },
     {
-      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
+      "Id": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
       "PackagePath": "staticwebassets\\Login.html"
     },
     {
-      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
+      "Id": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DD0u4vAWVDp2QcjCHj9A6VaVSMCJaXjAQlscKVdWTQY=",
+  "Hash": "Gy7p5gY3YHip7HcKAl1MK03DTUnGns/ui0F0K9Pq4Qk=",
   "Source": "CookingCourseAPI",
   "BasePath": "_content/CookingCourseAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "CookingCourseAPI\\wwwroot",
       "Source": "CookingCourseAPI",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "ContentRoot": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
       "BasePath": "_content/CookingCourseAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
+      "Identity": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
       "SourceId": "CookingCourseAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "ContentRoot": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
       "BasePath": "_content/CookingCourseAPI",
       "RelativePath": "index#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -31,17 +31,17 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "znravwmzbq",
-      "Integrity": "cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=",
+      "Fingerprint": "d8p7z1h36t",
+      "Integrity": "ffKVG85cKsM8a6Z8DxQdtdzOONENw/pYZ7Izc/GZ018=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
+      "Identity": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
       "SourceId": "CookingCourseAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "ContentRoot": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
       "BasePath": "_content/CookingCourseAPI",
       "RelativePath": "JavaScrip#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -59,10 +59,10 @@
       "OriginalItemSpec": "wwwroot\\JavaScrip.js"
     },
     {
-      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
+      "Identity": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
       "SourceId": "CookingCourseAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "ContentRoot": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
       "BasePath": "_content/CookingCourseAPI",
       "RelativePath": "Login#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -82,8 +82,8 @@
   ],
   "Endpoints": [
     {
-      "Route": "index.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
+      "Route": "index.d8p7z1h36t.html",
+      "AssetFile": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -92,7 +92,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9491"
+          "Value": "9752"
         },
         {
           "Name": "Content-Type",
@@ -100,48 +100,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=\""
+          "Value": "\"ffKVG85cKsM8a6Z8DxQdtdzOONENw/pYZ7Izc/GZ018=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U="
-        }
-      ]
-    },
-    {
-      "Route": "index.znravwmzbq.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "9491"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
+          "Value": "Tue, 22 Apr 2025 13:29:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -151,7 +114,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "znravwmzbq"
+          "Value": "d8p7z1h36t"
         },
         {
           "Name": "label",
@@ -159,13 +122,50 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U="
+          "Value": "sha256-ffKVG85cKsM8a6Z8DxQdtdzOONENw/pYZ7Izc/GZ018="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9752"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ffKVG85cKsM8a6Z8DxQdtdzOONENw/pYZ7Izc/GZ018=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 13:29:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ffKVG85cKsM8a6Z8DxQdtdzOONENw/pYZ7Izc/GZ018="
         }
       ]
     },
     {
       "Route": "JavaScrip.ctztyyb4hy.js",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
+      "AssetFile": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -186,7 +186,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
+          "Value": "Tue, 22 Apr 2025 13:29:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -210,7 +210,7 @@
     },
     {
       "Route": "JavaScrip.js",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
+      "AssetFile": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -231,7 +231,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
+          "Value": "Tue, 22 Apr 2025 13:29:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -247,7 +247,7 @@
     },
     {
       "Route": "Login.7rtakmdldn.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
+      "AssetFile": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -268,7 +268,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:04:27 GMT"
+          "Value": "Tue, 22 Apr 2025 13:29:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -292,7 +292,7 @@
     },
     {
       "Route": "Login.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
+      "AssetFile": "D:\\github\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -313,7 +313,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:04:27 GMT"
+          "Value": "Tue, 22 Apr 2025 13:29:21 GMT"
         },
         {
           "Name": "Cache-Control",
