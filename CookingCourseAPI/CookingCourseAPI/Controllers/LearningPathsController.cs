@@ -7,5 +7,6 @@ namespace CookingCourseAPI.Controllers
     [ApiController]
     public class LearningPathsController : ControllerBase
     {
+
     }
 }

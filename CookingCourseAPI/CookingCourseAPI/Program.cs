@@ -71,8 +71,17 @@ namespace CookingCourseAPI
             builder.Services.AddScoped<IBlogRepository, BlogRepository>();
             builder.Services.AddScoped<ICommentRepository, CommentRepository>();
             builder.Services.AddScoped<ICommentReportRepository, CommentReportRepository>();
+            builder.Services.AddScoped<ICourseService, CourseService>();
+            builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+            builder.Services.AddScoped<ICourseVideoRepository, CourseVideoRepository>();
+            builder.Services.AddScoped<ICourseVideoService, CourseVideoService>();
+            builder.Services.AddScoped<ICourseVideoRepository, CourseVideoRepository>();
 
-
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+                options.JsonSerializerOptions.WriteIndented = true; // Tùy chọn hiển thị dễ đọc
+            });
             // ============ Swagger có hỗ trợ JWT ============
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>

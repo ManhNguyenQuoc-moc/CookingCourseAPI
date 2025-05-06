@@ -172,3 +172,4 @@ D:\CookingCourseAPI\CookingCourseAPI\CookingCourseAPI\bin\Debug\net8.0\runtimes\
 D:\CookingCourseAPI\CookingCourseAPI\CookingCourseAPI\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\CookingCourseAPI\CookingCourseAPI\CookingCourseAPI\bin\Debug\net8.0\CookingCourseAPI.staticwebassets.runtime.json
 D:\CookingCourseAPI\CookingCourseAPI\CookingCourseAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\CookingCourseAPI\CookingCourseAPI\CookingCourseAPI\obj\Debug\net8.0\CookingCourseAPI.sourcelink.json

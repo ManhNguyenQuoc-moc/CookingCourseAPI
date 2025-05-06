@@ -18,8 +18,9 @@ namespace CookingCourseAPI.Data
         public DbSet<News> News { get; set; }
         public DbSet<FavoriteRecipe> FavoriteRecipes { get; set; }
         public DbSet<CommentReport> CommentReports { get; set; }
-       
-       
+        public DbSet<CourseVideo> CourseVideos { get; set; }
+
+
 
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
@@ -97,8 +98,13 @@ namespace CookingCourseAPI.Data
                 .WithMany(r => r.FavoriteRecipes)
                 .HasForeignKey(fr => fr.RecipeId)
                 .OnDelete(DeleteBehavior.Restrict);
-            
-           
+            modelBuilder.Entity<Recipe>()
+                 .HasOne(r => r.CourseVideo)
+                 .WithOne(v => v.Recipe) // dùng đúng thuộc tính navigation trong CourseVideo
+                 .HasForeignKey<Recipe>(r => r.CourseVideoId)
+                 .OnDelete(DeleteBehavior.Cascade);
+
+
         }
     }
 }

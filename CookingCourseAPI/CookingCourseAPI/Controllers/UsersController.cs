@@ -1,5 +1,7 @@
 ﻿using CookingCourseAPI.DTOs;
 using CookingCourseAPI.Helpers;
+using CookingCourseAPI.Models.Entities;
+using CookingCourseAPI.Models.Responses;
 using CookingCourseAPI.Services;
 using CookingCourseAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -14,18 +16,23 @@ namespace CookingCourseAPI.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UsersController(IUserService userService)
+        private readonly ICourseService _courseService;
+        public UsersController(IUserService userService, ICourseService courseService)
         {
             _userService = userService;
+            _courseService = courseService;
         }
-        //[Authorize]
-        //[HttpGet("profile")]
-        [HttpGet("{userId}")]
-        public async Task<IActionResult> GetProfile(int userId)
+        [Authorize]
+        [HttpGet("profile")]
+        public async Task<IActionResult> GetProfile()
         {
-            //var userId = int.Parse(User.FindFirst("id")!.Value); // Lấy id từ JWT
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+                return Unauthorized("Không tìm thấy thông tin người dùng trong token");
+            var userId = int.Parse(userIdClaim.Value);
             var profile = await _userService.GetProfileAsync(userId);
             if (profile == null) return NotFound();
+
             return Ok(profile);
         }
         // PUT: api/users/{id}
@@ -61,6 +68,13 @@ namespace CookingCourseAPI.Controllers
                 return NotFound("Không tìm thấy người dùng nào.");
 
             return Ok(userslist);
+        }
+        //[Authorize]
+        [HttpGet("Mycourse/{userId}")]
+        public async Task<IActionResult> GetCoursesByUserId(int userId)
+        {
+            var courses = await _courseService.GetCoursesByUserIdAsync(userId);
+            return Ok(ApiResponse<IEnumerable<Course>>.SuccessResponse(courses));
         }
 
     }

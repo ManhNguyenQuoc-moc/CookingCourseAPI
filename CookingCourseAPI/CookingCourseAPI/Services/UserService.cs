@@ -70,10 +70,8 @@ namespace CookingCourseAPI.Services
         {
             var user = await _userRepository.GetByIdAsync(id);
             if (user == null) throw new Exception("User not found");
-
             user.Role = newRole;
             await _userRepository.SaveChangesAsync();
-
             return user;
         }
         public async Task<bool> PermanentlyDeleteUserAsync(int id)

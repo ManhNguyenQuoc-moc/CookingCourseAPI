@@ -1,5 +1,6 @@
 ﻿using CookingCourseAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace CookingCourseAPI.Repositories
 {
@@ -46,6 +47,11 @@ namespace CookingCourseAPI.Repositories
         {
             return await _context.SaveChangesAsync() > 0;
         }
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().AnyAsync(predicate);
+        }
+
     }
 
 

@@ -1,4 +1,6 @@
-﻿namespace CookingCourseAPI.Repositories
+﻿using System.Linq.Expressions;
+
+namespace CookingCourseAPI.Repositories
 {
     public interface IGenericRepository<T> where T : class
     {
@@ -8,6 +10,8 @@
         Task<bool> UpdateAsync(T entity);
         Task<bool> DeleteAsync(T entity);
         Task<bool> SaveChangesAsync();
-       
+        Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
+
+
     }
 }
