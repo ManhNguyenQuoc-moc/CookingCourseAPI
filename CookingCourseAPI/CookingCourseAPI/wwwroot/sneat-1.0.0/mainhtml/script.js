@@ -1,23 +1,17 @@
-﻿// ========== CONSTANTS ========== 
-const API_BASE_URL = 'http://localhost:5043/api';
+﻿const API_BASE_URL = 'http://localhost:5043/api';
 
 // ========== EVENT LISTENERS ==========
 document.addEventListener("DOMContentLoaded", () => {
-    // Load courses regardless of login status
     loadCourses();
-    // Handle course enrollment buttons
     handleCourseEnrollButtons();
-    // Check token for user authentication
     const token = sessionStorage.getItem('token');
     if (token) {
         loginSuccess(token);
     } else {
-        // Show login button/icon if no token
         document.getElementById('loginBtn')?.classList.remove('d-none');
         document.getElementById('userDropdown')?.classList.add('d-none');
     }
 
-    // Debug logs for token, user, and role
     const user = JSON.parse(sessionStorage.getItem('user') || '{}');
     const payload = token ? JSON.parse(atob(token.split('.')[1])) : {};
     const role = payload.role || payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
@@ -26,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Payload:", payload);
     console.log("Role:", role);
 
-    // Set active menu item
     document.querySelectorAll('.menu-item > a').forEach(link => {
         link.addEventListener('click', function () {
             document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
@@ -34,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Setup other functionalities
     setupAuthForms();
     setupProfile();
     setupImagePreview();
@@ -42,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setupCreatePostModal();
 });
 
-// Handle login button redirect
 document.getElementById('loginBtn')?.addEventListener('click', () => {
     window.location.href = 'auth-login-basic.html';
 });
@@ -78,12 +69,10 @@ async function setupProfile() {
         const user = await res.json();
         sessionStorage.setItem('user', JSON.stringify(user));
 
-        // Display user name and role
         document.getElementById('nameuser').textContent = user.name;
         const payload = JSON.parse(atob(token.split('.')[1]));
         const role = payload.role || payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
         document.getElementById('roleuser').textContent = role;
-
     } catch (err) {
         console.error('Error fetching user profile:', err);
     }
@@ -220,24 +209,21 @@ async function loginSuccess(token) {
         sessionStorage.setItem('user', JSON.stringify(user));
         sessionStorage.setItem('userId', user.id);
         document.getElementById('loginBtn')?.classList.add('d-none');
-        const avatarUrl = "https://img.freepik.com/premium-vector/vector-illustration-chef-logo_976269-528.jpg";
-        document.getElementById('avataruser1')?.setAttribute('src', avatarUrl);
-        document.getElementById('useravatar')?.setAttribute('src', avatarUrl);
+        document.getElementById('avataruser1')?.setAttribute('src', user.avatarUrl);
+        document.getElementById('useravatar')?.setAttribute('src', user.avatarUrl);
         document.getElementById("nameuser").innerText = user.name;
         document.getElementById('userDropdown')?.classList.remove('d-none');
         alert('Chào mừng bạn đã đến với khóa học của chúng tôi');
     } catch (err) {
         console.error('Login success error:', err);
-        alert('Không thể lấy thông tin người dùng. Vui lòng thử lại!');
+        alert('Không thể lấy thông tin người. Vui lòng thử lại!');
     }
 }
 
 function handleLogout() {
     sessionStorage.clear();
-    // Ensure UI updates after logout
     document.getElementById('loginBtn')?.classList.remove('d-none');
     document.getElementById('userDropdown')?.classList.add('d-none');
-    // Redirect to homepage
     window.location.href = '/sneat-1.0.0/mainhtml/index.html';
 }
 
@@ -279,8 +265,8 @@ function renderCourses(coursesFromApi) {
 
         const buttons = isAdmin
             ? `
-                <button class="btn btn-warning btn-sm me-1" onclick="handleEditCourse('${course.id}')">Sửa</button>
-                <button class="btn btn-danger btn-sm" onclick="handleDeleteCourse('${course.id}')">Xóa</button>
+                <button class="btn btn-warning btn-sm me-1 btn-edit-course" data-id="${course.id}">Sửa</button>
+                <button class="btn btn-danger btn-sm btn-delete-course" data-id="${course.id}">Xóa</button>
               `
             : `
                 <button class="btn btn-${isPaid ? 'primary' : 'secondary'} btn-enroll" 
@@ -321,41 +307,68 @@ function renderCourses(coursesFromApi) {
     });
 
     if (!role || role !== 'Admin') {
-        handleCourseEnrollButtons(); // chỉ gắn sự kiện khi không phải admin
+        handleCourseEnrollButtons();
     }
+
+    document.querySelectorAll('.btn-edit-course').forEach(button => {
+        button.addEventListener('click', (e) => handleEditCourse(e.target.dataset.id));
+    });
+
+    document.querySelectorAll('.btn-delete-course').forEach(button => {
+        button.addEventListener('click', (e) => handleDeleteCourse(e.target.dataset.id));
+    });
 }
 
 function handleCourseEnrollButtons() {
     const enrollButtons = document.querySelectorAll('.btn-enroll');
     enrollButtons.forEach(button => {
-        button.removeEventListener('click', handleEnrollClick); // Remove previous listeners to avoid duplicates
+        button.removeEventListener('click', handleEnrollClick);
         button.addEventListener('click', handleEnrollClick);
     });
 }
 
-function handleEnrollClick(e) {
+async function handleEnrollClick(e) {
     const courseId = e.target.getAttribute('data-course-id');
     const courseName = e.target.getAttribute('data-course-name');
     const coursePrice = parseFloat(e.target.getAttribute('data-course-price'));
     const token = sessionStorage.getItem('token');
 
     if (!token) {
-        // If not logged in, prompt to login
         $('#loginPromptModal').modal('show');
-        // Store the course ID to enroll after login
         sessionStorage.setItem('pendingCourseId', courseId);
         return;
     }
-    // Check if the course is paid (price > 0)
-    if (coursePrice > 0) {
-        showPaymentConfirmation(courseId, courseName, coursePrice);
-    } else {
-        enrollInCourse(courseId, courseName);
+
+    const userId = sessionStorage.getItem('userId');
+
+    try {
+        const checkResponse = await fetch(`${API_BASE_URL}/Courses/check-enrollment?userId=${userId}&courseId=${courseId}`, {
+            method: 'GET',
+            headers: {
+                'Accept': '*/*',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        const checkData = await checkResponse.json();
+
+        if (checkData.isEnrolled) {
+            window.location.href = `learning.html?courseId=${courseId}`;
+            return;
+        }
+
+        if (coursePrice > 0) {
+            showPaymentConfirmation(courseId, courseName, coursePrice);
+        } else {
+            await enrollInCourse(courseId, courseName);
+        }
+    } catch (err) {
+        console.error('Error checking enrollment:', err);
+        alert('Đã có lỗi xảy ra khi kiểm tra trạng thái đăng ký');
     }
 }
 
 function showPaymentConfirmation(courseId, courseName, coursePrice) {
-    // Create a modal dynamically if it doesn't exist
     let paymentModal = document.getElementById('paymentConfirmationModal');
     if (!paymentModal) {
         paymentModal = document.createElement('div');
@@ -382,18 +395,14 @@ function showPaymentConfirmation(courseId, courseName, coursePrice) {
         document.body.appendChild(paymentModal);
     }
 
-    // Update modal content
     document.getElementById('confirmCourseName').innerText = courseName;
     document.getElementById('confirmCoursePrice').innerText = coursePrice.toLocaleString('vi-VN');
 
-    // Show the modal
     const modalInstance = new bootstrap.Modal(document.getElementById('paymentConfirmationModal'));
     modalInstance.show();
 
-    // Handle confirm button click
     document.getElementById('confirmPaymentBtn').onclick = () => {
         modalInstance.hide();
-        // Redirect to payment page with courseId as a query parameter
         window.location.href = `/sneat-1.0.0/mainhtml/payment.html?courseId=${courseId}`;
     };
 }
@@ -415,8 +424,8 @@ async function enrollInCourse(courseId, courseName) {
         const data = await response.json();
         if (response.ok) {
             alert(`Đã đăng ký khóa học ${courseName}`);
-        } else {
             window.location.href = `learning.html?courseId=${courseId}`;
+        } else {
             alert(`Không thể đăng ký khóa học: ${data.message}`);
         }
     } catch (err) {
@@ -425,121 +434,288 @@ async function enrollInCourse(courseId, courseName) {
     }
 }
 
-// Check for pending enrollment after login
-document.addEventListener("DOMContentLoaded", () => {
-    const pendingCourseId = sessionStorage.getItem('pendingCourseId');
-    const token = sessionStorage.getItem('token');
-    if (pendingCourseId && token) {
-        // Fetch course details to determine if it's paid
-        fetch(`${API_BASE_URL}/Courses/${pendingCourseId}`)
-            .then(res => res.json())
-            .then(res => {
-                if (res.success && res.data) {
-                    const course = res.data;
-                    if (!course.isFree && course.price > 0) {
-                        showPaymentConfirmation(course.id, course.name, course.price);
-                    } else {
-                        enrollInCourse(pendingCourseId);
-                    }
-                }
-            })
-            .catch(error => console.error("Lỗi khi kiểm tra khóa học:", error));
-        sessionStorage.removeItem('pendingCourseId');
-    }
-});
-// Khi nhấn nút mở modal
+// Hiển thị modal tạo khóa học
 document.getElementById('add-course-btn')?.addEventListener('click', () => {
     const modal = new bootstrap.Modal(document.getElementById('addCourseModal'));
     modal.show();
 });
 
-// Template form video
-function createVideoForm(index) {
+// ================== VIDEO FORM CREATION ==================
+// Hàm tạo form video, hỗ trợ điền dữ liệu từ API
+// Hàm tạo form video, hỗ trợ điền dữ liệu từ API
+function createVideoForm(index, video = {}) {
+    const recipe = video.recipe || {};
     return `
-                        <div class="border p-3 mb-3 video-item">
-                          <h6>Video ${index + 1}</h6>
-                          <div class="mb-2">
-                            <label>Tiêu đề video</label>
-                            <input type="text" class="form-control" name="title" required>
-                          </div>
-                          <div class="mb-2">
-                            <label>URL</label>
-                            <input type="text" class="form-control" name="url" required>
-                          </div>
-                          <div class="mb-2">
-                            <label>Tên công thức</label>
-                            <input type="text" class="form-control" name="recipeTitle" required>
-                          </div>
-                          <div class="mb-2">
-                            <label>Hướng dẫn</label>
-                            <textarea class="form-control" name="instructions" rows="2" required></textarea>
-                          </div>
-                          <button type="button" class="btn btn-danger btn-sm remove-video-btn">Xóa video</button>
-                        </div>`;
+        <div class="border p-3 mb-3 video-item">
+            <h6>Video ${index + 1}</h6>
+            <div class="mb-2">
+                <label>Tiêu đề video</label>
+                <input type="text" class="form-control" name="title" value="${video.title || ''}" required>
+            </div>
+            <div class="mb-2">
+                <label>URL</label>
+                <input type="text" class="form-control" name="url" value="${video.url || ''}" required>
+            </div>
+            <div class="mb-2">
+                <label>Tên công thức</label>
+                <input type="text" class="form-control" name="recipeTitle" value="${recipe.title || ''}" required>
+            </div>
+            <div class="mb-2">
+                <label>Nguyên liệu</label>
+                <textarea class="form-control" name="ingredients" rows="2" required>${recipe.ingredients || ''}</textarea>
+            </div>
+            <div class="mb-2">
+                <label>Hướng dẫn</label>
+                <textarea class="form-control" name="instructions" rows="2" required>${recipe.instructions || ''}</textarea>
+            </div>
+            <div class="mb-2">
+                <label>Mẹo nấu</label>
+                <textarea class="form-control" name="cookingTips" rows="2">${recipe.cookingTips || ''}</textarea>
+            </div>
+            <button type="button" class="btn btn-danger btn-sm remove-video-btn">Xóa video</button>
+        </div>`;
 }
-// Thêm video
+// ================== THÊM KHÓA HỌC ==================
 document.getElementById('add-video-btn')?.addEventListener('click', () => {
     const container = document.getElementById('videos-container');
     const index = container.children.length;
     container.insertAdjacentHTML('beforeend', createVideoForm(index));
 });
 
-// Xóa video
 document.getElementById('videos-container')?.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-video-btn')) {
         e.target.closest('.video-item').remove();
     }
 });
 
-// Gửi form
 document.getElementById('addCourseForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.target;
 
-    const course = {
-        name: form.name.value,
-        description: form.description.value,
-        price: parseFloat(form.price.value),
-        isFree: form.isFree.checked,
-        videos: []
-    };
+    const formData = new FormData();
+    formData.append('Name', form.name.value);
+    formData.append('Description', form.description.value);
+    formData.append('Price', parseFloat(form.price.value) || 0);
+    formData.append('IsFree', form.isFree.checked ? 'true' : 'false');
 
-    // Duyệt qua các video
-    document.querySelectorAll('#videos-container .video-item').forEach(videoDiv => {
-        const video = {
-            title: videoDiv.querySelector('input[name="title"]').value,
-            url: videoDiv.querySelector('input[name="url"]').value,
-            recipeTitle: videoDiv.querySelector('input[name="recipeTitle"]').value,
-            instructions: videoDiv.querySelector('textarea[name="instructions"]').value
-        };
-        course.videos.push(video);
+    document.querySelectorAll('#videos-container .video-item').forEach((videoDiv, index) => {
+        formData.append(`Videos[${index}].Title`, videoDiv.querySelector('input[name="title"]').value);
+        formData.append(`Videos[${index}].Url`, videoDiv.querySelector('input[name="url"]').value);
+        formData.append(`Videos[${index}].Recipe.Title`, videoDiv.querySelector('input[name="recipeTitle"]').value);
+        formData.append(`Videos[${index}].Recipe.Instructions`, videoDiv.querySelector('textarea[name="instructions"]').value);
+        formData.append(`Videos[${index}].Recipe.Ingredients`, videoDiv.querySelector('textarea[name="ingredients"]').value);
+        formData.append(`Videos[${index}].Recipe.CookingTips`, videoDiv.querySelector('textarea[name="cookingTips"]').value || '');
     });
 
-    console.log('Course to submit:', course);
+    if (form.image.files.length > 0) {
+        formData.append('Image', form.image.files[0]);
+    }
 
     try {
-        const token = sessionStorage.getItem('token');
         const res = await fetch(`${API_BASE_URL}/Courses`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(course)
+            body: formData
         });
+
+        const data = await res.json();
 
         if (res.ok) {
             alert('Tạo khóa học thành công!');
-            document.getElementById('addCourseForm').reset();
+            form.reset();
             document.getElementById('videos-container').innerHTML = '';
             bootstrap.Modal.getInstance(document.getElementById('addCourseModal')).hide();
-            // Gọi lại hàm loadCourses() nếu có
+            loadCourses();
         } else {
-            const data = await res.json();
-            alert('Thất bại: ' + (data.message || 'Không xác định'));
+            console.log('API lỗi:', data);
+            alert(`Thất bại: ${data.message || 'Không xác định'}`);
         }
     } catch (err) {
         console.error('Lỗi tạo khóa học:', err);
         alert('Lỗi khi gọi API');
+    }
+});
+
+
+// Xử lý chỉnh sửa khóa học
+async function handleEditCourse(courseId) {
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+        alert('Vui lòng đăng nhập để chỉnh sửa khóa học.');
+        return;
+    }
+
+    try {
+        const modalElement = document.getElementById('editCourseModal');
+        const form = document.getElementById('editCourseForm');
+        const videosContainer = document.getElementById('editVideosContainer');
+        const imagePreview = document.getElementById('editCourseImagePreview');
+
+        if (!modalElement || !form || !videosContainer || !imagePreview) {
+            alert('Lỗi giao diện: Không tìm thấy các phần tử cần thiết.');
+            return;
+        }
+
+        const response = await fetch(`${API_BASE_URL}/Courses/${courseId}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.message || 'Không thể tải thông tin khóa học.');
+        }
+
+        const course = await response.json();
+        const data = course.data;
+
+        // Hiển thị modal
+        const editCourseModal = new bootstrap.Modal(modalElement);
+        editCourseModal.show();
+
+        // Đổ dữ liệu vào form
+        form.querySelector('input[name="courseId"]').value = data.id || '';
+        form.querySelector('input[name="name"]').value = data.name || '';
+        form.querySelector('textarea[name="description"]').value = data.description || '';
+        form.querySelector('input[name="price"]').value = data.price || 0;
+        form.querySelector('input[name="isFree"]').checked = data.isFree || false;
+
+        const imageInput = form.querySelector('input[name="image"]');
+        if (data.imageUrl) {
+            imagePreview.src = data.imageUrl;
+            imagePreview.style.display = 'block';
+        } else {
+            imagePreview.src = '';
+            imagePreview.style.display = 'none';
+        }
+
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.style.display = 'none';
+            }
+        }, { once: true });
+
+        // Render lại danh sách video
+        videosContainer.innerHTML = '';
+        const videos = data.videos?.$values || [];
+        videos.forEach((video, index) => {
+            videosContainer.insertAdjacentHTML('beforeend', createVideoForm(index, video));
+        });
+
+        // Handle submit
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+
+            const videoItems = document.querySelectorAll('#editVideosContainer .video-item');
+            if (videoItems.length === 0) {
+                alert('Vui lòng thêm ít nhất một video.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('Name', form.querySelector('input[name="name"]').value || '');
+            formData.append('Description', form.querySelector('textarea[name="description"]').value || '');
+            formData.append('Price', parseFloat(form.querySelector('input[name="price"]').value) || 0);
+            formData.append('IsFree', form.querySelector('input[name="isFree"]').checked);
+
+            videoItems.forEach((videoDiv, index) => {
+                formData.append(`Videos[${index}].Title`, videoDiv.querySelector('input[name="title"]').value);
+                formData.append(`Videos[${index}].Url`, videoDiv.querySelector('input[name="url"]').value);
+                formData.append(`Videos[${index}].Recipe.Title`, videoDiv.querySelector('input[name="recipeTitle"]').value);
+                formData.append(`Videos[${index}].Recipe.Instructions`, videoDiv.querySelector('textarea[name="instructions"]').value);
+                formData.append(`Videos[${index}].Recipe.Ingredients`, videoDiv.querySelector('textarea[name="ingredients"]').value);
+                formData.append(`Videos[${index}].Recipe.CookingTips`, videoDiv.querySelector('textarea[name="cookingTips"]').value || '');
+            });
+
+            if (imageInput.files.length > 0) {
+                formData.append('Image', imageInput.files[0]);
+            }
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/Courses/update/${courseId}`, {
+                    method: 'PUT',
+                    body: formData
+                });
+
+                if (res.ok) {
+                    alert('Cập nhật khóa học thành công!');
+                    editCourseModal.hide();
+                    loadCourses();
+                } else {
+                    const error = await res.json();
+                    console.error('Lỗi từ API:', error);
+                    alert(`Không thể cập nhật khóa học: ${error.message || 'Lỗi không xác định'}`);
+                }
+            } catch (err) {
+                console.error('Lỗi khi cập nhật khóa học:', err);
+                alert('Đã có lỗi xảy ra khi cập nhật khóa học.');
+            }
+        };
+    } catch (err) {
+        console.error('Lỗi khi tải thông tin khóa học:', err);
+        alert('Đã có lỗi xảy ra khi tải thông tin khóa học.');
+    }
+}
+
+
+// Thêm video cho form chỉnh sửa
+document.getElementById('editAddVideoBtn')?.addEventListener('click', () => {
+    const container = document.getElementById('editVideosContainer');
+    if (!container) {
+        console.error('Không tìm thấy #editVideosContainer');
+        return;
+    }
+    const index = container.children.length;
+    container.insertAdjacentHTML('beforeend', createVideoForm(index));
+});
+
+// Xóa video trong form chỉnh sửa
+document.getElementById('editVideosContainer')?.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-video-btn')) {
+        e.target.closest('.video-item').remove();
+    }
+});
+// ================== XÓA KHÓA HỌC ==================
+async function handleDeleteCourse(courseId) {
+    if (!confirm('Bạn có chắc chắn muốn xóa khóa học này?')) return;
+
+    const token = sessionStorage.getItem('token');
+    try {
+        const res = await fetch(`${API_BASE_URL}/Courses/${courseId}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (res.ok) {
+            alert('Xóa khóa học thành công!');
+            loadCourses();
+        } else {
+            const error = await res.json();
+            alert(`Không thể xóa khóa học: ${error.message}`);
+        }
+    } catch (err) {
+        console.error('Lỗi khi xóa khóa học:', err);
+        alert('Đã có lỗi xảy ra khi xóa khóa học.');
+    }
+}
+
+// ================== THÊM VIDEO CHO FORM CHỈNH SỬA ==================
+document.getElementById('editAddVideoBtn')?.addEventListener('click', () => {
+    const container = document.getElementById('editVideosContainer');
+    const index = container.children.length;
+    container.insertAdjacentHTML('beforeend', createVideoForm(index));
+});
+
+document.getElementById('editVideosContainer')?.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-video-btn')) {
+        e.target.closest('.video-item').remove();
     }
 });

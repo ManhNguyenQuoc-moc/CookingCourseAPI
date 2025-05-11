@@ -6,6 +6,6 @@ namespace CookingCourseAPI.DTOs
     {
         public string Title { get; set; }
         public string Url { get; set; }
-        public RecipeDto Recipe { get; set; }// ← Chỉ 1 công thức
+        public RecipeDto Recipe { get; set; }
     }
 }

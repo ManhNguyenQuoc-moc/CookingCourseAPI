@@ -7,7 +7,7 @@
     {
         Task<IEnumerable<Recipe>> GetRecipesByVideoIdAsync(int videoId);
         Task<VideoWithRecipesDto> GetVideoWithRecipesDtoByIdAsync(int videoId);
-
+        Task RemoveVideosByCourseIdAsync(int courseId);
     }
 
 }

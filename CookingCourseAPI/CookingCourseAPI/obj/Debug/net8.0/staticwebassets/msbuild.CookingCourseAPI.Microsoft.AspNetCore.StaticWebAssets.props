@@ -1,77 +1,5 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))">
-      <SourceType>Package</SourceType>
-      <SourceId>CookingCourseAPI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CookingCourseAPI</BasePath>
-      <RelativePath>index.html</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>znravwmzbq</Fingerprint>
-      <Integrity>cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\JavaScrip.js'))">
-      <SourceType>Package</SourceType>
-      <SourceId>CookingCourseAPI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CookingCourseAPI</BasePath>
-      <RelativePath>JavaScrip.js</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ctztyyb4hy</Fingerprint>
-      <Integrity>cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\JavaScrip.js'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.html'))">
-      <SourceType>Package</SourceType>
-      <SourceId>CookingCourseAPI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CookingCourseAPI</BasePath>
-      <RelativePath>Login.html</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>7rtakmdldn</Fingerprint>
-      <Integrity>I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Login.html'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\script.js'))">
-      <SourceType>Package</SourceType>
-      <SourceId>CookingCourseAPI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CookingCourseAPI</BasePath>
-      <RelativePath>script.js</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>pz7leg1691</Fingerprint>
-      <Integrity>S0bed5EIfFzD5tFwLdJupaOBpbDs9iFcRCn3OPTnMaI=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\script.js'))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\.browserslistrc'))">
       <SourceType>Package</SourceType>
       <SourceId>CookingCourseAPI</SourceId>
@@ -1704,8 +1632,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>h9mf1vsq4a</Fingerprint>
-      <Integrity>iyQt4tXYT2egK5UD71FeFVMt04PcYcWNznZ36ULt7po=</Integrity>
+      <Fingerprint>vae2haf47a</Fingerprint>
+      <Integrity>571JMuO/kdlqRvsViU9ROyEAv4Q9hR5RSW2csDtRS4g=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\html\auth-forgot-password-basic.html'))</OriginalItemSpec>
@@ -2766,11 +2694,29 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>nfpaq56f6q</Fingerprint>
-      <Integrity>vbI6GZEg53/3LVXU/X0f9tNuDLB5voDdM79QLbjOkKM=</Integrity>
+      <Fingerprint>cl8p9dt2dp</Fingerprint>
+      <Integrity>QLt6QlaO46zP+48o//Sxpcrfrlqc+GD4IM3MvR21a+4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\admin-learnigpaths.html'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\admin-learningpart.js'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CookingCourseAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CookingCourseAPI</BasePath>
+      <RelativePath>sneat-1.0.0/mainhtml/admin-learningpart.js</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3r8b2a0bt1</Fingerprint>
+      <Integrity>8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\admin-learningpart.js'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\auth-forgot-password-basic.html'))">
       <SourceType>Package</SourceType>
@@ -2784,8 +2730,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>qvhr1g3w0d</Fingerprint>
-      <Integrity>RqRAuqZ2iYV6wCbz69I4hCpDZqGlzm0HrqfouBSnXFM=</Integrity>
+      <Fingerprint>4x1u4veop0</Fingerprint>
+      <Integrity>yFqoLkCwRbyLh6QIbVUHNo5zDyrB5+sC5Du57900BUU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\auth-forgot-password-basic.html'))</OriginalItemSpec>
@@ -2826,6 +2772,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\auth-register-basic.html'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\change-password.html'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CookingCourseAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CookingCourseAPI</BasePath>
+      <RelativePath>sneat-1.0.0/mainhtml/change-password.html</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>429k8dm29g</Fingerprint>
+      <Integrity>3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\change-password.html'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\coursemanager.html'))">
       <SourceType>Package</SourceType>
       <SourceId>CookingCourseAPI</SourceId>
@@ -2838,8 +2802,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>vzz7ls7z8p</Fingerprint>
-      <Integrity>+wYywgG8s5kOpId0w5c+v+uqfx7FSZW5NWNb7jJuZFo=</Integrity>
+      <Fingerprint>pieh7j4cye</Fingerprint>
+      <Integrity>P8lUffl6g2D87zOmRPhZyyxWKWlKRAsKR5I30fmZzQ4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\coursemanager.html'))</OriginalItemSpec>
@@ -2856,8 +2820,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2c168wvigr</Fingerprint>
-      <Integrity>vrv6jpoJjsbFZZFsEznPoDUoyARXmuWCr0UEQ574TaY=</Integrity>
+      <Fingerprint>y5tjm0ktzs</Fingerprint>
+      <Integrity>ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T+Q0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\index.html'))</OriginalItemSpec>
@@ -2874,8 +2838,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>enebi1tjas</Fingerprint>
-      <Integrity>FluCecz2i1/NuUiHH1AH7uEh5VrccuQVa/hKDdWCVdw=</Integrity>
+      <Fingerprint>hoogltow4r</Fingerprint>
+      <Integrity>D9YTRmH5ZtrUXWcxlL/ze+Wekz6RTP79SXeAUHzWed8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\learning.html'))</OriginalItemSpec>
@@ -2892,8 +2856,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>cb0ktngfkt</Fingerprint>
-      <Integrity>aAgn5VSpK6KcpVNzIzHjN9CF3EsPYTGpu8HdRw4/W+M=</Integrity>
+      <Fingerprint>tflovczw8h</Fingerprint>
+      <Integrity>ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\learning-paths.html'))</OriginalItemSpec>
@@ -2928,8 +2892,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>kzbr5puui2</Fingerprint>
-      <Integrity>cP6mrc6obAAwtT0zqMQa+oS5ow3gXb7D5FMAKT7Ko8U=</Integrity>
+      <Fingerprint>su7k2huwdk</Fingerprint>
+      <Integrity>xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN+Qf4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\pages-account-settings-account.html'))</OriginalItemSpec>
@@ -2970,6 +2934,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\payment.html'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\reset-password.html'))">
+      <SourceType>Package</SourceType>
+      <SourceId>CookingCourseAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/CookingCourseAPI</BasePath>
+      <RelativePath>sneat-1.0.0/mainhtml/reset-password.html</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>v4uzj0j0fg</Fingerprint>
+      <Integrity>sVniowGUGR6n6fhob4qvzcuLakW2ntNwrpXvFv5RYlQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\reset-password.html'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\script.js'))">
       <SourceType>Package</SourceType>
       <SourceId>CookingCourseAPI</SourceId>
@@ -2982,8 +2964,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jrllr53tax</Fingerprint>
-      <Integrity>kf9O+5upBvbnuqz7uRtv8+Pyc0pdIg2CDsl7hJ/p1+o=</Integrity>
+      <Fingerprint>m37b2r3e05</Fingerprint>
+      <Integrity>TslMZdUBsmHqBqizp1Ny+11CvSSEK9u0vc4fKo+zD6g=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\script.js'))</OriginalItemSpec>
@@ -4679,24 +4661,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\yarn.lock'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\style.css'))">
-      <SourceType>Package</SourceType>
-      <SourceId>CookingCourseAPI</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CookingCourseAPI</BasePath>
-      <RelativePath>style.css</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>wnt6iug3k5</Fingerprint>
-      <Integrity>rCU1HuNaxGp7TlA4VS6kmeEqvduRgFC20V+FC2yebRQ=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\style.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

@@ -14,7 +14,9 @@ public class User
     public string? Bio { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
-
+    // Các thuộc tính mới cho việc reset mật khẩu
+    public string? PasswordResetToken { get; set; }
+    public DateTime? PasswordResetTokenExpiration { get; set; }
     public ICollection<Enrollment> Enrollments { get; set; }
     public ICollection<Blog> Blogs { get; set; }
     public ICollection<Comment> Comments { get; set; }

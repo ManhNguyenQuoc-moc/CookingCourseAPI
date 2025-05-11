@@ -8,5 +8,7 @@ namespace CookingCourseAPI.Repositories.Interfaces
         Task<IEnumerable<Blog>> SearchAsync(string keyword);
         Task<List<Blog>> GetPagedAsync(int pageNumber, int pageSize);
         Task<int> CountAsync();
+        Task<Blog> GetByIdAsync(int id);
+
     }
 }

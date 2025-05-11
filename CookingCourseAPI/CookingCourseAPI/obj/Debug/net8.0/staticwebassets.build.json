@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BIoJLEVw3SUHdrEtZViKXcyqjpywsNSk7RtE2W2Nvx4=",
+  "Hash": "i3m6OjOI8aYZrXqcqAajkfbTB3HEtZ8vDGdPAL/Bjvw=",
   "Source": "CookingCourseAPI",
   "BasePath": "_content/CookingCourseAPI",
   "Mode": "Default",
@@ -16,90 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
-      "SourceId": "CookingCourseAPI",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
-      "BasePath": "_content/CookingCourseAPI",
-      "RelativePath": "index#[.{fingerprint}]?.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "znravwmzbq",
-      "Integrity": "cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\index.html"
-    },
-    {
-      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
-      "SourceId": "CookingCourseAPI",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
-      "BasePath": "_content/CookingCourseAPI",
-      "RelativePath": "JavaScrip#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ctztyyb4hy",
-      "Integrity": "cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\JavaScrip.js"
-    },
-    {
-      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
-      "SourceId": "CookingCourseAPI",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
-      "BasePath": "_content/CookingCourseAPI",
-      "RelativePath": "Login#[.{fingerprint}]?.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "7rtakmdldn",
-      "Integrity": "I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Login.html"
-    },
-    {
-      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\script.js",
-      "SourceId": "CookingCourseAPI",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
-      "BasePath": "_content/CookingCourseAPI",
-      "RelativePath": "script#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "pz7leg1691",
-      "Integrity": "S0bed5EIfFzD5tFwLdJupaOBpbDs9iFcRCn3OPTnMaI=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\script.js"
-    },
     {
       "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\.browserslistrc",
       "SourceId": "CookingCourseAPI",
@@ -2005,8 +1921,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "h9mf1vsq4a",
-      "Integrity": "iyQt4tXYT2egK5UD71FeFVMt04PcYcWNznZ36ULt7po=",
+      "Fingerprint": "vae2haf47a",
+      "Integrity": "571JMuO/kdlqRvsViU9ROyEAv4Q9hR5RSW2csDtRS4g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\html\\auth-forgot-password-basic.html"
@@ -3244,11 +3160,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "nfpaq56f6q",
-      "Integrity": "vbI6GZEg53/3LVXU/X0f9tNuDLB5voDdM79QLbjOkKM=",
+      "Fingerprint": "cl8p9dt2dp",
+      "Integrity": "QLt6QlaO46zP+48o//Sxpcrfrlqc+GD4IM3MvR21a+4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\admin-learnigpaths.html"
+    },
+    {
+      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin-learningpart.js",
+      "SourceId": "CookingCourseAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "BasePath": "_content/CookingCourseAPI",
+      "RelativePath": "sneat-1.0.0/mainhtml/admin-learningpart#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3r8b2a0bt1",
+      "Integrity": "8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\admin-learningpart.js"
     },
     {
       "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\auth-forgot-password-basic.html",
@@ -3265,8 +3202,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "qvhr1g3w0d",
-      "Integrity": "RqRAuqZ2iYV6wCbz69I4hCpDZqGlzm0HrqfouBSnXFM=",
+      "Fingerprint": "4x1u4veop0",
+      "Integrity": "yFqoLkCwRbyLh6QIbVUHNo5zDyrB5+sC5Du57900BUU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\auth-forgot-password-basic.html"
@@ -3314,6 +3251,27 @@
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\auth-register-basic.html"
     },
     {
+      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\change-password.html",
+      "SourceId": "CookingCourseAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "BasePath": "_content/CookingCourseAPI",
+      "RelativePath": "sneat-1.0.0/mainhtml/change-password#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "429k8dm29g",
+      "Integrity": "3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\change-password.html"
+    },
+    {
       "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\coursemanager.html",
       "SourceId": "CookingCourseAPI",
       "SourceType": "Discovered",
@@ -3328,8 +3286,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "vzz7ls7z8p",
-      "Integrity": "+wYywgG8s5kOpId0w5c+v+uqfx7FSZW5NWNb7jJuZFo=",
+      "Fingerprint": "pieh7j4cye",
+      "Integrity": "P8lUffl6g2D87zOmRPhZyyxWKWlKRAsKR5I30fmZzQ4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\coursemanager.html"
@@ -3349,8 +3307,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2c168wvigr",
-      "Integrity": "vrv6jpoJjsbFZZFsEznPoDUoyARXmuWCr0UEQ574TaY=",
+      "Fingerprint": "y5tjm0ktzs",
+      "Integrity": "ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T+Q0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\index.html"
@@ -3370,8 +3328,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "enebi1tjas",
-      "Integrity": "FluCecz2i1/NuUiHH1AH7uEh5VrccuQVa/hKDdWCVdw=",
+      "Fingerprint": "hoogltow4r",
+      "Integrity": "D9YTRmH5ZtrUXWcxlL/ze+Wekz6RTP79SXeAUHzWed8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\learning.html"
@@ -3391,8 +3349,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cb0ktngfkt",
-      "Integrity": "aAgn5VSpK6KcpVNzIzHjN9CF3EsPYTGpu8HdRw4/W+M=",
+      "Fingerprint": "tflovczw8h",
+      "Integrity": "ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\learning-paths.html"
@@ -3433,8 +3391,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "kzbr5puui2",
-      "Integrity": "cP6mrc6obAAwtT0zqMQa+oS5ow3gXb7D5FMAKT7Ko8U=",
+      "Fingerprint": "su7k2huwdk",
+      "Integrity": "xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN+Qf4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\pages-account-settings-account.html"
@@ -3482,6 +3440,27 @@
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\payment.html"
     },
     {
+      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\reset-password.html",
+      "SourceId": "CookingCourseAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
+      "BasePath": "_content/CookingCourseAPI",
+      "RelativePath": "sneat-1.0.0/mainhtml/reset-password#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "v4uzj0j0fg",
+      "Integrity": "sVniowGUGR6n6fhob4qvzcuLakW2ntNwrpXvFv5RYlQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\reset-password.html"
+    },
+    {
       "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\script.js",
       "SourceId": "CookingCourseAPI",
       "SourceType": "Discovered",
@@ -3496,8 +3475,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jrllr53tax",
-      "Integrity": "kf9O+5upBvbnuqz7uRtv8+Pyc0pdIg2CDsl7hJ/p1+o=",
+      "Fingerprint": "m37b2r3e05",
+      "Integrity": "TslMZdUBsmHqBqizp1Ny+11CvSSEK9u0vc4fKo+zD6g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\script.js"
@@ -5475,358 +5454,9 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\yarn.lock"
-    },
-    {
-      "Identity": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\style.css",
-      "SourceId": "CookingCourseAPI",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\",
-      "BasePath": "_content/CookingCourseAPI",
-      "RelativePath": "style#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "wnt6iug3k5",
-      "Integrity": "rCU1HuNaxGp7TlA4VS6kmeEqvduRgFC20V+FC2yebRQ=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\style.css"
     }
   ],
   "Endpoints": [
-    {
-      "Route": "index.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "9491"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 09:33:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U="
-        }
-      ]
-    },
-    {
-      "Route": "index.znravwmzbq.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "9491"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 09:33:17 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "znravwmzbq"
-        },
-        {
-          "Name": "label",
-          "Value": "index.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-cTYIHM57es6rRoc86YXFUGYv50DPQm5PO/bRE/eGa2U="
-        }
-      ]
-    },
-    {
-      "Route": "JavaScrip.ctztyyb4hy.js",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3260"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ctztyyb4hy"
-        },
-        {
-          "Name": "label",
-          "Value": "JavaScrip.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw="
-        }
-      ]
-    },
-    {
-      "Route": "JavaScrip.js",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3260"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:17:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-cMtBFS1c5C7mymXBW5Fq3S6gYiZicbKC0RDkcpWsDhw="
-        }
-      ]
-    },
-    {
-      "Route": "Login.7rtakmdldn.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "616"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:04:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7rtakmdldn"
-        },
-        {
-          "Name": "label",
-          "Value": "Login.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE="
-        }
-      ]
-    },
-    {
-      "Route": "Login.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "616"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 15 Apr 2025 07:04:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-I3F6FTBORjBLaNCGNtG6G7a45EBB0puo9ZUvNx9WZSE="
-        }
-      ]
-    },
-    {
-      "Route": "script.js",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\script.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "922"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"S0bed5EIfFzD5tFwLdJupaOBpbDs9iFcRCn3OPTnMaI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 09:06:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-S0bed5EIfFzD5tFwLdJupaOBpbDs9iFcRCn3OPTnMaI="
-        }
-      ]
-    },
-    {
-      "Route": "script.pz7leg1691.js",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\script.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "922"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"S0bed5EIfFzD5tFwLdJupaOBpbDs9iFcRCn3OPTnMaI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 09:06:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "pz7leg1691"
-        },
-        {
-          "Name": "label",
-          "Value": "script.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-S0bed5EIfFzD5tFwLdJupaOBpbDs9iFcRCn3OPTnMaI="
-        }
-      ]
-    },
     {
       "Route": "sneat-1.0.0/.295zgyv2ac.prettierignore",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\.prettierignore",
@@ -13208,51 +12838,6 @@
       ]
     },
     {
-      "Route": "sneat-1.0.0/html/auth-forgot-password-basic.h9mf1vsq4a.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\html\\auth-forgot-password-basic.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "9954"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"iyQt4tXYT2egK5UD71FeFVMt04PcYcWNznZ36ULt7po=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 13 Mar 2022 05:40:00 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "h9mf1vsq4a"
-        },
-        {
-          "Name": "label",
-          "Value": "sneat-1.0.0/html/auth-forgot-password-basic.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-iyQt4tXYT2egK5UD71FeFVMt04PcYcWNznZ36ULt7po="
-        }
-      ]
-    },
-    {
       "Route": "sneat-1.0.0/html/auth-forgot-password-basic.html",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\html\\auth-forgot-password-basic.html",
       "Selectors": [],
@@ -13263,7 +12848,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9954"
+          "Value": "12604"
         },
         {
           "Name": "Content-Type",
@@ -13271,11 +12856,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"iyQt4tXYT2egK5UD71FeFVMt04PcYcWNznZ36ULt7po=\""
+          "Value": "\"571JMuO/kdlqRvsViU9ROyEAv4Q9hR5RSW2csDtRS4g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 13 Mar 2022 05:40:00 GMT"
+          "Value": "Sun, 11 May 2025 20:19:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13285,7 +12870,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-iyQt4tXYT2egK5UD71FeFVMt04PcYcWNznZ36ULt7po="
+          "Value": "sha256-571JMuO/kdlqRvsViU9ROyEAv4Q9hR5RSW2csDtRS4g="
+        }
+      ]
+    },
+    {
+      "Route": "sneat-1.0.0/html/auth-forgot-password-basic.vae2haf47a.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\html\\auth-forgot-password-basic.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"571JMuO/kdlqRvsViU9ROyEAv4Q9hR5RSW2csDtRS4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 20:19:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vae2haf47a"
+        },
+        {
+          "Name": "label",
+          "Value": "sneat-1.0.0/html/auth-forgot-password-basic.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-571JMuO/kdlqRvsViU9ROyEAv4Q9hR5RSW2csDtRS4g="
         }
       ]
     },
@@ -18046,6 +17676,51 @@
       ]
     },
     {
+      "Route": "sneat-1.0.0/mainhtml/admin-learnigpaths.cl8p9dt2dp.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin-learnigpaths.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "67606"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QLt6QlaO46zP+48o//Sxpcrfrlqc+GD4IM3MvR21a+4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 19:38:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cl8p9dt2dp"
+        },
+        {
+          "Name": "label",
+          "Value": "sneat-1.0.0/mainhtml/admin-learnigpaths.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QLt6QlaO46zP+48o//Sxpcrfrlqc+GD4IM3MvR21a+4="
+        }
+      ]
+    },
+    {
       "Route": "sneat-1.0.0/mainhtml/admin-learnigpaths.html",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin-learnigpaths.html",
       "Selectors": [],
@@ -18056,7 +17731,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "32661"
+          "Value": "67606"
         },
         {
           "Name": "Content-Type",
@@ -18064,11 +17739,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vbI6GZEg53/3LVXU/X0f9tNuDLB5voDdM79QLbjOkKM=\""
+          "Value": "\"QLt6QlaO46zP+48o//Sxpcrfrlqc+GD4IM3MvR21a+4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 03:39:06 GMT"
+          "Value": "Sun, 11 May 2025 19:38:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18078,13 +17753,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vbI6GZEg53/3LVXU/X0f9tNuDLB5voDdM79QLbjOkKM="
+          "Value": "sha256-QLt6QlaO46zP+48o//Sxpcrfrlqc+GD4IM3MvR21a+4="
         }
       ]
     },
     {
-      "Route": "sneat-1.0.0/mainhtml/admin-learnigpaths.nfpaq56f6q.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin-learnigpaths.html",
+      "Route": "sneat-1.0.0/mainhtml/admin-learningpart.3r8b2a0bt1.js",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin-learningpart.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -18093,19 +17768,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "32661"
+          "Value": "3"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/html"
+          "Value": "text/javascript"
         },
         {
           "Name": "ETag",
-          "Value": "\"vbI6GZEg53/3LVXU/X0f9tNuDLB5voDdM79QLbjOkKM=\""
+          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 03:39:06 GMT"
+          "Value": "Sun, 11 May 2025 17:21:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18115,15 +17790,97 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "nfpaq56f6q"
+          "Value": "3r8b2a0bt1"
         },
         {
           "Name": "label",
-          "Value": "sneat-1.0.0/mainhtml/admin-learnigpaths.html"
+          "Value": "sneat-1.0.0/mainhtml/admin-learningpart.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-vbI6GZEg53/3LVXU/X0f9tNuDLB5voDdM79QLbjOkKM="
+          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
+        }
+      ]
+    },
+    {
+      "Route": "sneat-1.0.0/mainhtml/admin-learningpart.js",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin-learningpart.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 17:21:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
+        }
+      ]
+    },
+    {
+      "Route": "sneat-1.0.0/mainhtml/auth-forgot-password-basic.4x1u4veop0.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\auth-forgot-password-basic.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12660"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFqoLkCwRbyLh6QIbVUHNo5zDyrB5+sC5Du57900BUU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 20:22:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4x1u4veop0"
+        },
+        {
+          "Name": "label",
+          "Value": "sneat-1.0.0/mainhtml/auth-forgot-password-basic.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yFqoLkCwRbyLh6QIbVUHNo5zDyrB5+sC5Du57900BUU="
         }
       ]
     },
@@ -18138,7 +17895,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9992"
+          "Value": "12660"
         },
         {
           "Name": "Content-Type",
@@ -18146,11 +17903,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RqRAuqZ2iYV6wCbz69I4hCpDZqGlzm0HrqfouBSnXFM=\""
+          "Value": "\"yFqoLkCwRbyLh6QIbVUHNo5zDyrB5+sC5Du57900BUU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 02:33:51 GMT"
+          "Value": "Sun, 11 May 2025 20:22:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18160,52 +17917,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RqRAuqZ2iYV6wCbz69I4hCpDZqGlzm0HrqfouBSnXFM="
-        }
-      ]
-    },
-    {
-      "Route": "sneat-1.0.0/mainhtml/auth-forgot-password-basic.qvhr1g3w0d.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\auth-forgot-password-basic.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "9992"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"RqRAuqZ2iYV6wCbz69I4hCpDZqGlzm0HrqfouBSnXFM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 02:33:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "qvhr1g3w0d"
-        },
-        {
-          "Name": "label",
-          "Value": "sneat-1.0.0/mainhtml/auth-forgot-password-basic.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-RqRAuqZ2iYV6wCbz69I4hCpDZqGlzm0HrqfouBSnXFM="
+          "Value": "sha256-yFqoLkCwRbyLh6QIbVUHNo5zDyrB5+sC5Du57900BUU="
         }
       ]
     },
@@ -18374,6 +18086,88 @@
       ]
     },
     {
+      "Route": "sneat-1.0.0/mainhtml/change-password.429k8dm29g.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\change-password.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4068"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 20:52:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "429k8dm29g"
+        },
+        {
+          "Name": "label",
+          "Value": "sneat-1.0.0/mainhtml/change-password.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s="
+        }
+      ]
+    },
+    {
+      "Route": "sneat-1.0.0/mainhtml/change-password.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\change-password.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4068"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 20:52:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s="
+        }
+      ]
+    },
+    {
       "Route": "sneat-1.0.0/mainhtml/coursemanager.html",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\coursemanager.html",
       "Selectors": [],
@@ -18384,7 +18178,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "33172"
+          "Value": "37183"
         },
         {
           "Name": "Content-Type",
@@ -18392,11 +18186,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+wYywgG8s5kOpId0w5c+v+uqfx7FSZW5NWNb7jJuZFo=\""
+          "Value": "\"P8lUffl6g2D87zOmRPhZyyxWKWlKRAsKR5I30fmZzQ4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 09:26:13 GMT"
+          "Value": "Sun, 11 May 2025 08:13:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18406,12 +18200,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-+wYywgG8s5kOpId0w5c+v+uqfx7FSZW5NWNb7jJuZFo="
+          "Value": "sha256-P8lUffl6g2D87zOmRPhZyyxWKWlKRAsKR5I30fmZzQ4="
         }
       ]
     },
     {
-      "Route": "sneat-1.0.0/mainhtml/coursemanager.vzz7ls7z8p.html",
+      "Route": "sneat-1.0.0/mainhtml/coursemanager.pieh7j4cye.html",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\coursemanager.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -18421,7 +18215,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "33172"
+          "Value": "37183"
         },
         {
           "Name": "Content-Type",
@@ -18429,11 +18223,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"+wYywgG8s5kOpId0w5c+v+uqfx7FSZW5NWNb7jJuZFo=\""
+          "Value": "\"P8lUffl6g2D87zOmRPhZyyxWKWlKRAsKR5I30fmZzQ4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 09:26:13 GMT"
+          "Value": "Sun, 11 May 2025 08:13:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18443,7 +18237,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "vzz7ls7z8p"
+          "Value": "pieh7j4cye"
         },
         {
           "Name": "label",
@@ -18451,52 +18245,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-+wYywgG8s5kOpId0w5c+v+uqfx7FSZW5NWNb7jJuZFo="
-        }
-      ]
-    },
-    {
-      "Route": "sneat-1.0.0/mainhtml/index.2c168wvigr.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "31344"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vrv6jpoJjsbFZZFsEznPoDUoyARXmuWCr0UEQ574TaY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 03:38:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2c168wvigr"
-        },
-        {
-          "Name": "label",
-          "Value": "sneat-1.0.0/mainhtml/index.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-vrv6jpoJjsbFZZFsEznPoDUoyARXmuWCr0UEQ574TaY="
+          "Value": "sha256-P8lUffl6g2D87zOmRPhZyyxWKWlKRAsKR5I30fmZzQ4="
         }
       ]
     },
@@ -18511,7 +18260,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "31344"
+          "Value": "32263"
         },
         {
           "Name": "Content-Type",
@@ -18519,11 +18268,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vrv6jpoJjsbFZZFsEznPoDUoyARXmuWCr0UEQ574TaY=\""
+          "Value": "\"ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T+Q0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 03:38:18 GMT"
+          "Value": "Sun, 11 May 2025 20:57:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18533,13 +18282,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vrv6jpoJjsbFZZFsEznPoDUoyARXmuWCr0UEQ574TaY="
+          "Value": "sha256-ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T+Q0="
         }
       ]
     },
     {
-      "Route": "sneat-1.0.0/mainhtml/learning.enebi1tjas.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\learning.html",
+      "Route": "sneat-1.0.0/mainhtml/index.y5tjm0ktzs.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -18548,7 +18297,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7832"
+          "Value": "32263"
         },
         {
           "Name": "Content-Type",
@@ -18556,11 +18305,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FluCecz2i1/NuUiHH1AH7uEh5VrccuQVa/hKDdWCVdw=\""
+          "Value": "\"ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T+Q0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 04 May 2025 01:50:21 GMT"
+          "Value": "Sun, 11 May 2025 20:57:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18570,7 +18319,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "enebi1tjas"
+          "Value": "y5tjm0ktzs"
+        },
+        {
+          "Name": "label",
+          "Value": "sneat-1.0.0/mainhtml/index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T+Q0="
+        }
+      ]
+    },
+    {
+      "Route": "sneat-1.0.0/mainhtml/learning.hoogltow4r.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\learning.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33203"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"D9YTRmH5ZtrUXWcxlL/ze+Wekz6RTP79SXeAUHzWed8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 16:19:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hoogltow4r"
         },
         {
           "Name": "label",
@@ -18578,7 +18372,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-FluCecz2i1/NuUiHH1AH7uEh5VrccuQVa/hKDdWCVdw="
+          "Value": "sha256-D9YTRmH5ZtrUXWcxlL/ze+Wekz6RTP79SXeAUHzWed8="
         }
       ]
     },
@@ -18593,7 +18387,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7832"
+          "Value": "33203"
         },
         {
           "Name": "Content-Type",
@@ -18601,11 +18395,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FluCecz2i1/NuUiHH1AH7uEh5VrccuQVa/hKDdWCVdw=\""
+          "Value": "\"D9YTRmH5ZtrUXWcxlL/ze+Wekz6RTP79SXeAUHzWed8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 04 May 2025 01:50:21 GMT"
+          "Value": "Sun, 11 May 2025 16:19:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18615,52 +18409,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FluCecz2i1/NuUiHH1AH7uEh5VrccuQVa/hKDdWCVdw="
-        }
-      ]
-    },
-    {
-      "Route": "sneat-1.0.0/mainhtml/learning-paths.cb0ktngfkt.html",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\learning-paths.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "32524"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aAgn5VSpK6KcpVNzIzHjN9CF3EsPYTGpu8HdRw4/W+M=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 06:01:45 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "cb0ktngfkt"
-        },
-        {
-          "Name": "label",
-          "Value": "sneat-1.0.0/mainhtml/learning-paths.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-aAgn5VSpK6KcpVNzIzHjN9CF3EsPYTGpu8HdRw4/W+M="
+          "Value": "sha256-D9YTRmH5ZtrUXWcxlL/ze+Wekz6RTP79SXeAUHzWed8="
         }
       ]
     },
@@ -18675,7 +18424,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "32524"
+          "Value": "64646"
         },
         {
           "Name": "Content-Type",
@@ -18683,11 +18432,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aAgn5VSpK6KcpVNzIzHjN9CF3EsPYTGpu8HdRw4/W+M=\""
+          "Value": "\"ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 06:01:45 GMT"
+          "Value": "Sun, 11 May 2025 19:37:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18697,7 +18446,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aAgn5VSpK6KcpVNzIzHjN9CF3EsPYTGpu8HdRw4/W+M="
+          "Value": "sha256-ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM="
+        }
+      ]
+    },
+    {
+      "Route": "sneat-1.0.0/mainhtml/learning-paths.tflovczw8h.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\learning-paths.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64646"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 19:37:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tflovczw8h"
+        },
+        {
+          "Name": "label",
+          "Value": "sneat-1.0.0/mainhtml/learning-paths.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM="
         }
       ]
     },
@@ -18839,7 +18633,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "40656"
+          "Value": "42308"
         },
         {
           "Name": "Content-Type",
@@ -18847,11 +18641,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cP6mrc6obAAwtT0zqMQa+oS5ow3gXb7D5FMAKT7Ko8U=\""
+          "Value": "\"xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN+Qf4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 06:27:03 GMT"
+          "Value": "Sun, 11 May 2025 20:13:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18861,7 +18655,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-cP6mrc6obAAwtT0zqMQa+oS5ow3gXb7D5FMAKT7Ko8U="
+          "Value": "sha256-xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN+Qf4="
         }
       ]
     },
@@ -18903,7 +18697,7 @@
       ]
     },
     {
-      "Route": "sneat-1.0.0/mainhtml/pages-account-settings-account.kzbr5puui2.html",
+      "Route": "sneat-1.0.0/mainhtml/pages-account-settings-account.su7k2huwdk.html",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\pages-account-settings-account.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -18913,7 +18707,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "40656"
+          "Value": "42308"
         },
         {
           "Name": "Content-Type",
@@ -18921,11 +18715,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cP6mrc6obAAwtT0zqMQa+oS5ow3gXb7D5FMAKT7Ko8U=\""
+          "Value": "\"xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN+Qf4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 May 2025 06:27:03 GMT"
+          "Value": "Sun, 11 May 2025 20:13:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18935,7 +18729,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "kzbr5puui2"
+          "Value": "su7k2huwdk"
         },
         {
           "Name": "label",
@@ -18943,7 +18737,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cP6mrc6obAAwtT0zqMQa+oS5ow3gXb7D5FMAKT7Ko8U="
+          "Value": "sha256-xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN+Qf4="
         }
       ]
     },
@@ -18970,7 +18764,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:46:41 GMT"
+          "Value": "Wed, 07 May 2025 04:00:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -19007,7 +18801,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:46:41 GMT"
+          "Value": "Wed, 07 May 2025 04:00:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -19030,8 +18824,8 @@
       ]
     },
     {
-      "Route": "sneat-1.0.0/mainhtml/script.jrllr53tax.js",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\script.js",
+      "Route": "sneat-1.0.0/mainhtml/reset-password.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\reset-password.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -19040,19 +18834,56 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22194"
+          "Value": "5543"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/javascript"
+          "Value": "text/html"
         },
         {
           "Name": "ETag",
-          "Value": "\"kf9O+5upBvbnuqz7uRtv8+Pyc0pdIg2CDsl7hJ/p1+o=\""
+          "Value": "\"sVniowGUGR6n6fhob4qvzcuLakW2ntNwrpXvFv5RYlQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 10:05:44 GMT"
+          "Value": "Sun, 11 May 2025 20:27:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-sVniowGUGR6n6fhob4qvzcuLakW2ntNwrpXvFv5RYlQ="
+        }
+      ]
+    },
+    {
+      "Route": "sneat-1.0.0/mainhtml/reset-password.v4uzj0j0fg.html",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\reset-password.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"sVniowGUGR6n6fhob4qvzcuLakW2ntNwrpXvFv5RYlQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 20:27:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -19062,15 +18893,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jrllr53tax"
+          "Value": "v4uzj0j0fg"
         },
         {
           "Name": "label",
-          "Value": "sneat-1.0.0/mainhtml/script.js"
+          "Value": "sneat-1.0.0/mainhtml/reset-password.html"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-kf9O+5upBvbnuqz7uRtv8+Pyc0pdIg2CDsl7hJ/p1+o="
+          "Value": "sha256-sVniowGUGR6n6fhob4qvzcuLakW2ntNwrpXvFv5RYlQ="
         }
       ]
     },
@@ -19085,7 +18916,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22194"
+          "Value": "29817"
         },
         {
           "Name": "Content-Type",
@@ -19093,11 +18924,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kf9O+5upBvbnuqz7uRtv8+Pyc0pdIg2CDsl7hJ/p1+o=\""
+          "Value": "\"TslMZdUBsmHqBqizp1Ny+11CvSSEK9u0vc4fKo+zD6g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 10:05:44 GMT"
+          "Value": "Sun, 11 May 2025 09:56:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -19107,7 +18938,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kf9O+5upBvbnuqz7uRtv8+Pyc0pdIg2CDsl7hJ/p1+o="
+          "Value": "sha256-TslMZdUBsmHqBqizp1Ny+11CvSSEK9u0vc4fKo+zD6g="
+        }
+      ]
+    },
+    {
+      "Route": "sneat-1.0.0/mainhtml/script.m37b2r3e05.js",
+      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\script.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29817"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TslMZdUBsmHqBqizp1Ny+11CvSSEK9u0vc4fKo+zD6g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 11 May 2025 09:56:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m37b2r3e05"
+        },
+        {
+          "Name": "label",
+          "Value": "sneat-1.0.0/mainhtml/script.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TslMZdUBsmHqBqizp1Ny+11CvSSEK9u0vc4fKo+zD6g="
         }
       ]
     },
@@ -26816,88 +26692,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-HyTZM/IF2PlBeRq/KAPnkuRf3cm3UfvabgkShZIAq1k="
-        }
-      ]
-    },
-    {
-      "Route": "style.css",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\style.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1779"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"rCU1HuNaxGp7TlA4VS6kmeEqvduRgFC20V+FC2yebRQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 09:06:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-rCU1HuNaxGp7TlA4VS6kmeEqvduRgFC20V+FC2yebRQ="
-        }
-      ]
-    },
-    {
-      "Route": "style.wnt6iug3k5.css",
-      "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\style.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1779"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"rCU1HuNaxGp7TlA4VS6kmeEqvduRgFC20V+FC2yebRQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 09:06:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "wnt6iug3k5"
-        },
-        {
-          "Name": "label",
-          "Value": "style.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-rCU1HuNaxGp7TlA4VS6kmeEqvduRgFC20V+FC2yebRQ="
         }
       ]
     }

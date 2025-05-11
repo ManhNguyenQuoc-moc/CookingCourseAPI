@@ -11,6 +11,6 @@ namespace CookingCourseAPI.Repositories
         Task<IEnumerable<Recipe>> GetRecipesByVideoIdAsync(int videoId);
         Task<VideoWithRecipesDto> GetVideoWithRecipeAsync(int videoId);
 
-
+        Task RemoveRange(IEnumerable<CourseVideo> videos);
     }
 }

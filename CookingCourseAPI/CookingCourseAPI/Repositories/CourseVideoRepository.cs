@@ -67,9 +67,16 @@ public class CourseVideoRepository : GenericRepository<CourseVideo>, ICourseVide
             {
                 Id = recipe.Id,
                 Title = recipe.Title,
-                Instructions = recipe.Instructions
+                Instructions = recipe.Instructions,
+                Ingredients = recipe.Ingredients,
+                CookingTips = recipe.CookingTips
             }
         };
+    }
+    public async Task RemoveRange(IEnumerable<CourseVideo> videos)
+    {
+        _context.Set<CourseVideo>().RemoveRange(videos);
+        await _context.SaveChangesAsync();
     }
 
 }

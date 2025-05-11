@@ -6,6 +6,8 @@ namespace CookingCourseAPI.Repositories
     {
         Task<User?> GetByEmailAsync(string email);
         Task<bool> EmailExistsAsync(string email);
+        Task<User?> FindByEmailAsync(string email);
+        Task<User?> FindByIdAsync(int userId);
     }
 
 }

@@ -51,6 +51,14 @@ namespace CookingCourseAPI.Repositories
         {
             return await _context.Set<T>().AnyAsync(predicate);
         }
+        public async Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(predicate);
+        }
+        public async Task AddRangeAsync(IEnumerable<T> entities)
+        {
+            await _dbSet.AddRangeAsync(entities);  // Use the EF method for batch insert
+        }
 
     }
 

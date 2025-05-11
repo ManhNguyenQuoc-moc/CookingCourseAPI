@@ -10,23 +10,31 @@ namespace CookingCourseAPI.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly PhotoService _photoService;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, PhotoService photoService)
         {
             _userRepository = userRepository;
+            _photoService = photoService;
         }
         public async Task<User?> UpdateProfileAsync(int id, UpdateProfileDto dto)
         {
             var user = await _userRepository.GetByIdAsync(id);
             if (user == null) return null;
 
-            user.Name = dto.FullName;
-            user.Bio = dto.Bio;
-            user.AvatarUrl = dto.AvatarUrl;
+            user.Name = dto.FullName ?? user.Name;
+            user.Bio = dto.Bio ?? user.Bio;
+
+            if (dto.Avatar != null)
+            {
+                var imageUrl = await _photoService.UploadImageAsync(dto.Avatar); // Gọi đúng chữ ký
+                user.AvatarUrl = imageUrl;
+            }
 
             await _userRepository.SaveChangesAsync();
             return user;
         }
+
         public async Task<UserProfileDto?> GetProfileAsync(int id)
         {
             var user = await _userRepository.GetByIdAsync(id);
@@ -78,11 +86,23 @@ namespace CookingCourseAPI.Services
         {
             var user = await _userRepository.GetByIdAsync(id);
             if (user == null) return false;
-            _userRepository.DeleteAsync(user);
+            await _userRepository.DeleteAsync(user);
             await _userRepository.SaveChangesAsync();
             return true;
         }
+        public async Task<User> GetUserByIdAsync(int id)
+        {
+            return await _userRepository.GetByIdAsync(id);
+        }
+        public async Task<bool> ToggleUserLockAsync(int userId)
+        {
+            var user = await _userRepository.GetByIdAsync(userId);
+            if (user == null) return false;
 
+            user.IsLocked = !user.IsLocked;
+            await _userRepository.UpdateAsync(user);
+            return user.IsLocked;
+        }
 
     }
 }

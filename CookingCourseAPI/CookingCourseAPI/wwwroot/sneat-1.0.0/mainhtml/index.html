@@ -158,7 +158,7 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div data-i18n="Account Settings">Account Settings</div>
+                            <div data-i18n="Account Settings">Trang cá nhân</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item active">
@@ -171,12 +171,12 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                            <div data-i18n="Authentications">Authentications</div>
+                            <div data-i18n="Authentications">Tài khoản</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item active">
-                                <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                                    <div data-i18n="Basic">Forgot Password</div>
+                                <a href="#" class="menu-link" id="changePasswordLink">
+                                    <div data-i18n="Change Password">Change Password</div>
                                 </a>
                             </li>
                         </ul>
@@ -224,7 +224,7 @@
                             <!-- Place this tag where you want the button to render. -->
                             <!-- Khóa học của tôi -->
                             <li class="nav-item me-3">
-                                <h5 class="mb-0"><a href="#" class="text-gray">Khóa học của tôi</a></h5>
+                                <h5 class="mb-0"><a href="pages-account-settings-account.html" class="text-gray">Khóa học của tôi</a></h5>
                             </li>
                             <!-- Chuông thông báo -->
                             <li class="nav-item dropdown me-3">
@@ -476,6 +476,25 @@
             <div class="layout-overlay layout-menu-toggle">
 
             </div>
+            <script>
+                document.getElementById('changePasswordLink').addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Lấy token từ sessionStorage
+                    const token = sessionStorage.getItem('token');
+
+                    if (!token) {
+                        alert('Token không tồn tại. Vui lòng đăng nhập lại.');
+                        return;
+                    }
+
+                    // Ghi token lại (tùy chọn) rồi mở trang đổi mật khẩu
+                    sessionStorage.setItem('authToken', token); // optional: nếu bạn cần key khác bên change-password.html
+
+                    // Mở trang đổi mật khẩu
+                    window.open('change-password.html', '_blank');
+                });
+            </script>
 
         </div>
         <!-- / Layout wrapper -->
@@ -494,6 +513,8 @@
         <!-- Main JS -->
         <script src="../assets/js/main.js"></script>
         <!-- Page JS -->
+        
+
         <script src="../assets/js/dashboards-analytics.js"></script>
         <!-- Place this tag in your head or just before your close body tag. -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>

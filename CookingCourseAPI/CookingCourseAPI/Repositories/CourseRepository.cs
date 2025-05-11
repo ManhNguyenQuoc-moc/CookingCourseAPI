@@ -34,5 +34,11 @@ namespace CookingCourseAPI.Repositories
                                  .Where(v => v.CourseId == courseId)
                                  .ToListAsync();
         }
+        public async Task<bool> IsUserEnrolledAsync(int userId, int courseId)
+        {
+            return await _context.Enrollments
+                .AnyAsync(e => e.UserId == userId && e.CourseId == courseId);
+        }
+
     }
 }

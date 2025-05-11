@@ -4,6 +4,8 @@ using CookingCourseAPI.Models.Responses;
 using CookingCourseAPI.Services.Interfaces;
 using CookingCourseAPI.DTOs;
 using CookingCourseAPI.Services;
+using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
 
 namespace CookingCourseAPI.Controllers
 {
@@ -13,11 +15,13 @@ namespace CookingCourseAPI.Controllers
     {
         private readonly ICourseService _courseService;
         private readonly ICourseVideoService _courseVideoService;
+        private readonly PhotoService _photoService;
 
-        public CoursesController(ICourseService courseService, ICourseVideoService courseVideoService)
+        public CoursesController(ICourseService courseService, ICourseVideoService courseVideoService, PhotoService photoService)
         {
             _courseService = courseService;
             _courseVideoService = courseVideoService;
+            _photoService = photoService;
         }
 
         [HttpGet]
@@ -38,21 +42,41 @@ namespace CookingCourseAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Course updatedCourse)
+        public async Task<IActionResult> Update(int id, [FromForm] CourseCreateDto updatedCourse)
         {
-            var existing = await _courseService.GetCourseByIdAsync(id);
-            if (existing == null)
-                return NotFound(ApiResponse<string>.FailResponse("Course not found"));
+            try
+            {
+                var existingCourse = await _courseService.GetCourseByIdAsync(id);
+                if (existingCourse == null)
+                    return NotFound(ApiResponse<string>.FailResponse("Khóa học không tồn tại."));
 
-            existing.Name = updatedCourse.Name;
-            existing.Description = updatedCourse.Description;
+                // Upload image if provided
+                if (updatedCourse.Image != null)
+                {
+                    try
+                    {
+                        var imageUrl = await _photoService.UploadImageAsync(updatedCourse.Image);
+                        existingCourse.ImageUrl = imageUrl;
+                    }
+                    catch (Exception ex)
+                    {
+                        return BadRequest(ApiResponse<string>.FailResponse($"Lỗi upload ảnh: {ex.Message}"));
+                    }
+                }
 
-            var result = await _courseService.UpdateCourseAsync(existing);
-            if (!result)
-                return BadRequest(ApiResponse<string>.FailResponse("Update failed"));
+                // Update course
+                var result = await _courseService.UpdateCourseAsync(id, updatedCourse);
+                if (!result)
+                    return BadRequest(ApiResponse<string>.FailResponse("Cập nhật khóa học thất bại."));
 
-            return Ok(ApiResponse<string>.SuccessResponse("Course updated successfully"));
+                return Ok(ApiResponse<string>.SuccessResponse("Cập nhật khóa học thành công."));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ApiResponse<string>.FailResponse($"Lỗi server: {ex.Message}"));
+            }
         }
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
@@ -65,9 +89,16 @@ namespace CookingCourseAPI.Controllers
         }
         // API tạo khóa học và nhiều video
         [HttpPost]
-        public async Task<IActionResult> CreateCourseWithVideos([FromBody] CourseCreateDto courseCreateDto)
+        public async Task<IActionResult> CreateCourseWithVideos([FromForm] CourseCreateDto courseCreateDto)
         {
-            if (courseCreateDto == null || !courseCreateDto.Videos.Any())
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState
+                    .Select(kvp => new { Field = kvp.Key, Errors = kvp.Value.Errors.Select(e => e.ErrorMessage) });
+                return BadRequest(new { message = "ModelState invalid", errors });
+            }
+
+            if (courseCreateDto?.Videos == null || !courseCreateDto.Videos.Any())
             {
                 return BadRequest("Invalid course data or no videos provided.");
             }
@@ -79,8 +110,10 @@ namespace CookingCourseAPI.Controllers
                 return BadRequest("Failed to create course.");
             }
 
-            return Ok(createdCourse);  // Trả về khóa học đã tạo
+            return Ok(createdCourse);
         }
+
+
         [HttpPost("enroll")]
         public async Task<IActionResult> Enroll([FromBody] CourseEnrollDto enrollDto)
         {
@@ -126,6 +159,31 @@ namespace CookingCourseAPI.Controllers
             return Ok(videoDto);
         }
 
+        [HttpGet("check-enrollment")]
+        public async Task<IActionResult> CheckEnrollment([FromQuery] int userId, [FromQuery] int courseId)
+        {
+            var isEnrolled = await _courseService.CheckUserEnrollmentAsync(userId, courseId);
+            return Ok(new { isEnrolled });
+        }
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateCourseWithVideos(int id, [FromForm] CourseCreateDto courseCreateDto)
+        {
+            // Kiểm tra nếu dữ liệu video là null hoặc không có video
+            if (courseCreateDto?.Videos == null || !courseCreateDto.Videos.Any())
+            {
+                return BadRequest("Invalid course data or no videos provided.");
+            }
+
+            // Gọi service để cập nhật khóa học
+            var updatedCourse = await _courseService.UpdateCourseWithVideosAsync(id, courseCreateDto);
+
+            if (updatedCourse == null)
+            {
+                return BadRequest("Failed to update course.");
+            }
+
+            return Ok(updatedCourse);
+        }
 
     }
 }

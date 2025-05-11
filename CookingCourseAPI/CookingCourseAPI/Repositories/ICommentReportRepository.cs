@@ -1,5 +1,4 @@
-﻿
-using CookingCourseAPI.Models.Entities;
+﻿using CookingCourseAPI.Models.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

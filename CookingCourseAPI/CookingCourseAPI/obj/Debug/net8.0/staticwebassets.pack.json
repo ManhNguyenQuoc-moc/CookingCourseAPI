@@ -1,22 +1,6 @@
 {
   "Files": [
     {
-      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\JavaScrip.js",
-      "PackagePath": "staticwebassets\\JavaScrip.js"
-    },
-    {
-      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\Login.html",
-      "PackagePath": "staticwebassets\\Login.html"
-    },
-    {
-      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\index.html",
-      "PackagePath": "staticwebassets\\index.html"
-    },
-    {
-      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\script.js",
-      "PackagePath": "staticwebassets\\script.js"
-    },
-    {
       "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\.browserslistrc",
       "PackagePath": "staticwebassets\\sneat-1.0.0\\.browserslistrc"
     },
@@ -617,6 +601,10 @@
       "PackagePath": "staticwebassets\\sneat-1.0.0\\mainhtml\\admin-learnigpaths.html"
     },
     {
+      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin-learningpart.js",
+      "PackagePath": "staticwebassets\\sneat-1.0.0\\mainhtml\\admin-learningpart.js"
+    },
+    {
       "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin.html",
       "PackagePath": "staticwebassets\\sneat-1.0.0\\mainhtml\\admin.html"
     },
@@ -631,6 +619,10 @@
     {
       "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\auth-register-basic.html",
       "PackagePath": "staticwebassets\\sneat-1.0.0\\mainhtml\\auth-register-basic.html"
+    },
+    {
+      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\change-password.html",
+      "PackagePath": "staticwebassets\\sneat-1.0.0\\mainhtml\\change-password.html"
     },
     {
       "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\coursemanager.html",
@@ -663,6 +655,10 @@
     {
       "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\payment.html",
       "PackagePath": "staticwebassets\\sneat-1.0.0\\mainhtml\\payment.html"
+    },
+    {
+      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\reset-password.html",
+      "PackagePath": "staticwebassets\\sneat-1.0.0\\mainhtml\\reset-password.html"
     },
     {
       "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\script.js",
@@ -1039,10 +1035,6 @@
     {
       "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\yarn.lock",
       "PackagePath": "staticwebassets\\sneat-1.0.0\\yarn.lock"
-    },
-    {
-      "Id": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\style.css",
-      "PackagePath": "staticwebassets\\style.css"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CookingCourseAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

@@ -163,6 +163,27 @@ namespace CookingCourseAPI.Migrations
                     b.ToTable("CommentReports");
                 });
 
+            modelBuilder.Entity("CookingCourseAPI.Models.Entities.CompletedCourseVideo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CourseProgressId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CourseVideoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseProgressId");
+
+                    b.ToTable("CompletedCourseVideos");
+                });
+
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.Course", b =>
                 {
                     b.Property<int>("Id")
@@ -175,11 +196,12 @@ namespace CookingCourseAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsFree")
                         .HasColumnType("bit");
-
-                    b.Property<int?>("LearningPathId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -190,9 +212,33 @@ namespace CookingCourseAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LearningPathId");
-
                     b.ToTable("Courses");
+                });
+
+            modelBuilder.Entity("CookingCourseAPI.Models.Entities.CourseProgress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsCourseCompleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CourseProgresses");
                 });
 
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.CourseVideo", b =>
@@ -262,13 +308,58 @@ namespace CookingCourseAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("LearningPaths");
+                });
+
+            modelBuilder.Entity("CookingCourseAPI.Models.Entities.LearningPathCourse", b =>
+                {
+                    b.Property<int>("LearningPathId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LearningPathId", "CourseId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("learningPathCourses");
+                });
+
+            modelBuilder.Entity("CookingCourseAPI.Models.Entities.LearningPathProgress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsPathCompleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LearningPathId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LearningPathProgresses");
                 });
 
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.News", b =>
@@ -354,11 +445,16 @@ namespace CookingCourseAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CourseId")
-                        .HasColumnType("int");
+                    b.Property<string>("CookingTips")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CourseVideoId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Ingredients")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Instructions")
                         .IsRequired()
@@ -369,8 +465,6 @@ namespace CookingCourseAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
 
                     b.HasIndex("CourseVideoId")
                         .IsUnique();
@@ -409,6 +503,12 @@ namespace CookingCourseAPI.Migrations
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordResetToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("PasswordResetTokenExpiration")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -494,11 +594,15 @@ namespace CookingCourseAPI.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CookingCourseAPI.Models.Entities.Course", b =>
+            modelBuilder.Entity("CookingCourseAPI.Models.Entities.CompletedCourseVideo", b =>
                 {
-                    b.HasOne("CookingCourseAPI.Models.Entities.LearningPath", null)
-                        .WithMany("Courses")
-                        .HasForeignKey("LearningPathId");
+                    b.HasOne("CookingCourseAPI.Models.Entities.CourseProgress", "CourseProgress")
+                        .WithMany("CompletedCourseVideos")
+                        .HasForeignKey("CourseProgressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseProgress");
                 });
 
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.CourseVideo", b =>
@@ -515,9 +619,9 @@ namespace CookingCourseAPI.Migrations
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.Enrollment", b =>
                 {
                     b.HasOne("CookingCourseAPI.Models.Entities.Course", "Course")
-                        .WithMany("Enrollments")
+                        .WithMany()
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("User", "User")
@@ -550,6 +654,25 @@ namespace CookingCourseAPI.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("CookingCourseAPI.Models.Entities.LearningPathCourse", b =>
+                {
+                    b.HasOne("CookingCourseAPI.Models.Entities.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CookingCourseAPI.Models.Entities.LearningPath", "LearningPath")
+                        .WithMany("LearningPathCourses")
+                        .HasForeignKey("LearningPathId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("LearningPath");
+                });
+
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.Notification", b =>
                 {
                     b.HasOne("User", "User")
@@ -564,9 +687,9 @@ namespace CookingCourseAPI.Migrations
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.Rating", b =>
                 {
                     b.HasOne("CookingCourseAPI.Models.Entities.Course", "Course")
-                        .WithMany("Ratings")
+                        .WithMany()
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("User", "User")
@@ -582,10 +705,6 @@ namespace CookingCourseAPI.Migrations
 
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.Recipe", b =>
                 {
-                    b.HasOne("CookingCourseAPI.Models.Entities.Course", null)
-                        .WithMany("Recipes")
-                        .HasForeignKey("CourseId");
-
                     b.HasOne("CookingCourseAPI.Models.Entities.CourseVideo", "CourseVideo")
                         .WithOne("Recipe")
                         .HasForeignKey("CookingCourseAPI.Models.Entities.Recipe", "CourseVideoId")
@@ -609,13 +728,12 @@ namespace CookingCourseAPI.Migrations
 
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.Course", b =>
                 {
-                    b.Navigation("Enrollments");
-
-                    b.Navigation("Ratings");
-
-                    b.Navigation("Recipes");
-
                     b.Navigation("Videos");
+                });
+
+            modelBuilder.Entity("CookingCourseAPI.Models.Entities.CourseProgress", b =>
+                {
+                    b.Navigation("CompletedCourseVideos");
                 });
 
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.CourseVideo", b =>
@@ -626,7 +744,7 @@ namespace CookingCourseAPI.Migrations
 
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.LearningPath", b =>
                 {
-                    b.Navigation("Courses");
+                    b.Navigation("LearningPathCourses");
                 });
 
             modelBuilder.Entity("CookingCourseAPI.Models.Entities.Recipe", b =>

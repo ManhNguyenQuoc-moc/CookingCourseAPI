@@ -392,7 +392,10 @@
                                         <input class="form-check-input" type="checkbox" name="isFree" id="isFreeCheck">
                                         <label class="form-check-label" for="isFreeCheck">Miễn phí</label>
                                     </div>
-
+                                    <div class="mb-3">
+                                        <label class="form-label">Ảnh khóa học</label>
+                                        <input type="file" class="form-control" name="image" accept="image/*" required>
+                                    </div>
                                     <!-- Danh sách video -->
                                     <h6>Danh sách video</h6>
                                     <div id="videos-container"></div>
@@ -406,6 +409,47 @@
                         </div>
                     </div>
                 </div>
+                <!-- Modal chỉnh sửa khóa học -->
+                <div class="modal fade" id="editCourseModal" tabindex="-1" aria-labelledby="editCourseModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editCourseModalLabel">Chỉnh sửa khóa học</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editCourseForm">
+                                    <input type="hidden" name="courseId">
+                                    <div class="mb-3">
+                                        <label for="editCourseName" class="form-label">Tên khóa học</label>
+                                        <input type="text" class="form-control" name="name" id="editCourseName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editCourseDescription" class="form-label">Mô tả</label>
+                                        <textarea class="form-control" name="description" id="editCourseDescription" rows="3" required></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editCoursePrice" class="form-label">Giá</label>
+                                        <input type="number" class="form-control" name="price" id="editCoursePrice" required>
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" name="isFree" id="editCourseIsFree">
+                                        <label class="form-check-label" for="editCourseIsFree">Miễn phí</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editCourseImage" class="form-label">Ảnh khóa học</label>
+                                        <input type="file" class="form-control" name="image" id="editCourseImage">
+                                        <img id="editCourseImagePreview" src="" alt="Preview" style="display: none; max-width: 100%; margin-top: 10px;">
+                                    </div>
+                                    <div id="editVideosContainer"></div>
+                                    <button type="button" class="btn btn-secondary mb-3" id="editAddVideoBtn">+ Thêm video</button>
+                                    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <script>
                     document.getElementById('add-video-btn')?.addEventListener('click', () => {
                         const container = document.getElementById('videos-container');

@@ -9,6 +9,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Security.Claims;
 using CookingCourseAPI.Repositories.Interfaces;
+using CloudinaryDotNet;
+using CookingCourseAPI.Models;
 
 namespace CookingCourseAPI
 {
@@ -32,7 +34,7 @@ namespace CookingCourseAPI
                 });
             });
 
-            // ============= JWT Authentication ============
+            // ============= JWT Authentication ============ 
             var jwtSettings = builder.Configuration.GetSection("Jwt");
             var jwtKey = jwtSettings["Key"];
             var jwtIssuer = jwtSettings["Issuer"];
@@ -61,6 +63,7 @@ namespace CookingCourseAPI
             builder.Services.AddAuthorization();
 
             // ============ DI cho Repository và Service ============
+
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped<IBlogReportRepository, BlogReportRepository>();
             builder.Services.AddScoped<IAuthService, AuthService>();
@@ -75,14 +78,33 @@ namespace CookingCourseAPI
             builder.Services.AddScoped<ICourseRepository, CourseRepository>();
             builder.Services.AddScoped<ICourseVideoRepository, CourseVideoRepository>();
             builder.Services.AddScoped<ICourseVideoService, CourseVideoService>();
-            builder.Services.AddScoped<ICourseVideoRepository, CourseVideoRepository>();
+            builder.Services.AddScoped<PhotoService>();
+            builder.Services.AddScoped<IFavoriteRecipeService, FavoriteRecipeService>();
+            builder.Services.AddScoped<IFavoriteRecipeRepository, FavoriteRecipeRepository>();
+            builder.Services.AddScoped<ILearningPathRepository, LearningPathRepository>();
+            builder.Services.AddScoped<ILearningPathService, LearningPathService>();
+            builder.Services.AddScoped<IProgressService, ProgressService>();
+            builder.Services.AddScoped<IProgressRepository, ProgressRepository>();
+            builder.Services.AddTransient<IEmailService, EmailService>();
 
+            // Cấu hình JSON Serializer để hỗ trợ các tham chiếu vòng
             builder.Services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
-                options.JsonSerializerOptions.WriteIndented = true; // Tùy chọn hiển thị dễ đọc
+                options.JsonSerializerOptions.WriteIndented = true; // Định dạng JSON dễ đọc
             });
+            builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
+
+            builder.Services.AddSingleton(serviceProvider =>
+            {
+                var config = builder.Configuration.GetSection("CloudinarySettings").Get<CloudinarySettings>();
+                var account = new Account(config.CloudName, config.ApiKey, config.ApiSecret);
+                return new Cloudinary(account);
+            });
+
+
             // ============ Swagger có hỗ trợ JWT ============
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
@@ -115,30 +137,34 @@ namespace CookingCourseAPI
             });
 
             // ============ Kết nối DbContext ============
+
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
             // ============ Middleware ============
+
+            // Phục vụ Swagger trong môi trường phát triển
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
-            app.UseStaticFiles();
-            app.UseCors("AllowAll");
-            app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseStaticFiles(); // Đảm bảo các file tĩnh có thể truy cập
+            app.UseCors("AllowAll"); // Áp dụng CORS
+            app.UseAuthentication(); // Kích hoạt authentication
+            app.UseAuthorization(); // Kích hoạt authorization
             app.MapControllers();
 
             // Trang chủ trả về index.html nếu có
             app.MapGet("/", async context =>
             {
-                await context.Response.SendFileAsync(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"));
+                await context.Response.SendFileAsync(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/", "/sneat-1.0.0/mainhtml/index.html"));
             });
 
+            // Chạy ứng dụng
             app.Run();
         }
     }

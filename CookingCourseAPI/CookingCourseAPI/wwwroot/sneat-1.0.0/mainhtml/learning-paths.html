@@ -64,7 +64,6 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!-- Menu -->
-
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
                     <a href="index.html" class="app-brand-link">
@@ -145,9 +144,8 @@
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text" data-i18n="menu.news-header">Bản tin khóa học</span>
                     </li>
-                    <!-- Bản tin -->
                     <li class="menu-item">
-                        <a href="ban-tin.html" class="menu-link">
+                        <a class="menu-link" href="#" data-bs-toggle="modal" data-bs-target="#newsModal">
                             <i class="menu-icon tf-icons bx bx-news"></i>
                             <div data-i18n="menu.news">Bản tin</div>
                         </a>
@@ -158,10 +156,10 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div data-i18n="Account Settings">Account Settings</div>
+                            <div data-i18n="Account Settings">Trang cá nhân</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
+                            <li class="menu-item active">
                                 <a href="pages-account-settings-account.html" class="menu-link">
                                     <div data-i18n="Account">Account</div>
                                 </a>
@@ -171,12 +169,12 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                            <div data-i18n="Authentications">Authentications</div>
+                            <div data-i18n="Authentications">Tài khoản</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                                    <div data-i18n="Basic">Forgot Password</div>
+                            <li class="menu-item active">
+                                <a href="#" class="menu-link" id="changePasswordLink">
+                                    <div data-i18n="Change Password">Change Password</div>
                                 </a>
                             </li>
                         </ul>
@@ -184,6 +182,20 @@
                 </ul>
             </aside>
             <!-- / Menu -->
+            <!-- Modal: Hiển thị bản tin -->
+            <div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="newsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="newsModalLabel">Bản tin hôm nay</h5>
+                        </div>
+                        <div class="modal-body">
+                            <img src="https://via.placeholder.com/800x300" class="img-fluid mb-3" alt="Tin tức">
+                            <p>Đây là nội dung bản tin chi tiết, bạn có thể cập nhật bằng nội dung thật sự hoặc load động.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
@@ -210,17 +222,37 @@
                             <!-- Place this tag where you want the button to render. -->
                             <!-- Khóa học của tôi -->
                             <li class="nav-item me-3">
-                                <h5 class="mb-0">Khóa học của tôi</h5>
+                                <h5 class="mb-0"><a href="#" class="text-gray">Khóa học của tôi</a></h5>
                             </li>
                             <!-- Chuông thông báo -->
-                            <li class="nav-item me-3">
-                                <i class="fa-solid fa-bell fa-lg"></i>
+                            <li class="nav-item dropdown me-3">
+                                <button type="button"
+                                        id="loginNofica"
+                                        class="btn rounded-pill btn-icon btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false">
+                                    <span class="tf-icons bx bx-bell"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="loginNofica" style="min-width: 300px; max-height: 400px; overflow-y: auto;">
+                                    <h6 class="dropdown-header">Thông báo</h6>
+                                    <div id="notificationList">
+                                        <p class="text-muted mb-0">Không có thông báo nào.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <button id="loginBtn" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                                        type="button" style="width: 40px; height: 40px;">
+                                    <i class="fas fa-user"></i>
+                                </button>
                             </li>
                             <!-- User -->
-                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                            <li id="userDropdown" class="nav-item navbar-dropdown dropdown-user dropdown d-none">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                                    <div class="avatar avatar-online">
-                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    <div id="btnShowProfile" class="avatar avatar-online">
+                                        <img id="avataruser1" src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -229,12 +261,12 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        <img id="useravatar" src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">John Doe</span>
-                                                    <small class="text-muted">Admin</small>
+                                                    <span id="nameuser" class="fw-semibold d-block">John Doe</span>
+                                                    <small id="roleuser" class="text-muted">Admin</small>
                                                 </div>
                                             </div>
                                         </a>
@@ -288,199 +320,748 @@
                         </ul>
                     </div>
                 </nav>
+                <style>
+                    /* Ẩn dấu mũi tên của dropdown-toggle */
+                    #loginNofica::after {
+                        display: none !important;
+                    }
+                </style>
                 <!-- / Navbar -->
+                <!-- /Navbar -->
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <!-- Style variation -->
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Lộ trình học nấu ăn /</span> Các lộ trình</h4>
 
-                        <div class="container-xxl flex-grow-1 container-p-y">
-                            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Lộ trình học nấu ăn /</span> Các lộ trình</h4>
-                            <!-- Horizontal -->
-                            <div class="_container-top_juuyp_10">
-                                <h1 class="_heading_juuyp_22">Lộ trình học</h1><div class="_wrapper_1ek85_1 _desc_juuyp_29" style="--font-size: 1.4rem; --line-height: 1.8;">
-                                    <p>Để bắt đầu một cách thuận lợi, bạn nên tập trung vào một lộ trình học. Ví dụ: Bạn muốn đi làm bếp cho một nhà hàng bạn nên tập trung vào lộ trình "Đầu bếp từ zero đến hero".</p>
-                                </div>
-                            </div>
-                            <div class="row mb-5">
-                                <!-- First Row -->
-                                <div class="col-md-6 mb-3">
-                                    <div class="card mb-3">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img class="card-img card-img-left" src="../assets/img/elements/12.jpg" alt="Card image" />
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <p class="card-text">
-                                                        This is a wider card with supporting text below as a natural lead-in to additional content.
-                                                        This content is a little bit longer.
-                                                    </p>
-                                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="card mb-3">
-                                        <div class="row g-0">
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <p class="card-text">
-                                                        This is a wider card with supporting text below as a natural lead-in to additional content.
-                                                        This content is a little bit longer.
-                                                    </p>
-                                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <img class="card-img card-img-right" src="../assets/img/elements/17.jpg" alt="Card image" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Second Row -->
-                                <div class="col-md-6 mb-3">
-                                    <div class="card mb-3">
-                                        <div class="row g-0">
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <p class="card-text">
-                                                        This is a wider card with supporting text below as a natural lead-in to additional content.
-                                                        This content is a little bit longer.
-                                                    </p>
-                                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <img class="card-img card-img-right" src="../assets/img/elements/17.jpg" alt="Card image" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="card mb-3">
-                                        <div class="row g-0">
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Card title</h5>
-                                                    <p class="card-text">
-                                                        This is a wider card with supporting text below as a natural lead-in to additional content.
-                                                        This content is a little bit longer.
-                                                    </p>
-                                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <img class="card-img card-img-right" src="../assets/img/elements/17.jpg" alt="Card image" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/ Horizontal -->
-                            <!--/ Card layout -->
-                            <div class="_wrapper_669bc_1">
-                                <div class="_info_669bc_9">
-                                    <h2>Tham gia cộng đồng học viên cookingcourse trên Facebook</h2><p>
-                                        Hàng nghìn người khác đang học lộ trình giống như bạn. Hãy tham gia hỏi đáp, chia sẻ và hỗ trợ nhau
-                                        trong quá trình học nhé.
-                                    </p>
-                                    <button type="button" class="btn rounded-pill btn-primary" href="#">Tham gia nhóm</button>
-                                </div>
-                                <div class="_image_669bc_26">
-                                    <img src="https://png.pngtree.com/png-clipart/20220116/original/pngtree-hand-drawn-cartoon-drink-png-elements-png-image_7106682.png" class="img-fluid" style="max-width: 150px;" />
-                                </div>
-                            </div>
+                        <div class="_container-top_juuyp_10">
+                            <!-- ... (existing intro text) ... -->
                         </div>
-                        
-                        <!--/ Card layout -->
+
+                        <!--<div class="d-flex justify-content-end mb-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addLearningPathModal">
+                                <i class="bx bx-plus me-1"></i> Thêm Lộ trình học
+                            </button>
+                        </div>-->
+
+                        <div class="row mb-5" id="learningPathsDisplayArea">
+                            <p class="text-center col-12">Đang tải danh sách lộ trình học...</p>
+                        </div>
+
+                        <div class="_wrapper_669bc_1">
+                            <!-- ... (existing "Tham gia cộng đồng" section) ... -->
+                        </div>
                     </div>
-                            <!-- Outline -->
-                            <!--/ Style variation -->
-                        <!-- / Content -->
-                   
-                        <!-- Footer -->
-                        <footer class="content-footer footer bg-dark text-white py-4">
-                            <div class="container-xxl d-flex flex-wrap justify-content-between flex-md-row flex-column">
-                                <div class="mb-4">
-                                    <h5 class="text-white">Cooking Master - Hãy để những món ăn của bạn được hiện thực</h5>
-                                    <p>Điện thoại: 08 1919 1234<br>Email: contact@cookingmaster.vn<br>Địa chỉ: Số 123, Đường Ẩm Thực, Quận 1, TP. Hồ Chí Minh</p>
-                                    <i class="fas fa-certificate"></i> DMCA Protected
+                    <!-- / Content -->
+                    <!-- Footer -->
+                    <!-- ... (existing footer as provided previously) ... -->
+                    <footer class="bg-light text-dark pt-5 pb-3 border-top">
+                        <div class="container-xxl">
+                            <div class="row">
+                                <!-- Thông tin liên hệ -->
+                                <div class="col-md-4 mb-4">
+                                    <h5 class="fw-bold text-primary">Cooking Master</h5>
+                                    <p class="small mb-2">
+                                        Điện thoại: 08 1919 1234<br>
+                                        Email: contact@cookingmaster.vn<br>
+                                        Địa chỉ: Số 123, Đường Ẩm Thực, Quận 1, TP. Hồ Chí Minh
+                                    </p>
+                                    <img src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-bakery-tool-clipart-hand-drawn-illustration-food-items-and-cooking-concepts-png-image_12149984.png"
+                                         class="img-fluid rounded shadow-sm mt-2"
+                                         style="max-height: 120px; object-fit: contain;" id="imageurl">
                                 </div>
-                                <div class="mb-4">
-                                    <h5 class="text-white">Về Chúng Tôi</h5>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#" class="text-gray">Giới thiệu</a></li>
-                                        <li><a href="#" class="text-gray">Liên hệ</a></li>
-                                        <li><a href="#" class="text-gray">Điều khoản</a></li>
-                                        <li><a href="#" class="text-gray">Chính sách bảo mật</a></li>
-                                    </ul>
-                                </div>
-                                <div class="mb-4">
-                                    <h5 class="text-white">Khóa Học</h5>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#" class="text-gray">Nấu ăn cơ bản</a></li>
-                                        <li><a href="#" class="text-gray">Bếp Âu chuyên nghiệp</a></li>
-                                        <li><a href="#" class="text-gray">Pha chế đồ uống</a></li>
-                                        <li><a href="#" class="text-gray">Trang trí món ăn</a></li>
-                                        <li><a href="#" class="text-gray">Khóa học làm bánh</a></li>
+
+                                <!-- Về Chúng Tôi -->
+                                <div class="col-md-2 mb-4">
+                                    <h6 class="fw-semibold text-primary">Về Chúng Tôi</h6>
+                                    <ul class="list-unstyled small">
+                                        <li><a href="#" class="footer-link">Giới thiệu</a></li>
+                                        <li><a href="#" class="footer-link">Liên hệ</a></li>
+                                        <li><a href="#" class="footer-link">Điều khoản</a></li>
+                                        <li><a href="#" class="footer-link">Chính sách bảo mật</a></li>
                                     </ul>
                                 </div>
 
-                                <div class="mb-4">
-                                    <h5 class="text-white">Công Cụ</h5>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#" class="text-gray">Công thức nấu ăn</a></li>
-                                        <li><a href="#" class="text-gray">Tạo thực đơn</a></li>
+                                <!-- Khóa Học -->
+                                <div class="col-md-3 mb-4">
+                                    <h6 class="fw-semibold text-primary">Khóa Học</h6>
+                                    <ul class="list-unstyled small">
+                                        <li><a href="#" class="footer-link">Nấu ăn cơ bản</a></li>
+                                        <li><a href="#" class="footer-link">Bếp Âu chuyên nghiệp</a></li>
+                                        <li><a href="#" class="footer-link">Pha chế đồ uống</a></li>
+                                        <li><a href="#" class="footer-link">Trang trí món ăn</a></li>
+                                        <li><a href="#" class="footer-link">Khóa học làm bánh</a></li>
                                     </ul>
-  
-                                <style>
-                                    /* Đặt màu sắc mặc định cho các liên kết */
-                                    .text-gray {
-                                        color: gray;
-                                        text-decoration: none;
-                                    }
+                                </div>
 
-                                        /* Hiệu ứng hover */
-                                        .text-gray:hover {
-                                            color:; /* Màu khi hover (bạn có thể thay đổi màu sắc này) */
-                                            text-decoration: underline; /* Thêm gạch dưới khi hover */
-                                        }
-                                </style>
+                                <!-- Công Cụ -->
+                                <div class="col-md-3 mb-4">
+                                    <h6 class="fw-semibold text-primary">Công Cụ</h6>
+                                    <ul class="list-unstyled small">
+                                        <li><a href="#" class="footer-link">Công thức nấu ăn</a></li>
+                                        <li><a href="#" class="footer-link">Tạo thực đơn</a></li>
+                                    </ul>
+                                </div>
                             </div>
 
-                            <div class="container-xxl d-flex justify-content-between align-items-center mt-4 border-top pt-3">
-                                <div>
+                            <hr>
+
+                            <!-- Bản quyền & mạng xã hội -->
+                            <div class="d-flex justify-content-between align-items-center flex-wrap small pt-3">
+                                <div class="text-muted">
                                     ©
                                     <script>document.write(new Date().getFullYear());</script> Cooking Master. Nền tảng học nấu ăn hàng đầu Việt Nam.
                                 </div>
                                 <div>
-                                    <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
-                                    <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-                                    <a href="#" class="text-white"><i class="fab fa-tiktok"></i></a>
+                                    <a href="#" class="text-primary me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="text-primary me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" class="text-primary fs-5"><i class="fab fa-tiktok"></i></a>
                                 </div>
                             </div>
-                        </footer>
+                        </div>
+                    </footer>
 
+                    <style>
+                        .footer-link {
+                            color: #495057;
+                            text-decoration: none;
+                            transition: color 0.2s ease-in-out;
+                        }
 
-                        <!-- / Footer -->
-                        <div class="content-backdrop fade"></div>
-                    </div>
-                <!-- Content wrapper -->
+                            .footer-link:hover {
+                                color: #0d6efd; /* Màu primary khi hover */
+                                text-decoration: underline;
+                            }
+
+                        footer h5, footer h6 {
+                            margin-bottom: 1rem;
+                        }
+                    </style>
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- / Content wrapper -->
             </div>
             <!-- / Layout page -->
         </div>
-
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle">
-
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+    <!-- MODAL: Thêm Lộ trình học (existing) -->
+    <!--<div class="modal fade" id="addLearningPathModal" tabindex="-1" aria-labelledby="addLearningPathModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addLearningPathModalLabel">Thêm Lộ trình học mới</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addLearningPathForm">
+                        <div class="mb-3">
+                            <label for="learningPathTitle" class="form-label">Tiêu đề lộ trình <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="learningPathTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="learningPathDescription" class="form-label">Mô tả <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="learningPathDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="learningPathImageUrl" class="form-label">Link ảnh bìa (tùy chọn)</label>
+                            <input type="url" class="form-control" id="learningPathImageUrl" placeholder="https://example.com/image.jpg">
+                        </div>
+                        <h6 class="mt-4 mb-2">Chọn các khóa học <span class="text-danger">*</span>:</h6>
+                        <div id="coursesListContainer" class="list-group border rounded" style="max-height: 300px; overflow-y: auto;">
+                            <p class="text-center p-3">Đang tải danh sách khóa học...</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="saveLearningPathBtn">Lưu lộ trình</button>
+                </div>
+            </div>
         </div>
+    </div>-->
+    <!-- MODAL: Sửa Lộ trình học (NEW) -->
+    <!--<div class="modal fade" id="editLearningPathModal" tabindex="-1" aria-labelledby="editLearningPathModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editLearningPathModalLabel">Chỉnh sửa Lộ trình học</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editLearningPathForm">
+                        <input type="hidden" id="editLearningPathId">
+                        <div class="mb-3">
+                            <label for="editLearningPathTitle" class="form-label">Tiêu đề lộ trình <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="editLearningPathTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editLearningPathDescription" class="form-label">Mô tả <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="editLearningPathDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editLearningPathImageUrl" class="form-label">Link ảnh bìa (tùy chọn)</label>
+                            <input type="url" class="form-control" id="editLearningPathImageUrl" placeholder="https://example.com/image.jpg">
+                        </div>
+                        <h6 class="mt-4 mb-2">Chọn các khóa học <span class="text-danger">*</span>:</h6>
+                        <div id="editCoursesListContainer" class="list-group border rounded" style="max-height: 300px; overflow-y: auto;">
+                            <p class="text-center p-3">Đang tải danh sách khóa học...</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="updateLearningPathBtn">Lưu thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- MODAL: Chi tiết Lộ trình học (NEW) -->
+    <div class="modal fade" id="learningPathDetailModal" tabindex="-1" aria-labelledby="learningPathDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <!-- modal-xl for wider modal -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="learningPathDetailModalLabel">Chi tiết Lộ trình học</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="detailLearningPathTitle" class="mb-3"></h4>
+                    <div id="detailCoursesContainer" class="container-fluid">
+                        <!-- Courses will be listed here -->
+                        <p class="text-center p-3">Đang tải danh sách khóa học của lộ trình...</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const API_BASE_URL = 'http://localhost:5043/api';
+
+            // --- Globals and Helper Functions ---
+            let allSystemCourses = []; // To cache all courses for reuse in modals
+
+            // Function to get current user ID (replace with actual auth logic)
+            function getCurrentUserId() {
+                const storedUser = localStorage.getItem('user');
+                if (storedUser) {
+                    try {
+                        const user = JSON.parse(storedUser);
+                        if (user && user.id) return user.id;
+                    } catch (e) { console.error("Error parsing user from localStorage", e); }
+                }
+                console.warn("User ID not found in localStorage, defaulting to 1. Ensure user is logged in and ID is stored.");
+                return 1; // Fallback to a default if not found or error
+            }
+            const currentUserId = getCurrentUserId();
+
+
+            // --- Modal Instances ---
+            const addLearningPathModalEl = document.getElementById('addLearningPathModal');
+            const addLearningPathModal = addLearningPathModalEl ? new bootstrap.Modal(addLearningPathModalEl) : null;
+
+            const editLearningPathModalEl = document.getElementById('editLearningPathModal');
+            const editLearningPathModal = editLearningPathModalEl ? new bootstrap.Modal(editLearningPathModalEl) : null;
+
+            const learningPathDetailModalEl = document.getElementById('learningPathDetailModal');
+            const learningPathDetailModal = learningPathDetailModalEl ? new bootstrap.Modal(learningPathDetailModalEl) : null;
+
+
+            // --- DOM Elements for Modals & Forms ---
+            const coursesListContainer = document.getElementById('coursesListContainer'); // For Add Modal
+            const editCoursesListContainer = document.getElementById('editCoursesListContainer'); // For Edit Modal
+            const detailCoursesContainer = document.getElementById('detailCoursesContainer'); // For Detail Modal
+            const detailLearningPathTitleEl = document.getElementById('detailLearningPathTitle');
+
+            const addLearningPathForm = document.getElementById('addLearningPathForm');
+            const learningPathTitleInput = document.getElementById('learningPathTitle');
+            const learningPathDescriptionInput = document.getElementById('learningPathDescription');
+            const learningPathImageUrlInput = document.getElementById('learningPathImageUrl');
+            const saveLearningPathBtn = document.getElementById('saveLearningPathBtn');
+
+            const editLearningPathForm = document.getElementById('editLearningPathForm');
+            const editLearningPathIdInput = document.getElementById('editLearningPathId');
+            const editLearningPathTitleInput = document.getElementById('editLearningPathTitle');
+            const editLearningPathDescriptionInput = document.getElementById('editLearningPathDescription');
+            const editLearningPathImageUrlInput = document.getElementById('editLearningPathImageUrl');
+            const updateLearningPathBtn = document.getElementById('updateLearningPathBtn');
+
+            const learningPathsDisplayArea = document.getElementById('learningPathsDisplayArea');
+
+
+            // --- Fetch All System Courses (cached) ---
+            async function fetchAllSystemCourses() {
+                if (allSystemCourses.length > 0) {
+                    return allSystemCourses;
+                }
+                try {
+                    const response = await fetch(`${API_BASE_URL}/Courses`);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const result = await response.json();
+                    if (result.success && result.data && result.data.$values) {
+                        allSystemCourses = result.data.$values;
+                        return allSystemCourses;
+                    } else {
+                        console.error('Failed to fetch system courses:', result.message);
+                        return [];
+                    }
+                } catch (error) {
+                    console.error('Error fetching system courses:', error);
+                    return [];
+                }
+            }
+
+            // --- Render Courses in Checkbox List (for Add/Edit Modals) ---
+            function renderCoursesForSelection(courses, containerElement, selectedCourseIds = []) {
+                if (!courses || courses.length === 0) {
+                    containerElement.innerHTML = '<p class="text-center p-3">Không có khóa học nào để hiển thị.</p>';
+                    return;
+                }
+                containerElement.innerHTML = '';
+                courses.forEach(course => {
+                    const isChecked = selectedCourseIds.includes(course.id);
+                    const courseItemHTML = `
+                            <label class="list-group-item d-flex align-items-center">
+                                <input class="form-check-input me-2" type="checkbox" value="${course.id}" ${isChecked ? 'checked' : ''}>
+                                <div class="flex-grow-1">
+                                    ${course.name}
+                                    <small class="d-block text-muted">${course.isFree ? 'Miễn phí' : (course.price ? course.price.toLocaleString() + ' VND' : 'Giá không xác định')}</small>
+                                </div>
+                                ${course.imageUrl ? `<img src="${course.imageUrl}" alt="${course.name}" style="width: 50px; height: 50px; object-fit: cover; margin-left: 10px; border-radius: 4px;">` : ''}
+                            </label>
+                        `;
+                    containerElement.insertAdjacentHTML('beforeend', courseItemHTML);
+                });
+            }
+
+            //// --- ADD LEARNING PATH ---
+            //if (addLearningPathModalEl) {
+            //    addLearningPathModalEl.addEventListener('show.bs.modal', async () => {
+            //        addLearningPathForm.reset();
+            //        coursesListContainer.innerHTML = '<p class="text-center p-3">Đang tải khóa học...</p>';
+            //        const courses = await fetchAllSystemCourses();
+            //        renderCoursesForSelection(courses, coursesListContainer);
+            //    });
+            //}
+
+            //if (saveLearningPathBtn) {
+            //    saveLearningPathBtn.addEventListener('click', async () => {
+            //        const title = learningPathTitleInput.value.trim();
+            //        const description = learningPathDescriptionInput.value.trim();
+            //        const imageUrl = learningPathImageUrlInput.value.trim() || null;
+            //        const selectedCourses = Array.from(coursesListContainer.querySelectorAll('input[type="checkbox"]:checked'));
+            //        const courseIds = selectedCourses.map(cb => parseInt(cb.value));
+
+            //        if (!title || !description || courseIds.length === 0) {
+            //            alert('Vui lòng nhập đầy đủ tiêu đề, mô tả và chọn ít nhất một khóa học.');
+            //            return;
+            //        }
+
+            //        const learningPathData = { title, description, courseIds, imageUrl };
+
+            //        try {
+            //            saveLearningPathBtn.disabled = true;
+            //            saveLearningPathBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Đang lưu...';
+            //            const response = await fetch(`${API_BASE_URL}/LearningPaths`, {
+            //                method: 'POST',
+            //                headers: { 'Content-Type': 'application/json' },
+            //                body: JSON.stringify(learningPathData)
+            //            });
+            //            if (!response.ok) { // Check if response is NOT ok
+            //                const errorResult = await response.json().catch(() => ({ message: "Lỗi không xác định từ server." }));
+            //                throw new Error(errorResult.message || `Lỗi HTTP: ${response.status}`);
+            //            }
+            //            // Assuming success if response.ok is true, as per your controller returning Ok(path)
+            //            // For POST, it might return the created object.
+            //            // const result = await response.json(); // If you need to use the created object
+
+            //            alert('Thêm lộ trình học thành công!');
+            //            addLearningPathModal.hide();
+            //            fetchAndDisplayLearningPaths();
+            //        } catch (error) {
+            //            console.error('Error saving learning path:', error);
+            //            alert(`Lỗi khi lưu lộ trình: ${error.message}`);
+            //        } finally {
+            //            saveLearningPathBtn.disabled = false;
+            //            saveLearningPathBtn.innerHTML = 'Lưu lộ trình';
+            //        }
+            //    });
+            //}
+
+            // --- EDIT LEARNING PATH ---
+            //async function openEditModal(pathId) {
+            //    if (!editLearningPathModal) return;
+            //    editLearningPathForm.reset();
+            //    editCoursesListContainer.innerHTML = '<p class="text-center p-3">Đang tải...</p>';
+            //    try {
+            //        // 1. Fetch the specific learning path
+            //        const pathResponse = await fetch(`${API_BASE_URL}/LearningPaths/${pathId}`);
+            //        if (!pathResponse.ok) throw new Error(`Không thể tải dữ liệu lộ trình: ${pathResponse.status}`);
+            //        const learningPath = await pathResponse.json(); // Directly the object, not wrapped in {success, data}
+
+            //        if (!learningPath) throw new Error("Không tìm thấy lộ trình.");
+
+            //        // 2. Populate form fields
+            //        editLearningPathIdInput.value = learningPath.id;
+            //        editLearningPathTitleInput.value = learningPath.title || '';
+            //        editLearningPathDescriptionInput.value = learningPath.description || '';
+            //        editLearningPathImageUrlInput.value = learningPath.imageUrl || '';
+
+            //        // 3. Fetch all system courses and pre-select
+            //        const allCourses = await fetchAllSystemCourses();
+            //        const selectedCourseIds = learningPath.courseIds || [];
+            //        renderCoursesForSelection(allCourses, editCoursesListContainer, selectedCourseIds);
+
+            //        editLearningPathModal.show();
+            //    } catch (error) {
+            //        console.error("Error opening edit modal:", error);
+            //        alert(`Lỗi: ${error.message}`);
+            //    }
+            //}
+
+            //if (updateLearningPathBtn) {
+            //    updateLearningPathBtn.addEventListener('click', async () => {
+            //        const id = parseInt(editLearningPathIdInput.value);
+            //        const title = editLearningPathTitleInput.value.trim();
+            //        const description = editLearningPathDescriptionInput.value.trim();
+            //        const imageUrl = editLearningPathImageUrlInput.value.trim() || null;
+            //        const selectedCourses = Array.from(editCoursesListContainer.querySelectorAll('input[type="checkbox"]:checked'));
+            //        const courseIds = selectedCourses.map(cb => parseInt(cb.value));
+
+            //        if (!id || !title || !description || courseIds.length === 0) {
+            //            alert('Vui lòng nhập đầy đủ tiêu đề, mô tả và chọn ít nhất một khóa học.');
+            //            return;
+            //        }
+
+            //        const learningPathData = { id, title, description, courseIds, imageUrl };
+
+            //        try {
+            //            updateLearningPathBtn.disabled = true;
+            //            updateLearningPathBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Đang cập nhật...';
+            //            const response = await fetch(`${API_BASE_URL}/LearningPaths/${id}`, {
+            //                method: 'PUT',
+            //                headers: { 'Content-Type': 'application/json' },
+            //                body: JSON.stringify(learningPathData)
+            //            });
+            //            if (!response.ok) {
+            //                const errorResult = await response.json().catch(() => ({ message: "Lỗi không xác định từ server." }));
+            //                throw new Error(errorResult.message || `Lỗi HTTP: ${response.status}`);
+            //            }
+            //            // const result = await response.json(); // If PUT returns updated object
+            //            alert('Cập nhật lộ trình học thành công!');
+            //            editLearningPathModal.hide();
+            //            fetchAndDisplayLearningPaths();
+            //        } catch (error) {
+            //            console.error('Error updating learning path:', error);
+            //            alert(`Lỗi khi cập nhật lộ trình: ${error.message}`);
+            //        } finally {
+            //            updateLearningPathBtn.disabled = false;
+            //            updateLearningPathBtn.innerHTML = 'Lưu thay đổi';
+            //        }
+            //    });
+            //}
+
+
+            //// --- DELETE LEARNING PATH ---
+            //async function deleteLearningPath(pathId, pathTitle) {
+            //    if (!confirm(`Bạn có chắc chắn muốn xóa lộ trình "${pathTitle}" không? Hành động này không thể hoàn tác.`)) {
+            //        return;
+            //    }
+            //    try {
+            //        const response = await fetch(`${API_BASE_URL}/LearningPaths/${pathId}`, {
+            //            method: 'DELETE'
+            //        });
+            //        if (response.status === 204) { // NoContent
+            //            alert(`Đã xóa lộ trình "${pathTitle}" thành công.`);
+            //            fetchAndDisplayLearningPaths();
+            //        } else if (!response.ok) {
+            //            const errorResult = await response.json().catch(() => ({ message: "Lỗi không xác định khi xóa." }));
+            //            throw new Error(errorResult.message || `Lỗi HTTP: ${response.status}`);
+            //        } else {
+            //            alert(`Đã xóa lộ trình "${pathTitle}" thành công.`); // For APIs returning Ok() on delete
+            //            fetchAndDisplayLearningPaths();
+            //        }
+            //    } catch (error) {
+            //        console.error('Error deleting learning path:', error);
+            //        alert(`Lỗi khi xóa lộ trình: ${error.message}`);
+            //    }
+            //}
+
+
+            // --- VIEW LEARNING PATH DETAILS (Courses in Path) ---
+            async function openLearningPathDetailModal(pathId, pathTitle) {
+                if (!learningPathDetailModal || !detailCoursesContainer || !detailLearningPathTitleEl) return;
+
+                detailLearningPathTitleEl.textContent = pathTitle || "Chi tiết lộ trình";
+                detailCoursesContainer.innerHTML = '<p class="text-center p-3">Đang tải các khóa học...</p>';
+                learningPathDetailModal.show();
+
+                try {
+                    const pathResponse = await fetch(`${API_BASE_URL}/LearningPaths/${pathId}`);
+                    if (!pathResponse.ok) throw new Error(`Không thể tải chi tiết lộ trình: ${pathResponse.status}`);
+                    const learningPath = await pathResponse.json();
+
+                    // Lấy courseIds từ learningPathCourses.$values
+                    const learningPathCourses = learningPath.learningPathCourses?.$values || [];
+                    const courseIds = learningPathCourses.map(item => item.courseId);
+
+                    if (courseIds.length === 0) {
+                        detailCoursesContainer.innerHTML = '<p class="text-center p-3">Lộ trình này chưa có khóa học nào.</p>';
+                        return;
+                    }
+
+                    // Gửi request lấy chi tiết từng khóa học
+                    const coursePromises = courseIds.map(courseId =>
+                        fetch(`${API_BASE_URL}/Courses/${courseId}`).then(res => {
+                            if (!res.ok) {
+                                console.error(`Không thể tải khóa học ${courseId}: ${res.status}`);
+                                return null;
+                            }
+                            return res.json();
+                        })
+                    );
+
+                    const courseResults = await Promise.all(coursePromises);
+
+                    // Lọc và trích thông tin cần thiết
+                    const coursesInPath = courseResults
+                        .filter(result => result && result.success && result.data)
+                        .map(result => ({
+                            id: result.data.id,
+                            name: result.data.name,
+                            description: result.data.description,
+                            price: result.data.price,
+                            isFree: result.data.isFree,
+                            videos: result.data.videos ? result.data.videos.$values.map(video => ({
+                                title: video.title,
+                                url: video.url
+                            })) : []
+                        }));
+
+                    renderCoursesInDetailModal(coursesInPath);
+
+                } catch (error) {
+                    console.error("Lỗi khi mở modal chi tiết lộ trình học:", error);
+                    detailCoursesContainer.innerHTML = `<p class="text-danger text-center p-3">Lỗi tải khóa học: ${error.message}</p>`;
+                }
+
+
+            }
+
+            function renderCoursesInDetailModal(courses) {
+                if (!detailCoursesContainer) return;
+                detailCoursesContainer.innerHTML = '';
+
+                if (!courses || courses.length === 0) {
+                    detailCoursesContainer.innerHTML = '<p class="text-center p-3">Không có khóa học nào trong lộ trình này hoặc không thể tải dữ liệu.</p>';
+                    return;
+                }
+
+                const coursesHtml = courses.map(course => {
+                    const priceDisplay = course.isFree ? '<span class="badge bg-success">Miễn phí</span>' : `<span class="badge bg-info">${course.price ? course.price.toLocaleString() + ' VND' : 'N/A'}</span>`;
+                    const actionButton = course.isFree
+                        ? `<button class="btn btn-success btn-sm start-learning-btn" data-course-id="${course.id}">Bắt đầu học</button>`
+                        : `<button class="btn btn-primary btn-sm enroll-course-btn" data-course-id="${course.id}" data-course-price="${course.price}">Đăng kí học</button>`;
+
+                    return `
+                            <div class="row course-in-detail-modal align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <img src="${course.imageUrl || 'https://png.pngtree.com/png-clipart/20220603/original/pngtree-classic-chef-cartoon-png-image_7899858.png'}" alt="${course.name}" class="img-fluid rounded" style="max-height: 80px; object-fit: cover;">
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="mb-1">${course.name}</h6>
+                                    <p class="text-muted small mb-1" style="max-height: 40px; overflow: hidden; text-overflow: ellipsis;">${course.description || 'Không có mô tả.'}</p>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    ${priceDisplay}
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    ${actionButton}
+                                </div>
+                            </div>
+                        `;
+                }).join('');
+                detailCoursesContainer.innerHTML = coursesHtml;
+            }
+
+            // Handle "Start Learning" and "Enroll Course" button clicks within the detail modal
+            if (detailCoursesContainer) {
+                detailCoursesContainer.addEventListener('click', async (event) => {
+                    const target = event.target;
+                    const courseId = target.dataset.courseId;
+
+                    if (target.classList.contains('start-learning-btn')) {
+                        if (!courseId) return;
+                        alert(`Bắt đầu học khóa học ID: ${courseId}. Chuyển hướng đến trang học...`);
+                        window.location.href = `learning.html?courseId=${courseId}`; // Placeholder
+                    }
+                    else if (target.classList.contains('enroll-course-btn')) {
+                        if (!courseId) return;
+                        const coursePrice = target.dataset.coursePrice;
+                        if (confirm(`Bạn có muốn đăng ký khóa học này với giá ${coursePrice ? parseInt(coursePrice).toLocaleString() : 'N/A'} VND không?`)) {
+                            try {
+                                target.disabled = true;
+                                target.innerHTML = '<span class="spinner-border spinner-border-sm"></span>';
+
+                                const enrollDto = { userId: currentUserId, courseId: parseInt(courseId) };
+                                const response = await fetch(`${API_BASE_URL}/Courses/enroll`, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify(enrollDto)
+                                });
+                                const result = await response.json();
+                                if (response.ok && result.success) {
+                                    alert(result.message || "Đăng ký thành công! Chuyển đến trang học...");
+                                    window.location.href = `learning.html?courseId=${courseId}`; // Placeholder
+                                } else {
+                                    alert(`Đăng ký thất bại: ${result.message || 'Lỗi không xác định.'}`);
+                                }
+                            } catch (error) {
+                                console.error("Enrollment error:", error);
+                                alert(`Lỗi khi đăng ký: ${error.message}`);
+                            } finally {
+                                target.disabled = false;
+                                target.innerHTML = 'Đăng kí học';
+                            }
+                        }
+                    }
+                });
+            }
+
+
+            // --- DISPLAY LEARNING PATHS ON PAGE ---
+            async function fetchAndDisplayLearningPaths() {
+                if (!learningPathsDisplayArea) return;
+                learningPathsDisplayArea.innerHTML = '<p class="text-center col-12 p-5">Đang tải danh sách lộ trình học...</p>';
+                try {
+                    const response = await fetch(`${API_BASE_URL}/LearningPaths`);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                    const result = await response.json(); // Expecting { $id, $values: [] } or direct array based on controller
+                    let pathsToRender = [];
+
+                    if (result && result.$values && Array.isArray(result.$values)) { // Handle {$id, $values} structure
+                        pathsToRender = result.$values;
+                    } else if (Array.isArray(result)) { // Handle direct array
+                        pathsToRender = result;
+                    } else {
+                        console.warn("Learning paths data format not recognized.", result);
+                        learningPathsDisplayArea.innerHTML = '<p class="text-center col-12 p-3">Không tìm thấy dữ liệu lộ trình học hợp lệ.</p>';
+                        return;
+                    }
+
+                    renderLearningPathCards(pathsToRender);
+
+                } catch (error) {
+                    learningPathsDisplayArea.innerHTML = `<p class="text-danger text-center col-12 p-3">Lỗi khi tải lộ trình học: ${error.message}</p>`;
+                    console.error('Error fetching learning paths:', error);
+                }
+            }
+
+            function renderLearningPathCards(learningPaths) {
+                learningPathsDisplayArea.innerHTML = '';
+                if (!learningPaths || learningPaths.length === 0) {
+                    learningPathsDisplayArea.innerHTML = '<p class="text-center col-12 p-5">Chưa có lộ trình học nào. Hãy thêm mới!</p>';
+                    return;
+                }
+                learningPaths.forEach(path => {
+                    const imageUrl = path.imageUrl || '../assets/img/elements/13.jpg'; // Default image
+                    const courseCount = path.courseIds ? path.courseIds.length : (path.courses ? path.courses.length : 0);
+
+                    // Ensure path.title is defined for data attributes
+                    const pathTitleForAttr = path.title || "Không có tiêu đề";
+
+                    const pathCardHTML = `
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card h-100 shadow-sm position-relative">
+                                    <div class="card-actions">
+
+                                    </div>
+                                    <img class="card-img-top" src="${imageUrl}" alt="${pathTitleForAttr}" style="height: 200px; object-fit: cover; background-color: #e9ecef;">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">${path.title || 'Không có tiêu đề'}</h5>
+                                        <p class="card-text flex-grow-1 text-muted small">${path.description || 'Không có mô tả.'}</p>
+                                        ${courseCount > 0 ? `<p class="card-text mb-2"><small class="text-muted"><strong>${courseCount}</strong> khóa học</small></p>` : ''}
+                                        <button class="btn btn-primary btn-sm mt-auto align-self-start view-lp-details-btn"
+                                                data-path-id="${path.id}" data-path-title="${pathTitleForAttr}">
+                                            Xem chi tiết
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    learningPathsDisplayArea.insertAdjacentHTML('beforeend', pathCardHTML);
+                });
+                // Initialize tooltips for new buttons
+                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl)
+                })
+            }
+
+            // --- Event Delegation for Card Buttons ---
+            if (learningPathsDisplayArea) {
+                learningPathsDisplayArea.addEventListener('click', (event) => {
+                    const editBtn = event.target.closest('.edit-lp-btn');
+                    const deleteBtn = event.target.closest('.delete-lp-btn');
+                    const viewDetailsBtn = event.target.closest('.view-lp-details-btn');
+
+                    if (editBtn) {
+                        const pathId = editBtn.dataset.pathId;
+                        if (pathId) openEditModal(parseInt(pathId));
+                    } else if (deleteBtn) {
+                        const pathId = deleteBtn.dataset.pathId;
+                        const pathTitle = deleteBtn.dataset.pathTitle;
+                        if (pathId) deleteLearningPath(parseInt(pathId), pathTitle);
+                    } else if (viewDetailsBtn) {
+                        const pathId = viewDetailsBtn.dataset.pathId;
+                        const pathTitle = viewDetailsBtn.dataset.pathTitle;
+                        if (pathId) openLearningPathDetailModal(parseInt(pathId), pathTitle);
+                    }
+                });
+            }
+
+            // --- Initial Load ---
+            fetchAllSystemCourses(); // Pre-fetch all courses
+            fetchAndDisplayLearningPaths(); // Load learning paths
+        });
+    </script>
+    <script>
+        document.getElementById('changePasswordLink').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Lấy token từ sessionStorage
+            const token = sessionStorage.getItem('token');
+
+            if (!token) {
+                alert('Token không tồn tại. Vui lòng đăng nhập lại.');
+                return;
+            }
+
+            // Ghi token lại (tùy chọn) rồi mở trang đổi mật khẩu
+            sessionStorage.setItem('authToken', token); // optional: nếu bạn cần key khác bên change-password.html
+
+            // Mở trang đổi mật khẩu
+            window.open('change-password.html', '_blank');
+        });
+    </script>
+    <!-- / Footer -->
+    <div class="content-backdrop fade"></div>
+    </div>
+    <!-- Content wrapper -->
+    </div>
+    <!-- / Layout page -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle">
+
+    </div>
 
     </div>
     <!-- / Layout wrapper -->

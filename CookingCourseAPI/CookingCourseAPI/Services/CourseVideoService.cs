@@ -22,6 +22,11 @@
         {
             return await _courseVideoRepository.GetVideoWithRecipeAsync(videoId);
         }
+        public async Task RemoveVideosByCourseIdAsync(int courseId)
+        {
+            var existingVideos = await _courseVideoRepository.GetVideosByCourseIdAsync(courseId);
+            await _courseVideoRepository.RemoveRange(existingVideos);
+        }
     }
 
 }

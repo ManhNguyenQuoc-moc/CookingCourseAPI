@@ -21,7 +21,14 @@ namespace CookingCourseAPI.Repositories
         {
             return await _context.Users.AnyAsync(u => u.Email == email);
         }
-
+        public async Task<User?> FindByEmailAsync(string email)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        }
+        public async Task<User?> FindByIdAsync(int userId)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        }
     }
 
 }

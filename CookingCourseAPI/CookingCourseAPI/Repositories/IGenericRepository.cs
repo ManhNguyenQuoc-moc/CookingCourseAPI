@@ -11,7 +11,7 @@ namespace CookingCourseAPI.Repositories
         Task<bool> DeleteAsync(T entity);
         Task<bool> SaveChangesAsync();
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
-
-
+        Task<T> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate);
+        Task AddRangeAsync(IEnumerable<T> entities);
     }
 }

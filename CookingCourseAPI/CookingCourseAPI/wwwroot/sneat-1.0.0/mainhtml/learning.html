@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Cooking Course</title>
-    <meta name="description" content="" />
+    <title>Cooking Course - Learning</title>
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,10 +24,63 @@
             font-weight: bold;
         }
 
+        .list-group-item.completed {
+            background-color: #e6ffe6; /* Light green for completed */
+            color: #28a745; /* Darker green text */
+            /* text-decoration: line-through; */
+        }
+
+            .list-group-item.completed .badge {
+                background-color: #28a745 !important; /* Green checkmark */
+                color: white;
+            }
+
+        .list-group-item.active.completed { /* When active and completed */
+            background-color: #58a85a; /* A slightly different green */
+            border-color: #58a85a;
+            color: white;
+        }
+
+
         .btn-back {
             position: absolute;
             top: 1rem;
             left: 1rem;
+            z-index: 10;
+        }
+
+        .course-header {
+            background: #f8f9fa;
+            border-left: 6px solid #696cff;
+            transition: all 0.3s ease-in-out;
+        }
+
+            .course-header h1 {
+                font-size: 2rem;
+            }
+
+        @media (max-width: 768px) {
+            .course-header {
+                text-align: center;
+            }
+
+                .course-header h1 {
+                    font-size: 1.5rem;
+                }
+
+                .course-header p {
+                    font-size: 1rem;
+                }
+        }
+
+        #courseProgressContainer {
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            background-color: #e9ecef; /* Light gray background */
+            border-radius: .3rem;
+            font-size: 0.95rem;
+            color: #495057; /* Darker text for better readability */
+            border-left: 4px solid #696cff; /* Accent border */
         }
     </style>
 </head>
@@ -39,15 +91,34 @@
         <i class="bx bx-arrow-back"></i> Trang chủ
     </a>
 
-    <h4 class="fw-bold p-4 text-center">Khóa học nấu ăn</h4>
+    <!-- Header khóa học -->
+    <section class="course-header container my-5 p-4 rounded shadow-sm bg-white">
+        <div class="row align-items-center g-4 flex-wrap">
+            <div class="col-md-4 text-center">
+                <img src="../assets/img/courses/cooking-cover.jpg" alt="Ảnh khóa học" class="img-fluid rounded-3 shadow" id="courseImage">
+            </div>
+            <div class="col-md-8">
+                <h1 class="fw-bold mb-3 text-primary" id="courseTitle">Tên khóa học nấu ăn</h1>
+                <p class="text-muted fs-5 mb-0" id="courseDescription">
+                    Mô tả chi tiết về khóa học giúp bạn nấu những món ngon mỗi ngày một cách dễ dàng.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <div class="container py-4">
         <div class="row mb-4">
             <!-- Video -->
             <div class="col-lg-8">
+                <div id="courseProgressContainer" class="text-muted">
+                    Đang tải tiến độ học tập...
+                </div>
                 <div class="ratio ratio-16x9 mb-3 rounded shadow-sm">
                     <iframe id="videoFrame" src="" title="YouTube video" allowfullscreen></iframe>
                 </div>
+                <button class="btn btn-success mb-3" id="completeLessonBtn" style="display: none;">
+                    <i class="bx bx-check-circle"></i> Đánh dấu đã hoàn thành
+                </button>
             </div>
 
             <!-- Danh sách bài học -->
@@ -62,109 +133,459 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="card-title mb-0" id="videoTitle">Tên video</h4>
-                    <button class="btn btn-outline-danger" id="likeBtn">
+                    <button class="btn btn-outline-danger" id="likeBtn" data-recipe-id="">
                         <i class="bx bx-heart"></i> Yêu thích
                     </button>
                 </div>
                 <p class="text-muted" id="videoDesc">Mô tả công thức...</p>
-
                 <h6 class="fw-bold mt-4">Công thức:</h6>
-                <ul id="recipeList"></ul>
+                <ul id="recipeList" class="list-unstyled ps-3"></ul>
+                <h6 class="fw-bold mt-4">Nguyên liệu:</h6>
+                <ul id="ingredientsList" class="list-unstyled ps-3"></ul>
+                <h6 class="fw-bold mt-4">Mẹo nấu ăn:</h6>
+                <ul id="cookingTips" class="list-unstyled ps-3"></ul>
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
+            const API_BASE_URL = 'http://localhost:5043/api';
             const urlParams = new URLSearchParams(window.location.search);
             const courseId = urlParams.get('courseId');
+            const userId = sessionStorage.getItem('userId');
+            const token = sessionStorage.getItem('token');
+
+            // DOM Elements (giữ nguyên)
             const videoFrame = document.querySelector('#videoFrame');
-            const videoTitle = document.querySelector('#videoTitle');
+            const videoTitleElem = document.querySelector('#videoTitle');
             const videoDesc = document.querySelector('#videoDesc');
             const recipeList = document.querySelector('#recipeList');
-            const lessonList = document.querySelector('#lessonList');
-            let currentActiveLi = null;
+            const ingredientsList = document.querySelector('#ingredientsList');
+            const cookingTips = document.querySelector('#cookingTips');
+            const lessonListElem = document.querySelector('#lessonList');
+            const courseTitleElem = document.querySelector('#courseTitle');
+            const courseDescriptionElem = document.querySelector('#courseDescription');
+            const courseImage = document.querySelector('#courseImage');
+            const likeBtn = document.getElementById('likeBtn');
+            const completeLessonBtn = document.getElementById('completeLessonBtn');
+            const courseProgressContainer = document.getElementById('courseProgressContainer');
 
-            function convertToEmbedUrl(youtubeUrl) {
-                const videoId = youtubeUrl.split('v=')[1]?.split('&')[0];
-                return `https://www.youtube.com/embed/${videoId}`;
+
+            let currentActiveLi = null;
+            let currentVideoId = null;
+            let currentRecipeId = null;
+            let allVideos = [];
+            let completedLessons = new Set(); // Set để lưu ID các bài học đã hoàn thành
+
+            if (!userId || !token) {
+                alert('Vui lòng đăng nhập để xem khóa học.');
+                window.location.href = 'auth-login-basic.html';
+                return;
+            }
+            if (!courseId) {
+                alert('Không tìm thấy ID khóa học.');
+                window.location.href = 'index.html';
+                return;
             }
 
-            async function loadVideoDetail(videoId, clickedLi) {
+            function formatListContent(text) { /* ... (giữ nguyên) ... */
+                if (!text) return '<li>Không có thông tin.</li>';
+                return text.split('\n').map(item => `<li>${item.trim()}</li>`).join('');
+            }
+
+            function convertToEmbedUrl(youtubeUrl) { /* ... (giữ nguyên) ... */
+                if (!youtubeUrl || typeof youtubeUrl !== 'string') return "";
+                const videoIdMatch = youtubeUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+                return videoIdMatch ? `https://www.youtube.com/embed/${videoIdMatch[1]}` : "";
+            }
+
+            // 1. Tải danh sách các bài học đã hoàn thành BAN ĐẦU
+            async function loadInitialCompletedLessons() {
                 try {
-                    const res = await fetch(`http://localhost:5043/api/Courses/${videoId}/with-recipes`);
+                    const res = await fetch(`${API_BASE_URL}/Progress/user/${userId}/course/${courseId}/completed`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
                     if (!res.ok) {
-                        console.error('Lỗi API chi tiết video:', res.statusText);
+                        console.error('Không thể tải danh sách bài học đã hoàn thành ban đầu:', res.status);
+                        // Có thể hiển thị thông báo lỗi nếu cần, nhưng vẫn tiếp tục tải khóa học
                         return;
                     }
-
-                    const data = await res.text();
-                    if (!data) {
-                        console.error('Không có dữ liệu trả về');
-                        return;
-                    }
-
-                    const jsonData = JSON.parse(data);
-                    videoFrame.src = convertToEmbedUrl(jsonData.url);
-                    videoTitle.textContent = jsonData.title;
-
-                    // Xử lý mô tả & công thức
-                    if (jsonData.recipe && jsonData.recipe.instructions) {
-                        videoDesc.textContent = jsonData.recipe.instructions;
-                        recipeList.innerHTML = '';
-                        const li = document.createElement('li');
-                        li.textContent = jsonData.recipe.instructions;
-                        recipeList.appendChild(li);
+                    const data = await res.json();
+                    // Sửa ở đây để truy cập đúng vào mảng $values
+                    if (data && data.completedLessonIds && data.completedLessonIds.$values && Array.isArray(data.completedLessonIds.$values)) {
+                        data.completedLessonIds.$values.forEach(id => completedLessons.add(parseInt(id)));
+                        console.log('Bài học đã hoàn thành ban đầu:', completedLessons);
                     } else {
-                        videoDesc.textContent = 'Không có mô tả công thức.';
-                        recipeList.innerHTML = '<li>Không có công thức.</li>';
+                        console.warn('Dữ liệu bài học đã hoàn thành không đúng định dạng:', data);
+                    }
+                } catch (err) {
+                    console.error('Lỗi khi gọi API lấy danh sách bài học đã hoàn thành:', err);
+                }
+            }
+
+            function updateLessonListUI() {
+                document.querySelectorAll('#lessonList .list-group-item').forEach(li => {
+                    const lessonId = parseInt(li.dataset.videoId);
+                    if (completedLessons.has(lessonId)) {
+                        li.classList.add('completed');
+                        li.querySelector('.badge').innerHTML = '<i class="bx bx-check"></i>';
+                    } else {
+                        li.classList.remove('completed');
+                        li.querySelector('.badge').textContent = '▶';
+                    }
+                });
+                // Cập nhật nút completeLessonBtn nếu video hiện tại đã được tải
+                if (currentVideoId) {
+                    updateCompleteButtonState(currentVideoId);
+                }
+            }
+
+            function updateCompleteButtonState(lessonId) {
+                if (completedLessons.has(parseInt(lessonId))) {
+                    completeLessonBtn.innerHTML = '<i class="bx bx-check-double"></i> Đã hoàn thành';
+                    completeLessonBtn.disabled = true;
+                    completeLessonBtn.classList.replace('btn-success', 'btn-secondary');
+                } else {
+                    completeLessonBtn.innerHTML = '<i class="bx bx-check-circle"></i> Đánh dấu đã hoàn thành';
+                    completeLessonBtn.disabled = false;
+                    completeLessonBtn.classList.replace('btn-secondary', 'btn-success');
+                }
+            }
+
+
+            async function loadVideoDetail(videoId, clickedLi) {
+                currentVideoId = parseInt(videoId); // Cập nhật video ID hiện tại
+                completeLessonBtn.dataset.lessonId = currentVideoId;
+                completeLessonBtn.style.display = 'block';
+
+                updateCompleteButtonState(currentVideoId); // Cập nhật trạng thái nút dựa trên completedLessons
+
+                try {
+                    const res = await fetch(`${API_BASE_URL}/Courses/${currentVideoId}/with-recipes`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (!res.ok) { /* ... (xử lý lỗi giữ nguyên) ... */
+                        console.error("Không thể tải chi tiết video:", res.status, await res.text());
+                        videoFrame.src = "";
+                        videoTitleElem.textContent = "Không thể tải video";
+                        videoDesc.textContent = "Không có mô tả.";
+                        recipeList.innerHTML = formatListContent(null);
+                        ingredientsList.innerHTML = formatListContent(null);
+                        cookingTips.innerHTML = formatListContent(null);
+                        currentRecipeId = null;
+                        likeBtn.dataset.recipeId = "";
+                        likeBtn.innerHTML = '<i class="bx bx-heart"></i> Yêu thích';
+                        likeBtn.classList.remove('btn-danger', 'active');
+                        likeBtn.classList.add('btn-outline-danger');
+                        return;
                     }
 
-                    // Xử lý hiệu ứng active
+                    const jsonData = await res.json();
+                    videoFrame.src = convertToEmbedUrl(jsonData.url);
+                    videoTitleElem.textContent = jsonData.title;
+
+                    const recipe = jsonData.recipe;
+                    if (recipe) {
+                        videoDesc.textContent = recipe.description || 'Không có mô tả công thức.';
+                        ingredientsList.innerHTML = formatListContent(recipe.ingredients);
+                        recipeList.innerHTML = formatListContent(recipe.instructions);
+                        cookingTips.innerHTML = formatListContent(recipe.cookingTips);
+                        currentRecipeId = recipe.id; // Giả định recipe có 'id'
+                        likeBtn.dataset.recipeId = currentRecipeId;
+                        await checkFavoriteStatus(currentRecipeId); // Kiểm tra trạng thái yêu thích
+                    } else { /* ... (xử lý khi không có recipe giữ nguyên) ... */
+                        videoDesc.textContent = 'Không có thông tin công thức cho video này.';
+                        ingredientsList.innerHTML = formatListContent(null);
+                        recipeList.innerHTML = formatListContent(null);
+                        cookingTips.innerHTML = formatListContent(null);
+                        currentRecipeId = null;
+                        likeBtn.dataset.recipeId = "";
+                        likeBtn.innerHTML = '<i class="bx bx-heart"></i> Yêu thích';
+                        likeBtn.classList.remove('btn-danger', 'active');
+                        likeBtn.classList.add('btn-outline-danger');
+                    }
+
                     if (currentActiveLi) currentActiveLi.classList.remove('active');
                     if (clickedLi) {
                         clickedLi.classList.add('active');
                         currentActiveLi = clickedLi;
                     }
-
-                } catch (err) {
+                } catch (err) { /* ... (xử lý lỗi giữ nguyên) ... */
                     console.error('Lỗi khi tải video:', err);
+                    videoFrame.src = "";
+                    videoTitleElem.textContent = "Lỗi tải video";
                 }
             }
 
-            try {
-                const res = await fetch(`http://localhost:5043/api/Courses/${courseId}/videos`);
-                const apiData = await res.json();
-                const videos = apiData.data.$values;
-
-                if (!videos || videos.length === 0) {
-                    lessonList.innerHTML = '<li class="list-group-item">Không có video.</li>';
+            async function markLessonAsComplete() {
+                const lessonIdToComplete = parseInt(completeLessonBtn.dataset.lessonId);
+                if (!userId || !courseId || !lessonIdToComplete) { /* ... (giữ nguyên) ... */
+                    alert('Thông tin không đủ để hoàn thành bài học.');
+                    return;
+                }
+                if (completedLessons.has(lessonIdToComplete)) { /* ... (giữ nguyên) ... */
+                    alert("Bài học này đã được đánh dấu hoàn thành.");
                     return;
                 }
 
-                lessonList.innerHTML = '';
-                videos.forEach((video, index) => {
-                    const li = document.createElement('li');
-                    li.className = 'list-group-item d-flex justify-content-between align-items-center';
-                    li.textContent = video.title;
+                try {
+                    const response = await fetch(`${API_BASE_URL}/Progress/complete-lesson`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            userId: userId,
+                            courseId: parseInt(courseId), // API của bạn nhận courseId là int
+                            lessonId: lessonIdToComplete
+                        })
+                    });
 
-                    const badge = document.createElement('span');
-                    badge.className = 'badge bg-primary';
-                    badge.textContent = '▶';
-                    li.appendChild(badge);
+                    if (response.ok) {
+                        const resultData = await response.json(); // Lấy dữ liệu trả về từ API
+                        alert('Đánh dấu hoàn thành bài học thành công!');
 
-                    li.addEventListener('click', () => loadVideoDetail(video.id, li));
-                    lessonList.appendChild(li);
+                        // Cập nhật completedLessons từ phản hồi của API (nếu API trả về danh sách mới)
+                        // Hoặc chỉ cần thêm lessonIdToComplete vào Set hiện tại
+                        // Dựa trên Controller, API trả về completedLessonIds.
+                        if (resultData.completedLessonIds && Array.isArray(resultData.completedLessonIds)) {
+                            resultData.completedLessonIds.forEach(id => completedLessons.add(parseInt(id)));
+                        } else {
+                            completedLessons.add(lessonIdToComplete); // Fallback nếu API không trả về list
+                        }
 
-                    if (index === 0) {
-                        loadVideoDetail(video.id, li);
+                        updateLessonListUI(); // Cập nhật UI danh sách bài học
+                        updateCompleteButtonState(lessonIdToComplete); // Cập nhật lại nút complete
+                        await fetchCourseProgress(); // Cập nhật thông tin tiến độ chung
+                    } else { /* ... (xử lý lỗi giữ nguyên) ... */
+                        const errorData = await response.json().catch(() => ({ message: "Lỗi không xác định từ server." }));
+                        alert(`Không thể đánh dấu hoàn thành: ${errorData.message || response.statusText}`);
+                        console.error("Lỗi API khi đánh dấu hoàn thành:", errorData);
                     }
-                });
-
-            } catch (err) {
-                console.error('Lỗi khi lấy danh sách video:', err);
+                } catch (error) { /* ... (xử lý lỗi giữ nguyên) ... */
+                    console.error('Lỗi kết nối khi đánh dấu hoàn thành bài học:', error);
+                    alert('Lỗi kết nối khi đánh dấu hoàn thành bài học.');
+                }
             }
+
+            async function fetchCourseProgress() { // Hàm này để hiển thị thông báo tiến độ chung
+                try {
+                    const res = await fetch(`${API_BASE_URL}/Progress/get-course-progress/${userId}/${courseId}`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (!res.ok) { /* ... (xử lý lỗi giữ nguyên) ... */
+                        if (res.status === 404) {
+                            courseProgressContainer.textContent = "Bạn chưa bắt đầu khóa học này. Hãy chọn một bài học!";
+                        } else {
+                            console.error('Lỗi khi tải tiến độ:', res.status, await res.text());
+                            courseProgressContainer.textContent = "Không thể tải tiến độ học tập.";
+                        }
+                        return null;
+                    }
+                    const progressData = await res.json(); // DTO này là CourseProgressDetailsDto
+
+                    // Cập nhật completedLessons từ API get-course-progress (quan trọng)
+                    if (progressData.completedLessonIds && Array.isArray(progressData.completedLessonIds)) {
+                        completedLessons.clear(); // Xóa set cũ để đảm bảo dữ liệu mới nhất
+                        progressData.completedLessonIds.forEach(id => completedLessons.add(parseInt(id)));
+                        updateLessonListUI(); // Cập nhật lại UI sau khi có danh sách mới
+                    }
+
+
+                    if (progressData.isCourseCompleted) {
+                        courseProgressContainer.innerHTML = `<i class="bx bx-check-double bx-sm text-success"></i> Chúc mừng! Bạn đã hoàn thành khóa học vào ${new Date(progressData.lastUpdated).toLocaleDateString('vi-VN')}. (${progressData.completedLessonsCount}/${progressData.totalLessonsInCourse} bài)`;
+                    } else if (progressData.completedLessonsCount > 0) { // Nếu đã học bài nào đó
+                        // Lấy tên bài học cuối cùng từ allVideos (nếu có)
+                        let lastCompletedLessonTitle = "chưa xác định";
+                        if (allVideos.length > 0 && progressData.completedLessonIds.length > 0) {
+                            const lastCompletedId = Math.max(...progressData.completedLessonIds); // Tìm ID lớn nhất (giả sử ID tăng dần)
+                            const lastLesson = allVideos.find(v => v.id === lastCompletedId);
+                            if (lastLesson) lastCompletedLessonTitle = lastLesson.title;
+                        }
+                        courseProgressContainer.innerHTML = `<i class="bx bx-book-open bx-sm text-info"></i> Đã học ${progressData.completedLessonsCount}/${progressData.totalLessonsInCourse} bài. Bài gần nhất: <strong>${lastCompletedLessonTitle}</strong>. <span class="small text-muted">(Cập nhật: ${new Date(progressData.lastUpdated).toLocaleString('vi-VN')})</span>`;
+                    } else {
+                        courseProgressContainer.textContent = `Hãy bắt đầu bài học đầu tiên! (0/${progressData.totalLessonsInCourse} bài)`;
+                    }
+
+                    return progressData;
+                } catch (err) { /* ... (xử lý lỗi giữ nguyên) ... */
+                    console.error('Lỗi khi tải tiến độ học tập:', err);
+                    courseProgressContainer.textContent = "Lỗi kết nối khi tải tiến độ học tập.";
+                    return null;
+                }
+            }
+
+            async function toggleFavoriteRecipe() { /* ... (giữ nguyên logic bạn đã thêm) ... */
+                const recipeIdToFavorite = likeBtn.dataset.recipeId;
+                if (!userId || !recipeIdToFavorite) {
+                    alert('Không đủ thông tin để yêu thích công thức này (thiếu UserID hoặc RecipeID).');
+                    return;
+                }
+
+                const isFavorited = likeBtn.classList.contains('active');
+
+                if (isFavorited) {
+                    const confirmed = confirm("Bạn có chắc muốn xoá công thức này khỏi danh sách yêu thích?");
+                    if (!confirmed) return;
+
+                    const success = await unFavoriteRecipe(recipeIdToFavorite);
+                    if (success) {
+                        likeBtn.innerHTML = '<i class="bx bx-heart"></i> Yêu thích';
+                        likeBtn.classList.remove('btn-danger', 'active');
+                        likeBtn.classList.add('btn-outline-danger');
+                        alert("Đã xoá khỏi danh sách yêu thích.");
+                    } else {
+                        alert("Không thể xoá khỏi yêu thích. Vui lòng thử lại.");
+                    }
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`${API_BASE_URL}/Favorites?userId=${userId}&recipeId=${recipeIdToFavorite}`, {
+                        method: 'POST',
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+
+                    if (response.ok) {
+                        likeBtn.innerHTML = '<i class="bx bxs-heart"></i> Đã thích';
+                        likeBtn.classList.remove('btn-outline-danger');
+                        likeBtn.classList.add('btn-danger', 'active');
+                        alert('Đã thêm công thức vào danh sách yêu thích!');
+                    } else {
+                        const errorData = await response.json().catch(() => ({ message: "Lỗi không xác định." }));
+                        alert(`Không thể yêu thích công thức: ${errorData.message || errorData.title || response.statusText}`);
+                    }
+                } catch (error) {
+                    console.error('Lỗi kết nối khi yêu thích công thức:', error);
+                    alert('Lỗi kết nối khi yêu thích công thức.');
+                }
+            }
+
+            async function unFavoriteRecipe(recipeId) { /* ... (giữ nguyên) ... */
+                try {
+                    const res = await fetch(`${API_BASE_URL}/Favorites?userId=${userId}&recipeId=${recipeId}`, { // Giả sử endpoint này cho DELETE
+                        method: 'DELETE',
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    return res.ok;
+                } catch (err) {
+                    console.error('Lỗi khi xoá khỏi yêu thích:', err);
+                    return false;
+                }
+            }
+
+            async function checkFavoriteStatus(recipeId) { /* ... (giữ nguyên) ... */
+                if (!userId || !recipeId) {
+                    // Reset nút nếu không có recipeId
+                    likeBtn.innerHTML = '<i class="bx bx-heart"></i> Yêu thích';
+                    likeBtn.classList.remove('btn-danger', 'active');
+                    likeBtn.classList.add('btn-outline-danger');
+                    return;
+                }
+                try {
+                    const res = await fetch(`${API_BASE_URL}/Favorites/status?userId=${userId}&recipeId=${recipeId}`, { // Giả sử endpoint này tồn tại
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (res.ok) {
+                        const data = await res.json(); //  Giả sử trả về { isFavorited: true/false }
+                        if (data.isFavorited) {
+                            likeBtn.innerHTML = '<i class="bx bxs-heart"></i> Đã thích';
+                            likeBtn.classList.remove('btn-outline-danger');
+                            likeBtn.classList.add('btn-danger', 'active');
+                        } else {
+                            likeBtn.innerHTML = '<i class="bx bx-heart"></i> Yêu thích';
+                            likeBtn.classList.remove('btn-danger', 'active');
+                            likeBtn.classList.add('btn-outline-danger');
+                        }
+                    } else { // Nếu API lỗi hoặc không tìm thấy, coi như chưa thích
+                        likeBtn.innerHTML = '<i class="bx bx-heart"></i> Yêu thích';
+                        likeBtn.classList.remove('btn-danger', 'active');
+                        likeBtn.classList.add('btn-outline-danger');
+                    }
+                } catch (err) {
+                    console.error("Lỗi kiểm tra trạng thái yêu thích:", err);
+                    likeBtn.innerHTML = '<i class="bx bx-heart"></i> Yêu thích'; // Fallback
+                    likeBtn.classList.remove('btn-danger', 'active');
+                    likeBtn.classList.add('btn-outline-danger');
+                }
+            }
+
+            // ----- KHỞI TẠO TRANG -----
+            async function initializePage() {
+                // 1. Tải danh sách các bài học đã hoàn thành trước
+                await loadInitialCompletedLessons();
+
+                // 2. Tải thông tin khóa học và danh sách video
+                try {
+                    const courseRes = await fetch(`${API_BASE_URL}/Courses/${courseId}`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+
+                    if (!courseRes.ok) { /* ... (xử lý lỗi) ... */
+                        console.error('Không lấy được thông tin khóa học', courseRes.status, await courseRes.text());
+                        courseTitleElem.textContent = 'Lỗi tải khóa học';
+                        if (courseRes.status === 401 || courseRes.status === 403) {
+                            alert("Phiên đăng nhập hết hạn hoặc không có quyền truy cập. Vui lòng đăng nhập lại.");
+                            window.location.href = 'auth-login-basic.html';
+                        }
+                        return;
+                    }
+
+                    const apiResult = await courseRes.json();
+                    const course = apiResult.data;
+
+                    courseTitleElem.textContent = course.name || 'Tên khóa học';
+                    courseDescriptionElem.textContent = course.description || 'Không có mô tả.';
+                    courseImage.src = course.imageUrl || '../assets/img/courses/cooking-cover.jpg';
+
+                    allVideos = course.videos?.$values || []; // Lưu danh sách video
+
+                    if (allVideos.length === 0) {
+                        lessonListElem.innerHTML = '<li class="list-group-item">Không có video trong khóa học này.</li>';
+                        completeLessonBtn.style.display = 'none';
+                    } else {
+                        lessonListElem.innerHTML = ''; // Xóa nội dung cũ
+                        allVideos.forEach((video, index) => {
+                            const li = document.createElement('li');
+                            li.className = 'list-group-item d-flex justify-content-between align-items-center list-group-item-action';
+                            li.textContent = video.title;
+                            li.dataset.videoId = video.id;
+
+                            const badge = document.createElement('span');
+                            badge.className = 'badge bg-primary rounded-pill';
+                            badge.innerHTML = '▶';
+                            li.appendChild(badge);
+
+                            li.addEventListener('click', () => loadVideoDetail(video.id, li));
+                            lessonListElem.appendChild(li);
+
+                            if (index === 0) { // Tải video đầu tiên mặc định
+                                loadVideoDetail(video.id, li);
+                            }
+                        });
+                        updateLessonListUI(); // Cập nhật UI sau khi render video
+                    }
+                } catch (error) { /* ... (xử lý lỗi) ... */
+                    console.error('Lỗi nghiêm trọng khi tải trang khóa học:', error);
+                    courseTitleElem.textContent = 'Lỗi tải khóa học';
+                    courseDescriptionElem.textContent = 'Đã có lỗi xảy ra. Vui lòng thử lại sau.';
+                    courseProgressContainer.textContent = "Lỗi tải dữ liệu khóa học.";
+                    return; // Dừng ở đây nếu không tải được khóa học
+                }
+
+                // 3. Tải thông tin tiến độ tổng quan (sau khi đã có allVideos)
+                await fetchCourseProgress();
+
+                // Gắn event listeners
+                completeLessonBtn.addEventListener('click', markLessonAsComplete);
+                likeBtn.addEventListener('click', toggleFavoriteRecipe);
+            }
+
+            initializePage(); // Gọi hàm khởi tạo chính
         });
     </script>
     <!-- Core JS -->

@@ -19,14 +19,6 @@ namespace CookingCourseAPI.Repositories
         {
             IQueryable<Comment> query = _context.Comments;
 
-            if (includes != null)
-            {
-                foreach (var include in includes)
-                {
-                    query = query.Include(include);
-                }
-            }
-
             if (predicate != null)
             {
                 query = query.Where(predicate);

@@ -41,6 +41,6 @@ namespace CookingCourseAPI.Repositories
         {
             return await _context.Blogs.CountAsync();
         }
-      
+
     }
 }

@@ -7,6 +7,7 @@ namespace CookingCourseAPI.Repositories
         Task<Course?> GetCourseByIdAsync(int id);
         Task<IEnumerable<Course>> GetCoursesByUserIdAsync(int userId);
         Task<IEnumerable<CourseVideo>> GetVideosByCourseIdAsync(int courseId);
+        Task<bool> IsUserEnrolledAsync(int userId, int courseId);
 
     }
 }

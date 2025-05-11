@@ -10,6 +10,8 @@ namespace CookingCourseAPI.Services.Interfaces
         Task<User> SetUserLockStatusAsync(int id, bool isLocked);
         Task<User> UpdateUserRoleAsync(int id, string newRole);
         Task<bool> PermanentlyDeleteUserAsync(int id);
+        Task<User?> GetUserByIdAsync(int id);
+        Task<bool> ToggleUserLockAsync(int userId);
 
     }
 }

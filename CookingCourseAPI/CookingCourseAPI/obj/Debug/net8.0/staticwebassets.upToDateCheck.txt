@@ -1,7 +1,3 @@
-wwwroot\index.html
-wwwroot\JavaScrip.js
-wwwroot\Login.html
-wwwroot\script.js
 wwwroot\sneat-1.0.0\.browserslistrc
 wwwroot\sneat-1.0.0\.eslintignore
 wwwroot\sneat-1.0.0\.eslintrc.json
@@ -152,9 +148,11 @@ wwwroot\sneat-1.0.0\LICENSE.md
 wwwroot\sneat-1.0.0\mainhtml\account-manager.html
 wwwroot\sneat-1.0.0\mainhtml\admin.html
 wwwroot\sneat-1.0.0\mainhtml\admin-learnigpaths.html
+wwwroot\sneat-1.0.0\mainhtml\admin-learningpart.js
 wwwroot\sneat-1.0.0\mainhtml\auth-forgot-password-basic.html
 wwwroot\sneat-1.0.0\mainhtml\auth-login-basic.html
 wwwroot\sneat-1.0.0\mainhtml\auth-register-basic.html
+wwwroot\sneat-1.0.0\mainhtml\change-password.html
 wwwroot\sneat-1.0.0\mainhtml\coursemanager.html
 wwwroot\sneat-1.0.0\mainhtml\index.html
 wwwroot\sneat-1.0.0\mainhtml\learning.html
@@ -163,6 +161,7 @@ wwwroot\sneat-1.0.0\mainhtml\page-blogs.html
 wwwroot\sneat-1.0.0\mainhtml\pages-account-settings-account.html
 wwwroot\sneat-1.0.0\mainhtml\pages-account-settings-account.js
 wwwroot\sneat-1.0.0\mainhtml\payment.html
+wwwroot\sneat-1.0.0\mainhtml\reset-password.html
 wwwroot\sneat-1.0.0\mainhtml\script.js
 wwwroot\sneat-1.0.0\package.json
 wwwroot\sneat-1.0.0\package-lock.json
@@ -258,4 +257,3 @@ wwwroot\sneat-1.0.0\tasks\build.js
 wwwroot\sneat-1.0.0\tasks\prod.js
 wwwroot\sneat-1.0.0\webpack.config.js
 wwwroot\sneat-1.0.0\yarn.lock
-wwwroot\style.css

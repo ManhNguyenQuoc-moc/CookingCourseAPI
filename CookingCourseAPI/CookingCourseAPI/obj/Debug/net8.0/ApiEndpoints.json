@@ -1,6 +1,38 @@
 [
   {
     "ContainingType": "CookingCourseAPI.Controllers.AuthController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Auth/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CookingCourseAPI.DTOs.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.AuthController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Auth/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CookingCourseAPI.DTOs.ForgotPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -26,6 +58,22 @@
       {
         "Name": "dto",
         "Type": "CookingCourseAPI.DTOs.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.AuthController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Auth/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CookingCourseAPI.DTOs.ResetPasswordDto",
         "IsRequired": true
       }
     ],
@@ -241,9 +289,34 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "courseCreateDto",
-        "Type": "CookingCourseAPI.DTOs.CourseCreateDto",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsFree",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Videos",
+        "Type": "System.Collections.Generic.List\u00601[[CookingCourseAPI.DTOs.VideoWithRecipesDto, CookingCourseAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -278,9 +351,34 @@
         "IsRequired": true
       },
       {
-        "Name": "updatedCourse",
-        "Type": "CookingCourseAPI.Models.Entities.Course",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsFree",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Videos",
+        "Type": "System.Collections.Generic.List\u00601[[CookingCourseAPI.DTOs.VideoWithRecipesDto, CookingCourseAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -371,6 +469,27 @@
   },
   {
     "ContainingType": "CookingCourseAPI.Controllers.CoursesController",
+    "Method": "CheckEnrollment",
+    "RelativePath": "api/Courses/check-enrollment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.CoursesController",
     "Method": "Enroll",
     "RelativePath": "api/Courses/enroll",
     "HttpMethod": "POST",
@@ -380,6 +499,326 @@
       {
         "Name": "enrollDto",
         "Type": "CookingCourseAPI.DTOs.CourseEnrollDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.CoursesController",
+    "Method": "UpdateCourseWithVideos",
+    "RelativePath": "api/Courses/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Price",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsFree",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Videos",
+        "Type": "System.Collections.Generic.List\u00601[[CookingCourseAPI.DTOs.VideoWithRecipesDto, CookingCourseAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.FavoritesController",
+    "Method": "AddToFavorites",
+    "RelativePath": "api/Favorites",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "recipeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.FavoritesController",
+    "Method": "RemoveFromFavorites",
+    "RelativePath": "api/Favorites",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "recipeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.FavoritesController",
+    "Method": "GetFavorites",
+    "RelativePath": "api/Favorites/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.FavoritesController",
+    "Method": "CheckFavoriteStatus",
+    "RelativePath": "api/Favorites/status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "recipeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.LearningPathsController",
+    "Method": "Create",
+    "RelativePath": "api/LearningPaths",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CookingCourseAPI.DTOs.LearningPathDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.LearningPathsController",
+    "Method": "GetAll",
+    "RelativePath": "api/LearningPaths",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.LearningPathsController",
+    "Method": "Update",
+    "RelativePath": "api/LearningPaths/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "CookingCourseAPI.DTOs.LearningPathDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.LearningPathsController",
+    "Method": "Delete",
+    "RelativePath": "api/LearningPaths/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.LearningPathsController",
+    "Method": "GetById",
+    "RelativePath": "api/LearningPaths/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.ProgressController",
+    "Method": "CompleteLesson",
+    "RelativePath": "api/Progress/complete-lesson",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CookingCourseAPI.Models.DTOs.LessonCompletionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.ProgressController",
+    "Method": "GetCourseProgress",
+    "RelativePath": "api/Progress/get-course-progress/{userId}/{courseId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.ProgressController",
+    "Method": "GetPathProgress",
+    "RelativePath": "api/Progress/get-learning-path-progress/{userId}/{pathId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pathId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.ProgressController",
+    "Method": "GetCompletedLessons",
+    "RelativePath": "api/Progress/user/{userId}/course/{courseId}/completed",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "courseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.RecipesController",
+    "Method": "AddFavoriteRecipe",
+    "RelativePath": "api/Recipes/Favorites",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "favoriteRecipe",
+        "Type": "CookingCourseAPI.Models.Entities.FavoriteRecipe",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.RecipesController",
+    "Method": "AddFavoriteRecipe",
+    "RelativePath": "api/Recipes/Favorites/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "favoriteRecipe",
+        "Type": "CookingCourseAPI.Models.Entities.FavoriteRecipe",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "",
         "IsRequired": true
       }
     ],
@@ -399,9 +838,19 @@
         "IsRequired": true
       },
       {
-        "Name": "dto",
-        "Type": "CookingCourseAPI.DTOs.UpdateProfileDto",
-        "IsRequired": true
+        "Name": "FullName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Bio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Avatar",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -444,8 +893,8 @@
   },
   {
     "ContainingType": "CookingCourseAPI.Controllers.UsersController",
-    "Method": "UpdateRoleUser",
-    "RelativePath": "api/Users/users",
+    "Method": "ToggleUserLock",
+    "RelativePath": "api/Users/users/{id}/lock",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -453,7 +902,28 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CookingCourseAPI.Controllers.UsersController",
+    "Method": "UpdateUserRole",
+    "RelativePath": "api/Users/users/{id}/role",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "newRole",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

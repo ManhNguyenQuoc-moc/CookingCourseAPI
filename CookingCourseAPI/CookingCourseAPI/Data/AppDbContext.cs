@@ -15,12 +15,14 @@ namespace CookingCourseAPI.Data
         public DbSet<BlogReport> BlogReports { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<LearningPath> LearningPaths { get; set; }
+        public DbSet<LearningPathCourse> learningPathCourses { get; set; }
         public DbSet<News> News { get; set; }
         public DbSet<FavoriteRecipe> FavoriteRecipes { get; set; }
         public DbSet<CommentReport> CommentReports { get; set; }
         public DbSet<CourseVideo> CourseVideos { get; set; }
-
-
+        public DbSet<CompletedCourseVideo> CompletedCourseVideos { get; set; }
+        public DbSet<CourseProgress> CourseProgresses { get; set; }
+        public DbSet<LearningPathProgress> LearningPathProgresses { get; set; }
 
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
@@ -41,11 +43,7 @@ namespace CookingCourseAPI.Data
                 .HasForeignKey(e => e.UserId)
                 .OnDelete(DeleteBehavior.Restrict); // Tránh xóa User nếu có Enrollment
 
-            modelBuilder.Entity<Enrollment>()
-                .HasOne(e => e.Course)
-                .WithMany(c => c.Enrollments)
-                .HasForeignKey(e => e.CourseId)
-                .OnDelete(DeleteBehavior.Restrict); // Tránh xóa Course nếu có Enrollment
+            // Tránh xóa Course nếu có Enrollment
 
             // Blog - Comment (1-n)
             modelBuilder.Entity<Comment>()
@@ -71,12 +69,24 @@ namespace CookingCourseAPI.Data
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Rating - Course/User (n-1)
-            modelBuilder.Entity<Rating>()
-                .HasOne(r => r.Course)
-                .WithMany(c => c.Ratings)
-                .HasForeignKey(r => r.CourseId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<Rating>()
+            //    .HasOne(r => r.Course)
+            //    .WithMany(c => c.Ratings)
+            //    .HasForeignKey(r => r.CourseId)
+            //    .OnDelete(DeleteBehavior.Restrict);
+            // Khai báo khóa chính cho bảng trung gian
+            modelBuilder.Entity<LearningPathCourse>()
+                .HasKey(lpc => new { lpc.LearningPathId, lpc.CourseId });
 
+            modelBuilder.Entity<LearningPathCourse>()
+                .HasOne(lpc => lpc.LearningPath)
+                .WithMany(lp => lp.LearningPathCourses)
+                .HasForeignKey(lpc => lpc.LearningPathId);
+
+            modelBuilder.Entity<LearningPathCourse>()
+                .HasOne(lpc => lpc.Course)
+                .WithMany()
+                .HasForeignKey(lpc => lpc.CourseId);
             modelBuilder.Entity<Rating>()
                 .HasOne(r => r.User)
                 .WithMany(u => u.Ratings)
@@ -104,7 +114,11 @@ namespace CookingCourseAPI.Data
                  .HasForeignKey<Recipe>(r => r.CourseVideoId)
                  .OnDelete(DeleteBehavior.Cascade);
 
-
+            modelBuilder.Entity<CompletedCourseVideo>()
+            .HasOne(c => c.CourseProgress)
+            .WithMany(cp => cp.CompletedCourseVideos)
+            .HasForeignKey(c => c.CourseProgressId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
