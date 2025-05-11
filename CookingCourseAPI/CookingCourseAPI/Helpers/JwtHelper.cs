@@ -19,7 +19,7 @@ namespace CookingCourseAPI.Helpers
             var key = Encoding.ASCII.GetBytes(SecretKey);
         
 
-            var tokenDescriptor = new SecurityTokenDescriptor
+            var tokenDescriptor = new SecurityTokenDescriptor 
             {
                 Subject = new ClaimsIdentity(new[]
                 {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CookingCourseAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+510a40ba673e621875a2f0c24e507a3a08052a38")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+919b2e287fc382062d34aa020a0ce48a32dad8bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("CookingCourseAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CookingCourseAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

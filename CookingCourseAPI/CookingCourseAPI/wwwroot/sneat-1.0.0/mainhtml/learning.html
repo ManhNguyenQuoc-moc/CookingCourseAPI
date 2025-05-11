@@ -136,7 +136,7 @@
             try {
                 const res = await fetch(`http://localhost:5043/api/Courses/${courseId}/videos`);
                 const apiData = await res.json();
-                const videos = apiData.data.$values;
+                const videos = apiData.data.$values;    
 
                 if (!videos || videos.length === 0) {
                     lessonList.innerHTML = '<li class="list-group-item">Không có video.</li>';

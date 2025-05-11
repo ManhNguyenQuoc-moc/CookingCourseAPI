@@ -41,6 +41,10 @@ namespace CookingCourseAPI.Repositories
         {
             return await _context.Blogs.CountAsync();
         }
-      
+        public async Task<Blog> GetByIdAsync(int id)
+        {
+            return await _context.Blogs
+                .FirstOrDefaultAsync(blog => blog.Id == id);
+        }
     }
 }

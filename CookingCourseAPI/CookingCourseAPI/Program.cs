@@ -62,6 +62,7 @@ namespace CookingCourseAPI
 
             // ============ DI cho Repository và Service ============
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            builder.Services.AddScoped<IBlogReportService, BlogReportService>();
             builder.Services.AddScoped<IBlogReportRepository, BlogReportRepository>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserService, UserService>();
@@ -76,6 +77,10 @@ namespace CookingCourseAPI
             builder.Services.AddScoped<ICourseVideoRepository, CourseVideoRepository>();
             builder.Services.AddScoped<ICourseVideoService, CourseVideoService>();
             builder.Services.AddScoped<ICourseVideoRepository, CourseVideoRepository>();
+            builder.Services.AddScoped<INewsRepository, NewsRepository>();
+            builder.Services.AddScoped<INewsService, NewsService>();
+            builder.Services.AddScoped<IStatisticsRepository, StatisticsRepository>();
+            builder.Services.AddScoped<IStatisticsService, StatisticsService>();
 
             builder.Services.AddControllers().AddJsonOptions(options =>
             {
