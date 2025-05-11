@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+
+<!-- =========================================================
+* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
+==============================================================
+
+* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
+* Created by: ThemeSelection
+* License: You must have a valid license purchased in order to legally use the theme for your project.
+* Copyright ThemeSelection (https://themeselection.com)
+
+=========================================================
+ -->
+<!-- beautify ignore:start -->
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+    <!-- Helpers -->
+    <script src="../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="index.html" class="app-brand-link">
+                        <span class="app-brand-logo demo">
+                            <svg width="25"
+                                 viewBox="0 0 25 42"
+                                 version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                    <path d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
+                                          id="path-1"></path>
+                                    <path d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
+                                          id="path-3"></path>
+                                    <path d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
+                                          id="path-4"></path>
+                                    <path d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
+                                          id="path-5"></path>
+                                </defs>
+                                <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+                                        <g id="Icon" transform="translate(27.000000, 15.000000)">
+                                            <g id="Mask" transform="translate(0.000000, 8.000000)">
+                                                <mask id="mask-2" fill="white">
+                                                    <use xlink:href="#path-1"></use>
+                                                </mask>
+                                                <use fill="#696cff" xlink:href="#path-1"></use>
+                                                <g id="Path-3" mask="url(#mask-2)">
+                                                    <use fill="#696cff" xlink:href="#path-3"></use>
+                                                    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                                                </g>
+                                                <g id="Path-4" mask="url(#mask-2)">
+                                                    <use fill="#696cff" xlink:href="#path-4"></use>
+                                                    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                                                </g>
+                                            </g>
+                                            <g id="Triangle"
+                                               transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
+                                                <use fill="#696cff" xlink:href="#path-5"></use>
+                                                <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="app-brand-text demo menu-text fw-bolder ms-2">Cooking</span>
+                    </a>
+
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+                <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <!-- Trang chủ -->
+                    <li class="menu-item active">
+                        <a href="index.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div data-i18n="menu.home">Trang chủ</div>
+                        </a>
+                    </li>
+                    <!-- Lộ trình -->
+                    <li class="menu-item">
+                        <a href="learning-paths.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-map"></i>
+                            <div data-i18n="menu.roadmap">Lộ trình</div>
+                        </a>
+                    </li>
+                    <!-- Bài viết -->
+                    <li class="menu-item">
+                        <a href="page-blogs.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-book-content"></i>
+                            <div data-i18n="menu.posts">Bài viết</div>
+                        </a>
+                    </li>
+                    <!-- Header: Bản tin khóa học -->
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text" data-i18n="menu.news-header">Bản tin khóa học</span>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link" href="#" data-bs-toggle="modal" data-bs-target="#newsModal">
+                            <i class="menu-icon tf-icons bx bx-news"></i>
+                            <div data-i18n="menu.news">Bản tin</div>
+                        </a>
+                    </li>
+                    <li class="menu-header small text-uppercase">
+                        <span class="menu-header-text">Pages</span>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                            <div data-i18n="Account Settings">Account Settings</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item active">
+                                <a href="pages-account-settings-account.html" class="menu-link">
+                                    <div data-i18n="Account">Account</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                            <div data-i18n="Authentications">Authentications</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item active">
+                                <a href="auth--forgotpassword-basic.html" class="menu-link" target="_blank">
+                                    <div data-i18n="Basic">Forgot Password</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <!-- / Menu -->
+            <!-- Modal: Hiển thị danh sách bản tin -->
+            <div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="newsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Bản tin khóa học</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                        </div>
+                        <div id="adminControls" class="mb-3 text-end d-none px-4">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewsModal">+ Thêm bản tin</button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="modalNewsList" class="row g-4">
+                                <!-- Tin tức sẽ được render tại đây bằng JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal: Thêm bản tin -->
+            <div class="modal fade" id="addNewsModal" tabindex="-1" role="dialog" aria-labelledby="addNewsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addNewsModalLabel">Thêm bản tin</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addNewsForm">
+                                <div class="mb-3">
+                                    <label for="newsTitle" class="form-label">Tiêu đề</label>
+                                    <input type="text" class="form-control" id="newsTitle" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newsContent" class="form-label">Nội dung</label>
+                                    <textarea class="form-control" id="newsContent" rows="4" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary">Lưu bản tin</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal: Sửa bản tin -->
+            <div class="modal fade" id="editNewsModal" tabindex="-1" role="dialog" aria-labelledby="editNewsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editNewsModalLabel">Sửa bản tin</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editNewsForm">
+                                <input type="hidden" id="editNewsId"> <!-- Lưu id bản tin đang sửa -->
+                                <div class="mb-3">
+                                    <label for="editNewsTitle" class="form-label">Tiêu đề</label>
+                                    <input type="text" class="form-control" id="editNewsTitle" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editNewsContent" class="form-label">Nội dung</label>
+                                    <textarea class="form-control" id="editNewsContent" rows="4" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary">Lưu sửa</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal: Hiển thị bản tin -->
+            <!--<div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="newsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newsModalLabel">Bản tin hôm nay</h5>
+                </div>
+                <div class="modal-body">
+                    <img src="https://via.placeholder.com/800x300" class="img-fluid mb-3" alt="Tin tức">
+                    <p>Đây là nội dung bản tin chi tiết, bạn có thể cập nhật bằng nội dung thật sự hoặc load động.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>-->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                     id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item d-flex align-items-center">
+                                <i class="bx bx-search fs-4 lh-0"></i>
+                                <input type="text"
+                                       class="form-control border-0 shadow-none"
+                                       placeholder="Search..."
+                                       aria-label="Search..." />
+                            </div>
+                        </div>
+                        <!-- /Search -->
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- Place this tag where you want the button to render. -->
+                            <!-- Khóa học của tôi -->
+                            <li class="nav-item me-3">
+                                <h5 class="mb-0"><a href="#" class="text-gray">Khóa học của tôi</a></h5>
+                            </li>
+                            <!-- Chuông thông báo -->
+                            <li class="nav-item dropdown me-3">
+                                <button type="button"
+                                        id="loginNofica"
+                                        class="btn rounded-pill btn-icon btn-outline-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false">
+                                    <span class="tf-icons bx bx-bell"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="loginNofica" style="min-width: 300px; max-height: 400px; overflow-y: auto;">
+                                    <h6 class="dropdown-header">Thông báo</h6>
+                                    <div id="notificationList">
+                                        <p class="text-muted mb-0">Không có thông báo nào.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <button id="loginBtn" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                                        type="button" style="width: 40px; height: 40px;">
+                                    <i class="fas fa-user"></i>
+                                </button>
+                            </li>
+                            <!-- User -->
+                            <li id="userDropdown" class="nav-item navbar-dropdown dropdown-user dropdown d-none">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                    <div id="btnShowProfile" class="avatar avatar-online">
+                                        <img id="avataruser1" src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img id="useravatar" src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span id="nameuser" class="fw-semibold d-block">John Doe</span>
+                                                    <small id="roleuser" class="text-muted">Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                                            <i class="bx bx-user me-2"></i>
+                                            <span class="align-middle">Trang cá nhân</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-pen me-2"></i>
+                                            <span class="align-middle">Viết blog</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-file me-2"></i>
+                                            <span class="align-middle">Bài viết của tôi</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-floppy-disk me-2"></i>
+                                            <span class="align-middle">Bài viết đã lưu</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="bx bx-cog me-2"></i>
+                                            <span class="align-middle">Cài đặt</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                            <i class="bx bx-power-off me-2"></i>
+                                            <span id="logoutBtn" class="align-middle">Đăng xuất</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+                </nav>
+                <style>
+                    /* Ẩn dấu mũi tên của dropdown-toggle */
+                    #loginNofica::after {
+                        display: none !important;
+                    }
+                </style>
+
+                <!-- / Navbar -->
+                <div class="row">
+                    <div class="contentcontent-wrapper">
+                        <!-- Content -->
+                        <div class="container-xxl flex-grow-1 container-p-y">
+                            <!-- Phần: Khóa học trả phí -->
+                            <h5 class="pb-1 mb-4">Khóa học trả phí</h5>
+                            <div class="row" id="paid-courses">
+                                <!-- Các khóa học trả phí sẽ được thêm vào đây -->
+                            </div>
+
+                            <!-- Phần: Khóa học miễn phí -->
+                            <h5 class="pb-1 mb-4">Khóa học miễn phí</h5>
+                            <div class="row" id="free-courses">
+                                <!-- Các khóa học miễn phí sẽ được thêm vào đây -->
+                            </div>
+                        </div>
+                        <!-- / Content -->
+                        <!-- model dang ki khóa học-->
+                        <div class="modal fade" id="enrollModal" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Đăng ký khóa học</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="enrollForm">
+                                            <input type="hidden" id="courseId">
+                                            <input type="hidden" id="userId">
+                                            <input type="hidden" id="isFree">
+                                            <input type="hidden" id="coursePriceValue">
+
+                                            <div class="mb-3">
+                                                <label class="form-label">Tên khóa học:</label>
+                                                <span id="courseName" class="fw-bold"></span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Giá tiền:</label>
+                                                <span id="coursePrice" class="text-danger fw-bold"></span>
+                                            </div>
+                                            <div class="text-end">
+                                                <button type="submit" class="btn btn-primary">Xác nhận đăng ký</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <footer class="bg-light text-dark pt-5 pb-3 border-top">
+                            <div class="container-xxl">
+                                <div class="row">
+
+                                    <!-- Thông tin liên hệ -->
+                                    <div class="col-md-4 mb-4">
+                                        <h5 class="fw-bold text-primary">Cooking Master</h5>
+                                        <p class="small mb-2">
+                                            Điện thoại: 08 1919 1234<br>
+                                            Email: contact@cookingmaster.vn<br>
+                                            Địa chỉ: Số 123, Đường Ẩm Thực, Quận 1, TP. Hồ Chí Minh
+                                        </p>
+                                        <img src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-bakery-tool-clipart-hand-drawn-illustration-food-items-and-cooking-concepts-png-image_12149984.png"
+                                             class="img-fluid rounded shadow-sm mt-2"
+                                             style="max-height: 120px; object-fit: contain;">
+                                    </div>
+
+                                    <!-- Về Chúng Tôi -->
+                                    <div class="col-md-2 mb-4">
+                                        <h6 class="fw-semibold text-primary">Về Chúng Tôi</h6>
+                                        <ul class="list-unstyled small">
+                                            <li><a href="#" class="footer-link">Giới thiệu</a></li>
+                                            <li><a href="#" class="footer-link">Liên hệ</a></li>
+                                            <li><a href="#" class="footer-link">Điều khoản</a></li>
+                                            <li><a href="#" class="footer-link">Chính sách bảo mật</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Khóa Học -->
+                                    <div class="col-md-3 mb-4">
+                                        <h6 class="fw-semibold text-primary">Khóa Học</h6>
+                                        <ul class="list-unstyled small">
+                                            <li><a href="#" class="footer-link">Nấu ăn cơ bản</a></li>
+                                            <li><a href="#" class="footer-link">Bếp Âu chuyên nghiệp</a></li>
+                                            <li><a href="#" class="footer-link">Pha chế đồ uống</a></li>
+                                            <li><a href="#" class="footer-link">Trang trí món ăn</a></li>
+                                            <li><a href="#" class="footer-link">Khóa học làm bánh</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Công Cụ -->
+                                    <div class="col-md-3 mb-4">
+                                        <h6 class="fw-semibold text-primary">Công Cụ</h6>
+                                        <ul class="list-unstyled small">
+                                            <li><a href="#" class="footer-link">Công thức nấu ăn</a></li>
+                                            <li><a href="#" class="footer-link">Tạo thực đơn</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <!-- Bản quyền & mạng xã hội -->
+                                <div class="d-flex justify-content-between align-items-center flex-wrap small pt-3">
+                                    <div class="text-muted">
+                                        ©
+                                        <script>document.write(new Date().getFullYear());</script> Cooking Master. Nền tảng học nấu ăn hàng đầu Việt Nam.
+                                    </div>
+                                    <div>
+                                        <a href="#" class="text-primary me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                                        <a href="#" class="text-primary me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="text-primary fs-5"><i class="fab fa-tiktok"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+
+                        <style>
+                            .footer-link {
+                                color: #495057;
+                                text-decoration: none;
+                                transition: color 0.2s ease-in-out;
+                            }
+
+                                .footer-link:hover {
+                                    color: #0d6efd; /* Màu primary khi hover */
+                                    text-decoration: underline;
+                                }
+
+                            footer h5, footer h6 {
+                                margin-bottom: 1rem;
+                            }
+                        </style>
+
+                        <!-- / Footer -->
+                        <div class="content-backdrop fade"></div>
+                    </div>
+                    <!-- Content wrapper -->
+                </div>
+                <!-- / Layout page -->
+            </div>
+
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle">
+
+            </div>
+
+        </div>
+        <!-- / Layout wrapper -->
+        <!-- Core JS -->
+        <!-- build:js assets/vendor/js/core.js -->
+        <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+        <script src="../assets/vendor/libs/popper/popper.js"></script>
+        <script src="../assets/vendor/js/bootstrap.js"></script>
+        <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="../assets/vendor/js/menu.js"></script>
+        <script type="module" src="script.js"></script>
+        <!-- Bootstrap 5 (nếu chưa có) -->
+        <!-- endbuild -->
+        <!-- Vendors JS -->
+        <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+        <!-- Main JS -->
+        <script src="../assets/js/main.js"></script>
+        <!-- Page JS -->
+        <script src="../assets/js/dashboards-analytics.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <!-- Bootstrap 5 Bundle (gồm cả Popper) -->
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>-->
+        <script>
+            let role = null; // Khai báo ở đầu script
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const token = sessionStorage.getItem('token');
+
+                // Kiểm tra nếu token tồn tại
+                if (token) {
+                    // Giải mã phần payload từ token JWT
+                    const payload = JSON.parse(atob(token.split('.')[1]));
+
+                    // Lấy role từ payload
+                    role = payload.role || payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+
+                    // Kiểm tra role và hiển thị các nút sửa/xóa
+                    if (role === "Admin") {
+                        document.getElementById("adminControls").classList.remove("d-none");
+                        const adminControls = document.querySelectorAll("[id^='adminControls-']");
+                        adminControls.forEach(control => {
+                            control.style.display = "block";
+                        });
+                    }
+                }
+
+              
+
+                // Hàm gửi yêu cầu PUT để sửa bản tin
+                document.getElementById("editNewsForm").addEventListener("submit", function (event) {
+                    event.preventDefault();  // Ngừng form submit mặc định
+
+                    // Lấy id và thông tin bản tin sửa
+                    const newsId = document.getElementById("editNewsId").value;
+                    const title = document.getElementById("editNewsTitle").value;
+                    const content = document.getElementById("editNewsContent").value;
+
+                    // Tạo đối tượng bản tin sửa
+                    const updatedNews = {
+                        title: title,
+                        content: content
+                    };
+
+                    // Gửi yêu cầu PUT để sửa bản tin
+                    fetch(`http://localhost:5043/api/News/${newsId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify(updatedNews)
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("Sửa bản tin thành công:", data);
+                            // Đóng modal sau khi sửa thành công
+                            $('#editNewsModal').modal('hide');
+                            // Cập nhật lại danh sách tin tức (nếu cần)
+                            // Ví dụ gọi lại fetch API để hiển thị bản tin đã sửa
+                        })
+                        .catch(error => {
+                            console.error("Lỗi khi sửa bản tin:", error);
+                        });
+                });
+
+                // Hàm gửi yêu cầu DELETE để xóa bản tin
+                function deleteNews(newsId) {
+                    const confirmDelete = confirm("Bạn có chắc chắn muốn xóa bản tin này?");
+                    if (confirmDelete) {
+                        fetch(`http://localhost:5043/api/News/${newsId}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization': `Bearer ${token}`
+                            }
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log("Xóa bản tin thành công:", data);
+                                // Cập nhật lại danh sách tin tức (nếu cần)
+                                // Ví dụ gọi lại fetch API để làm mới danh sách
+                            })
+                            .catch(error => {
+                                console.error("Lỗi khi xóa bản tin:", error);
+                            });
+                    }
+                }
+
+
+            });
+
+            document.getElementById('newsModal').addEventListener('show.bs.modal', function () {
+                fetch('http://localhost:5043/api/News')
+                    .then(response => {
+                        if (!response.ok) throw new Error("Lỗi khi gọi API");
+                        return response.json();
+                    })
+                    .then(data => {
+                        const newsList = data.$values;
+                        const container = document.getElementById("modalNewsList");
+                        container.innerHTML = "";
+
+                        if (newsList.length === 0) {
+                            container.innerHTML = `<p class="text-muted">Chưa có bản tin nào.</p>`;
+                            return;
+                        }
+
+                        newsList.forEach(news => {
+                            const col = document.createElement("div");
+                            col.className = "col-md-6";
+                            col.innerHTML = `
+    <div class="card shadow-sm h-100">
+        <div class="card-body">
+            <h5 class="card-title">${news.title}</h5>
+            <p class="card-text">${news.content}</p>
+            <p class="text-muted small">${new Date(news.createdAt).toLocaleString()}</p>
+
+            <!-- Nút sửa và xóa (ẩn theo quyền Admin) -->
+            <div class="d-flex justify-content-end gap-2 mt-3 admin-actions d-none">
+                <button class="btn btn-sm btn-outline-primary editNewsButton" 
+                    data-id="${news.id}" 
+                    data-title="${news.title}" 
+                    data-content="${news.content}">
+                    <i class="bi bi-pencil-square"></i> Sửa
+                </button>
+                <button class="btn btn-sm btn-outline-danger deleteNewsButton" 
+                    data-id="${news.id}">
+                    <i class="bi bi-trash"></i> Xóa
+                </button>
+            </div>
+        </div>
+    </div>
+`;
+
+                            container.appendChild(col);
+                        });
+                        document.querySelectorAll('.editNewsButton').forEach(button => {
+                            button.addEventListener('click', function () {
+                                const newsId = this.getAttribute('data-id');
+                                const newsTitle = this.getAttribute('data-title');
+                                const newsContent = this.getAttribute('data-content');
+                                    openEditModal({ id: newsId, title: newsTitle, content: newsContent });
+                            });
+                        });
+
+                        // Gắn sự kiện cho các nút xóa
+                        document.querySelectorAll('.deleteNewsButton').forEach(button => {
+                            button.addEventListener('click', function () {
+                                const newsId = this.getAttribute('data-id');
+                                deleteNews(newsId);
+                            });
+                        });
+
+                        // Nếu là Admin thì hiện nút sửa/xóa
+                        if (role === "Admin") {
+                            document.querySelectorAll('.admin-actions').forEach(el => {
+                                el.classList.remove('d-none');
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        document.getElementById("modalNewsList").innerHTML = `<p class="text-danger">Lỗi khi tải bản tin.</p>`;
+                    });
+            });
+            document.addEventListener("DOMContentLoaded", function () {
+                const token = sessionStorage.getItem('token');
+
+                // Kiểm tra nếu token tồn tại
+                if (token) {
+                    // Giải mã phần payload từ token JWT
+                    const payload = JSON.parse(atob(token.split('.')[1]));
+
+                    // Lấy role từ payload
+                    const role = payload.role || payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+
+                    // Hiển thị kết quả trong console
+                    console.log("Role:", role);
+
+                    // Kiểm tra role và hiển thị nút "Thêm bản tin"
+                    if (role === "Admin") {
+                        document.getElementById("adminControls").classList.remove("d-none");
+                    }
+                } else {
+                    console.log("Token không tồn tại trong sessionStorage.");
+                }
+
+                // Thêm sự kiện submit cho form thêm bản tin
+                document.getElementById("addNewsForm").addEventListener("submit", function (event) {
+                    event.preventDefault();  // Ngừng form submit mặc định
+
+                    // Lấy giá trị từ các trường nhập liệu
+                    const title = document.getElementById("newsTitle").value;
+                    const content = document.getElementById("newsContent").value;
+
+                    // Tạo đối tượng bản tin
+                    const newNews = {
+                        title: title,
+                        content: content,
+                        createdAt: new Date().toISOString()
+                    };
+
+                    // Gửi yêu cầu POST đến API
+                    fetch('http://localhost:5043/api/News', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`  // Thêm Authorization header nếu cần
+                        },
+                        body: JSON.stringify(newNews)
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("Thêm bản tin thành công:", data);
+                            // Đóng modal sau khi thêm bản tin thành công
+                            $('#addNewsModal').modal('hide');
+                            // Cập nhật lại danh sách tin tức (nếu cần)
+                            // Ví dụ gọi lại fetch API để hiển thị bản tin mới
+                        })
+                        .catch(error => {
+                            console.error("Lỗi khi thêm bản tin:", error);
+                        });
+                });
+            });
+            function openEditModal(news) {
+                // Gán giá trị vào các input trong modal sửa
+                document.getElementById('editNewsId').value = news.id;
+                document.getElementById('editNewsTitle').value = news.title;
+                document.getElementById('editNewsContent').value = news.content;
+
+                const editModal = new bootstrap.Modal(document.getElementById('editNewsModal'));
+                editModal.show();
+            }
+            function deleteNews(newsId) {
+                const confirmed = confirm("Bạn có chắc chắn muốn xóa bản tin này không?");
+                if (!confirmed) return;
+
+                const token = sessionStorage.getItem('token');
+
+                fetch(`http://localhost:5043/api/News/${newsId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                    .then(response => {
+                        if (!response.ok) throw new Error("Xóa thất bại.");
+                        alert("Đã xóa bản tin.");
+                        // Sau khi xóa thành công, làm mới danh sách bản tin
+                        const modal = document.getElementById('newsModal');
+                        const bsModal = bootstrap.Modal.getInstance(modal);
+                        bsModal.hide(); // Ẩn modal hiện tại
+                        setTimeout(() => {
+                            bsModal.show(); // Mở lại để làm mới dữ liệu
+                        }, 500);
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("Đã xảy ra lỗi khi xóa bản tin.");
+                    });
+            }
+            document.getElementById("editNewsForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const id = document.getElementById("editNewsId").value;
+                const title = document.getElementById("editNewsTitle").value;
+                const content = document.getElementById("editNewsContent").value;
+                const token = sessionStorage.getItem('token');
+
+                const updatedNews = {
+                    id: id,
+                    title: title,
+                    content: content
+                };
+
+                fetch(`http://localhost:5043/api/News/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(updatedNews)
+                })
+                    .then(response => {
+                        if (!response.ok) throw new Error("Lỗi khi cập nhật bản tin.");
+                        return response.json();
+                    })
+                    .then(data => {
+                        alert("Cập nhật thành công!");
+                        const modal = bootstrap.Modal.getInstance(document.getElementById("editNewsModal"));
+                        modal.hide();
+                        // Làm mới danh sách
+                        const newsModal = document.getElementById('newsModal');
+                        const bsModal = bootstrap.Modal.getInstance(newsModal);
+                        bsModal.hide();
+                        setTimeout(() => {
+                            bsModal.show();
+                        }, 500);
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert("Đã xảy ra lỗi khi cập nhật bản tin.");
+                    });
+            });
+
+        </script>
+
+</body>
+</html>

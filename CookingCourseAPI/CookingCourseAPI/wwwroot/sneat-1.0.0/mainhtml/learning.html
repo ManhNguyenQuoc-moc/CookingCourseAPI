@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="light-style" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Cooking Course</title>
+    <meta name="description" content="" />
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .list-group-item.active {
+            background-color: #696cff;
+            border-color: #696cff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-back {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nút quay về trang chủ -->
+    <a href="index.html" class="btn btn-secondary btn-back">
+        <i class="bx bx-arrow-back"></i> Trang chủ
+    </a>
+
+    <h4 class="fw-bold p-4 text-center">Khóa học nấu ăn</h4>
+
+    <div class="container py-4">
+        <div class="row mb-4">
+            <!-- Video -->
+            <div class="col-lg-8">
+                <div class="ratio ratio-16x9 mb-3 rounded shadow-sm">
+                    <iframe id="videoFrame" src="" title="YouTube video" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Danh sách bài học -->
+            <div class="col-lg-4">
+                <h5 class="fw-bold mb-3">Danh sách bài học</h5>
+                <ul class="list-group" id="lessonList"></ul>
+            </div>
+        </div>
+
+        <!-- Chi tiết video -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="card-title mb-0" id="videoTitle">Tên video</h4>
+                    <button class="btn btn-outline-danger" id="likeBtn">
+                        <i class="bx bx-heart"></i> Yêu thích
+                    </button>
+                </div>
+                <p class="text-muted" id="videoDesc">Mô tả công thức...</p>
+
+                <h6 class="fw-bold mt-4">Công thức:</h6>
+                <ul id="recipeList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('courseId');
+            const videoFrame = document.querySelector('#videoFrame');
+            const videoTitle = document.querySelector('#videoTitle');
+            const videoDesc = document.querySelector('#videoDesc');
+            const recipeList = document.querySelector('#recipeList');
+            const lessonList = document.querySelector('#lessonList');
+            let currentActiveLi = null;
+
+            function convertToEmbedUrl(youtubeUrl) {
+                const videoId = youtubeUrl.split('v=')[1]?.split('&')[0];
+                return `https://www.youtube.com/embed/${videoId}`;
+            }
+
+            async function loadVideoDetail(videoId, clickedLi) {
+                try {
+                    const res = await fetch(`http://localhost:5043/api/Courses/${videoId}/with-recipes`);
+                    if (!res.ok) {
+                        console.error('Lỗi API chi tiết video:', res.statusText);
+                        return;
+                    }
+
+                    const data = await res.text();
+                    if (!data) {
+                        console.error('Không có dữ liệu trả về');
+                        return;
+                    }
+
+                    const jsonData = JSON.parse(data);
+                    videoFrame.src = convertToEmbedUrl(jsonData.url);
+                    videoTitle.textContent = jsonData.title;
+
+                    // Xử lý mô tả & công thức
+                    if (jsonData.recipe && jsonData.recipe.instructions) {
+                        videoDesc.textContent = jsonData.recipe.instructions;
+                        recipeList.innerHTML = '';
+                        const li = document.createElement('li');
+                        li.textContent = jsonData.recipe.instructions;
+                        recipeList.appendChild(li);
+                    } else {
+                        videoDesc.textContent = 'Không có mô tả công thức.';
+                        recipeList.innerHTML = '<li>Không có công thức.</li>';
+                    }
+
+                    // Xử lý hiệu ứng active
+                    if (currentActiveLi) currentActiveLi.classList.remove('active');
+                    if (clickedLi) {
+                        clickedLi.classList.add('active');
+                        currentActiveLi = clickedLi;
+                    }
+
+                } catch (err) {
+                    console.error('Lỗi khi tải video:', err);
+                }
+            }
+
+            try {
+                const res = await fetch(`http://localhost:5043/api/Courses/${courseId}/videos`);
+                const apiData = await res.json();
+                const videos = apiData.data.$values;    
+
+                if (!videos || videos.length === 0) {
+                    lessonList.innerHTML = '<li class="list-group-item">Không có video.</li>';
+                    return;
+                }
+
+                lessonList.innerHTML = '';
+                videos.forEach((video, index) => {
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                    li.textContent = video.title;
+
+                    const badge = document.createElement('span');
+                    badge.className = 'badge bg-primary';
+                    badge.textContent = '▶';
+                    li.appendChild(badge);
+
+                    li.addEventListener('click', () => loadVideoDetail(video.id, li));
+                    lessonList.appendChild(li);
+
+                    if (index === 0) {
+                        loadVideoDetail(video.id, li);
+                    }
+                });
+
+            } catch (err) {
+                console.error('Lỗi khi lấy danh sách video:', err);
+            }
+        });
+    </script>
+    <!-- Core JS -->
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

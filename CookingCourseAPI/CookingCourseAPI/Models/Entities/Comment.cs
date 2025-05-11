@@ -15,5 +15,5 @@ public class Comment
 
     public ICollection<Comment> Replies { get; set; } // Nếu có trả lời cho bình luận
 
-    public List<int> Likes { get; set; } // Lưu danh sách userId đã like comment
+    public List<int> Likes { get; set; } = new List<int>(); // Khởi tạo danh sách Likes
 }

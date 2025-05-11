@@ -1,6 +1,7 @@
 ﻿using CookingCourseAPI.DTOs;
 using CookingCourseAPI.Models.Entities;
 using CookingCourseAPI.Models.Responses;
+using CookingCourseAPI.Repositories;
 using CookingCourseAPI.Repositories.Interfaces;
 using CookingCourseAPI.Services.Interfaces;
 using CookingCourseAPI.Wrappers;
@@ -60,17 +61,39 @@ namespace CookingCourseAPI.Services
             }
         }
 
-        public async Task<ApiResponse<Blog>> UpdateAsync(int id, Blog blog)
+        //public async Task<ApiResponse<Blog>> UpdateAsync(int id, Blog blog)
+        //{
+        //    var existing = await _blogRepo.GetByIdAsync(id);
+        //    if (existing == null)
+        //        return new ApiResponse<Blog>(false, "Blog not found", null);
+
+        //    existing.Title = blog.Title;
+        //    existing.Content = blog.Content;
+        //    existing.UpdatedAt = DateTime.Now;
+
+        //    await _blogRepo.UpdateAsync(existing);
+        //    return new ApiResponse<Blog>(true, "Cập nhật blog thành công", existing);
+        //}
+        public async Task<ApiResponse<Blog>> UpdateAsync(int id, UpdateBlogDto blogDto)
         {
             var existing = await _blogRepo.GetByIdAsync(id);
             if (existing == null)
-                return new ApiResponse<Blog>(false, "Blog not found", null);
+                return new ApiResponse<Blog>(false, "Blog không tồn tại", null);
 
-            existing.Title = blog.Title;
-            existing.Content = blog.Content;
+            // Cập nhật các trường được cung cấp
+            if (!string.IsNullOrWhiteSpace(blogDto.Title))
+                existing.Title = blogDto.Title;
+
+            if (!string.IsNullOrWhiteSpace(blogDto.Content))
+                existing.Content = blogDto.Content;
+
+            if (!string.IsNullOrWhiteSpace(blogDto.ImageUrl))
+                existing.ImageUrl = blogDto.ImageUrl;
+
             existing.UpdatedAt = DateTime.Now;
 
             await _blogRepo.UpdateAsync(existing);
+
             return new ApiResponse<Blog>(true, "Cập nhật blog thành công", existing);
         }
 
@@ -161,6 +184,28 @@ namespace CookingCourseAPI.Services
                 return new ApiResponse<string>(true, "Liked blog"); // Trả về thông báo đã like
             }
         }
+        public async Task<ApiResponse<int>> GetLikesCountAsync(int blogId)
+        {
+            // Lấy blog từ repository
+            var blog = await _blogRepo.GetByIdAsync(blogId);
 
+            if (blog == null)
+            {
+                return new ApiResponse<int>
+                {
+                    Success = false,
+                    Message = "Blog not found",
+                    Data = 0
+                };
+            }
+
+            // Trả về số lượng like
+            return new ApiResponse<int>
+            {
+                Success = true,
+                Message = "Fetched like count for the blog.",
+                Data = blog.Likes?.Count ?? 0
+            };
+        }
     }
 }
