@@ -44,29 +44,37 @@ namespace CookingCourseAPI.Controllers
 
         // POST: api/Blogs
         [HttpPost]
-        public async Task<ActionResult<ApiResponse<Blog>>> Create([FromBody] CreateBlogDto dto)
+        public async Task<IActionResult> Create([FromForm] CreateBlogDto dto)
         {
-            if (dto == null)
-                return BadRequest("Blog cannot be null.");
-            //var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-            //dto.UserId = userId;
-            var response = await _blogService.CreateAsync(dto);
-            if (response.Success)
-                return CreatedAtAction(nameof(GetById), new { id = response.Data.Id }, response);
-            return BadRequest(response);  // Trả về 400 nếu có lỗi khi tạo blog
+            var result = await _blogService.CreateAsync(dto);
+            return Ok(result);
         }
-        // PUT: api/Blogs/{id}
-        [HttpPut("{id}")]
-        public async Task<ActionResult<ApiResponse<Blog>>> Update(int id, [FromBody] Blog blog)
-        {
-            if (blog == null)
-                return BadRequest("Blog cannot be null.");
 
-            var response = await _blogService.UpdateAsync(id, blog);
+        // PUT: api/Blogs/{id}
+        //[HttpPut("{id}")]
+        //public async Task<ActionResult<ApiResponse<Blog>>> Update(int id, [FromBody] Blog blog)
+        //{
+        //    if (blog == null)
+        //        return BadRequest("Blog cannot be null.");
+
+        //    var response = await _blogService.UpdateAsync(id, blog);
+        //    if (response.Success)
+        //        return Ok(response);
+        //    return NotFound(response);  // Trả về 404 nếu không tìm thấy blog để cập nhật
+        //}
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ApiResponse<Blog>>> Update(int id, [FromBody] UpdateBlogDto blogDto)
+        {
+            if (blogDto == null)
+                return BadRequest("Dữ liệu cập nhật không hợp lệ.");
+
+            var response = await _blogService.UpdateAsync(id, blogDto);
             if (response.Success)
                 return Ok(response);
-            return NotFound(response);  // Trả về 404 nếu không tìm thấy blog để cập nhật
+
+            return NotFound(response);
         }
+
         // DELETE: api/Blogs/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult<ApiResponse<string>>> Delete(int id)
@@ -90,5 +98,19 @@ namespace CookingCourseAPI.Controllers
                 return Ok(response);
             return BadRequest(response);  // Trả về 400 BadRequest nếu có lỗi
         }
+        // GET: api/Blogs/{blogId}/likes/count
+        [HttpGet("{blogId}/likes/count")]
+        public async Task<ActionResult<ApiResponse<int>>> GetLikesCount(int blogId)
+        {
+            var response = await _blogService.GetLikesCountAsync(blogId);
+
+            if (!response.Success)
+            {
+                return NotFound(response);  // Trả về 404 nếu blog không tìm thấy
+            }
+
+            return Ok(response);  // Trả về 200 OK nếu thành công
+        }
+
     }
 }

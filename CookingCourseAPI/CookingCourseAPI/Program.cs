@@ -85,7 +85,15 @@ namespace CookingCourseAPI
             builder.Services.AddScoped<ILearningPathService, LearningPathService>();
             builder.Services.AddScoped<IProgressService, ProgressService>();
             builder.Services.AddScoped<IProgressRepository, ProgressRepository>();
+           
             builder.Services.AddTransient<IEmailService, EmailService>();
+            builder.Services.AddScoped<INewsRepository, NewsRepository>();
+            builder.Services.AddScoped<INewsService, NewsService>();
+            builder.Services.AddScoped<IStatisticsRepository, StatisticsRepository>();
+            builder.Services.AddScoped<IStatisticsService, StatisticsService>();
+
+
+
 
             // Cấu hình JSON Serializer để hỗ trợ các tham chiếu vòng
             builder.Services.AddControllers().AddJsonOptions(options =>

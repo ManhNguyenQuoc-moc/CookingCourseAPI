@@ -145,22 +145,24 @@
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text" data-i18n="menu.news-header">Bản tin khóa học</span>
                     </li>
+                    <!-- Bản tin -->
                     <li class="menu-item">
-                        <a class="menu-link" href="#" data-bs-toggle="modal" data-bs-target="#newsModal">
+                        <a href="#" class="menu-link" data-toggle="modal" data-target="#newsModal">
                             <i class="menu-icon tf-icons bx bx-news"></i>
                             <div data-i18n="menu.news">Bản tin</div>
                         </a>
                     </li>
+
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">Pages</span>
                     </li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div data-i18n="Account Settings">Trang cá nhân</div>
+                            <div data-i18n="Account Settings">Account Settings</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
+                            <li class="menu-item active">
                                 <a href="pages-account-settings-account.html" class="menu-link">
                                     <div data-i18n="Account">Account</div>
                                 </a>
@@ -170,12 +172,12 @@
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                            <div data-i18n="Authentications">Tài khoản</div>
+                            <div data-i18n="Authentications">Authentications</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item active">
-                                <a href="#" class="menu-link" id="changePasswordLink">
-                                    <div data-i18n="Change Password">Change Password</div>
+                                <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
+                                    <div data-i18n="Basic">Forgot Password</div>
                                 </a>
                             </li>
                         </ul>
@@ -655,37 +657,37 @@
                     const imageUrl = blog.imageUrl ? blog.imageUrl : 'default-image-url.jpg';  // Thêm hình ảnh mặc định nếu không có
 
                     card.innerHTML = `
-                                        <div class="blog-header">
-                                            <div class="author-name">${authorName}</div>
-                                            ${isOwner ? `
-                                                <div class="blog-menu">
-                                                    <button class="menu-btn">⋯</button>
-                                                    <div class="menu-dropdown hidden">
-                                                        <button class="edit-btn">Chỉnh sửa</button>
-                                                        <button class="delete-btn">Xóa</button>
-                                                    </div>
+                                    <div class="blog-header">
+                                        <div class="author-name">${authorName}</div>
+                                        ${isOwner ? `
+                                            <div class="blog-menu">
+                                                <button class="menu-btn">⋯</button>
+                                                <div class="menu-dropdown hidden">
+                                                    <button class="edit-btn">Chỉnh sửa</button>
+                                                    <button class="delete-btn">Xóa</button>
                                                 </div>
-                                            ` : ""}
+                                            </div>
+                                        ` : ""}
+                                    </div>
+
+                                    <div class="blog-card-horizontal">
+                                        <div class="blog-media">
+                                            <img src="${imageUrl}" alt="Blog image">
                                         </div>
+                                        <div class="blog-info">
+                                            <div class="blog-title">${blog.title}</div>
+                                            <div class="blog-content">${blog.content}</div>
+                                            <div class="blog-date">Ngày đăng: ${new Date(blog.createdAt).toLocaleString()}</div>
 
-                                        <div class="blog-card-horizontal">
-                                            <div class="blog-media">
-                                                <img src="${imageUrl}" alt="Blog image">
+                                            <div class="blog-actions">
+                                                <button class="like-btn ${liked ? "liked" : ""}">❤️ <span>${likeCount}</span></button>
+                                                <button class="report-btn">🚩 Báo cáo</button>
                                             </div>
-                                            <div class="blog-info">
-                                                <div class="blog-title">${blog.title}</div>
-                                                <div class="blog-content">${blog.content}</div>
-                                                <div class="blog-date">Ngày đăng: ${new Date(blog.createdAt).toLocaleString()}</div>
 
-                                                <div class="blog-actions">
-                                                    <button class="like-btn ${liked ? "liked" : ""}">❤️ <span>${likeCount}</span></button>
-                                                    <button class="report-btn">🚩 Báo cáo</button>
-                                                </div>
+                                            <div class="blog-comments" id="comments-container-${blog.id}">Đang tải bình luận...</div>
 
-                                                <div class="blog-comments" id="comments-container-${blog.id}">Đang tải bình luận...</div>
-
-                                            </div>
-                                        </div>`;
+                                        </div>
+                                    </div>`;
 
                     container.prepend(card);
                     const commentsContainer = card.querySelector(`#comments-container-${blog.id}`);
@@ -836,12 +838,12 @@
                 const author = comment.user?.name ?? `User #${comment.userId}`;
                 const time = new Date(comment.createdAt).toLocaleString();
                 container.innerHTML += `
-                    <div class="comment">
-                        <strong>${author}</strong>
-                        <p>${comment.content}</p>
-                        <small>${time}</small>
-                    </div>
-                `;
+                <div class="comment">
+                    <strong>${author}</strong>
+                    <p>${comment.content}</p>
+                    <small>${time}</small>
+                </div>
+            `;
             });
 
             if (displayedCount < allComments.length) {
@@ -887,33 +889,33 @@
 
             // Hiển thị form ở trên cùng
             container.innerHTML = `
-                <form class="comment-form" onsubmit="handleCommentSubmit(event, ${blogId})">
-                    <textarea class="comment-input" placeholder="Viết bình luận..." required></textarea>
-                    <button type="submit" class="comment-submit">Gửi</button>
-                </form>
+            <form class="comment-form" onsubmit="handleCommentSubmit(event, ${blogId})">
+                <textarea class="comment-input" placeholder="Viết bình luận..." required></textarea>
+                <button type="submit" class="comment-submit">Gửi</button>
+            </form>
 
-                    ${hasError ? `<div style="color: red;">Không thể tải bình luận.</div>` : ""}
+                ${hasError ? `<div style="color: red;">Không thể tải bình luận.</div>` : ""}
 
-                ${displayedComments.map(c => `
-                    <div class="comment">
-                        <div><strong>${c.user?.name ?? "Ẩn danh"}</strong></div>
-                        <div>${c.content}</div>
-                        <div><small>${new Date(c.createdAt).toLocaleString()}</small></div>
-                    </div>
-                `).join("")}
+            ${displayedComments.map(c => `
+                <div class="comment">
+                    <div><strong>${c.user?.name ?? "Ẩn danh"}</strong></div>
+                    <div>${c.content}</div>
+                    <div><small>${new Date(c.createdAt).toLocaleString()}</small></div>
+                </div>
+            `).join("")}
 
-                ${hasMoreComments ? `<div class="more-comments">Xem thêm bình luận...</div>` : ""}
-            `;
+            ${hasMoreComments ? `<div class="more-comments">Xem thêm bình luận...</div>` : ""}
+        `;
             if (hasMoreComments) {
                 const moreBtn = container.querySelector(".more-comments");
                 moreBtn.addEventListener("click", () => {
                     const extraComments = comments.slice(2).map(comment => `
-                    <div class="comment">
-                        <div><strong>${comment.user?.name ?? "Ẩn danh"}</strong></div>
-                        <div>${comment.content}</div>
-                        <div><small>${new Date(comment.createdAt).toLocaleString()}</small></div>
-                    </div>
-                `).join("");
+                <div class="comment">
+                    <div><strong>${comment.user?.name ?? "Ẩn danh"}</strong></div>
+                    <div>${comment.content}</div>
+                    <div><small>${new Date(comment.createdAt).toLocaleString()}</small></div>
+                </div>
+            `).join("");
 
                     moreBtn.insertAdjacentHTML("beforebegin", extraComments);
                     moreBtn.remove(); // Ẩn nút sau khi click
@@ -975,10 +977,10 @@
                 const commentDiv = document.createElement("div");
                 commentDiv.className = "comment";
                 commentDiv.innerHTML = `
-                    <div><strong>${author}</strong></div>
-                    <div>${c.content}</div>
-                    <div><small>${time}</small></div>
-                `;
+                <div><strong>${author}</strong></div>
+                <div>${c.content}</div>
+                <div><small>${time}</small></div>
+            `;
                 container.appendChild(commentDiv);
             });
 
@@ -999,9 +1001,9 @@
             form.className = "comment-form";
             form.onsubmit = (e) => handleCommentSubmit(e, blogId);
             form.innerHTML = `
-                <textarea class="comment-input" placeholder="Viết bình luận..." required></textarea>
-                <button type="submit" class="comment-submit">Gửi</button>
-            `;
+            <textarea class="comment-input" placeholder="Viết bình luận..." required></textarea>
+            <button type="submit" class="comment-submit">Gửi</button>
+        `;
             container.appendChild(form);
         }
 
@@ -1036,34 +1038,26 @@
             const title = document.getElementById('blogTitle').value;
             const content = document.getElementById('blogContent').value;
             const imageInput = document.getElementById('blogImage');
-            const userId = sessionStorage.userId;
-            if (title === '' || content === '') {
+            const userId = sessionStorage.getItem('userId');
+
+            if (!title || !content) {
                 alert("Vui lòng nhập đầy đủ tiêu đề và nội dung.");
                 return;
             }
-            let imageUrl = "";
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('content', content);
+            formData.append('userId', userId);
 
             if (imageInput.files.length > 0) {
-                const file = imageInput.files[0];
-                // Tạo URL tạm thời (chỉ hiển thị nội bộ, không dùng để upload thực)
-                imageUrl = URL.createObjectURL(file);
-                // Nếu bạn có server để upload ảnh, nên upload rồi lấy URL thực
+                formData.append('image', imageInput.files[0]); // Tên 'image' phải trùng với tên biến IFormFile trong backend
             }
-
-            const data = {
-                title,
-                content,
-                imageUrl,
-                userId
-            };
 
             try {
                 const response = await fetch('http://localhost:5043/api/blogs', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
+                    body: formData // KHÔNG set Content-Type thủ công
                 });
 
                 const result = await response.json();
@@ -1075,7 +1069,6 @@
                     const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
                     modal.hide();
 
-                    // Xử lý thêm nếu lớp phủ không biến mất
                     document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
                     document.body.classList.remove('modal-open');
                     document.body.style = '';
@@ -1091,25 +1084,29 @@
             }
         });
 
+
         document.getElementById("editBlogForm").addEventListener("submit", async function (e) {
             e.preventDefault();
 
-            const blogId = document.getElementById("editBlogId").value; // Lấy blogId từ trường ẩn
-            const title = document.getElementById("editBlogTitle").value.trim(); // Lấy tiêu đề
-            const content = document.getElementById("editBlogContent").value.trim(); // Lấy nội dung
+            const blogId = document.getElementById("editBlogId").value;
+            const title = document.getElementById("editBlogTitle").value.trim();
+            const content = document.getElementById("editBlogContent").value.trim();
+            const imageInput = document.getElementById("editBlogImage"); // ô input ảnh (type="file")
+
+            const formData = new FormData();
+            formData.append("id", blogId);
+            formData.append("title", title);
+            formData.append("content", content);
+            formData.append("updatedAt", new Date().toISOString());
+
+            if (imageInput.files.length > 0) {
+                formData.append("image", imageInput.files[0]); // ảnh mới nếu có
+            }
 
             try {
                 const response = await fetch(`/api/blogs/${blogId}`, {
                     method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        id: blogId,
-                        title: title,
-                        content: content,
-                        updatedAt: new Date().toISOString() // Cập nhật thời gian
-                    })
+                    body: formData // KHÔNG đặt Content-Type
                 });
 
                 if (!response.ok) {
@@ -1117,33 +1114,17 @@
                     throw new Error(`Lỗi ${response.status}: ${errorText}`);
                 }
 
-                // Cập nhật UI hoặc load lại blog list
                 alert("Đã cập nhật bài viết!");
-                location.reload(); // Hoặc load lại blogs nếu cần
+                location.reload();
             } catch (err) {
                 console.error("Lỗi khi chỉnh sửa:", err);
                 alert("Có lỗi xảy ra khi cập nhật bài viết.");
             }
         });
-    </script>
-    <script>
-        document.getElementById('changePasswordLink').addEventListener('click', function (e) {
-            e.preventDefault();
 
-            // Lấy token từ sessionStorage
-            const token = sessionStorage.getItem('token');
 
-            if (!token) {
-                alert('Token không tồn tại. Vui lòng đăng nhập lại.');
-                return;
-            }
 
-            // Ghi token lại (tùy chọn) rồi mở trang đổi mật khẩu
-            sessionStorage.setItem('authToken', token); // optional: nếu bạn cần key khác bên change-password.html
 
-            // Mở trang đổi mật khẩu
-            window.open('change-password.html', '_blank');
-        });
     </script>
 </body>
 </html>

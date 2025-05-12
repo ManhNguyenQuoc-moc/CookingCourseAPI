@@ -1803,14 +1803,14 @@
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/admin.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\admin.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vxjd9vTARBFKcU\u002BTLKZcPGq\u002BUCe8c4rO6qjUOBTvkmc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"45809"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022vxjd9vTARBFKcU\u002BTLKZcPGq\u002BUCe8c4rO6qjUOBTvkmc=\u0022"},{"Name":"Last-Modified","Value":"Sat, 03 May 2025 08:44:47 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-S7YQ/jj4KwVGU1eJuUB24igSM3N1\u002BuUE4COxV6Rj9qE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"35786"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022S7YQ/jj4KwVGU1eJuUB24igSM3N1\u002BuUE4COxV6Rj9qE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 21:48:11 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/admin.nercvlhwa6.html">
+    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/admin.jyr7x3cje7.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\admin.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nercvlhwa6"},{"Name":"integrity","Value":"sha256-vxjd9vTARBFKcU\u002BTLKZcPGq\u002BUCe8c4rO6qjUOBTvkmc="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/admin.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"45809"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022vxjd9vTARBFKcU\u002BTLKZcPGq\u002BUCe8c4rO6qjUOBTvkmc=\u0022"},{"Name":"Last-Modified","Value":"Sat, 03 May 2025 08:44:47 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jyr7x3cje7"},{"Name":"integrity","Value":"sha256-S7YQ/jj4KwVGU1eJuUB24igSM3N1\u002BuUE4COxV6Rj9qE="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/admin.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"35786"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022S7YQ/jj4KwVGU1eJuUB24igSM3N1\u002BuUE4COxV6Rj9qE=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 21:48:11 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/auth-forgot-password-basic.4x1u4veop0.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\auth-forgot-password-basic.html'))</AssetFile>
@@ -1848,17 +1848,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ktk01/IYgNAek4asVemv8gn4x4I3FygHcvUL9hV\u002BVgw="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"13968"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022ktk01/IYgNAek4asVemv8gn4x4I3FygHcvUL9hV\u002BVgw=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 17:11:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/change-password.429k8dm29g.html">
+    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/change-password.b4ubkulil7.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\change-password.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"429k8dm29g"},{"Name":"integrity","Value":"sha256-3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/change-password.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4068"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00223KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 20:52:05 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"b4ubkulil7"},{"Name":"integrity","Value":"sha256-OwmmBfuaMe4r2Yvkv94m9PmnUGWBoynjzd6M31uES6s="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/change-password.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5205"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022OwmmBfuaMe4r2Yvkv94m9PmnUGWBoynjzd6M31uES6s=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 21:04:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/change-password.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\change-password.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4068"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00223KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 20:52:05 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-OwmmBfuaMe4r2Yvkv94m9PmnUGWBoynjzd6M31uES6s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5205"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022OwmmBfuaMe4r2Yvkv94m9PmnUGWBoynjzd6M31uES6s=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 21:04:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/coursemanager.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\coursemanager.html'))</AssetFile>
@@ -1872,29 +1872,29 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pieh7j4cye"},{"Name":"integrity","Value":"sha256-P8lUffl6g2D87zOmRPhZyyxWKWlKRAsKR5I30fmZzQ4="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/coursemanager.html"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"37183"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022P8lUffl6g2D87zOmRPhZyyxWKWlKRAsKR5I30fmZzQ4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 08:13:17 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/index.37fase7re2.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"37fase7re2"},{"Name":"integrity","Value":"sha256-by/aDRP8j7IhBc6dnu0GM5eRyzxIhjGO2ZZfiZjRp9A="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"52264"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022by/aDRP8j7IhBc6dnu0GM5eRyzxIhjGO2ZZfiZjRp9A=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 22:36:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/index.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\index.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T\u002BQ0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"32263"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T\u002BQ0=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 20:57:27 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-by/aDRP8j7IhBc6dnu0GM5eRyzxIhjGO2ZZfiZjRp9A="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"52264"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022by/aDRP8j7IhBc6dnu0GM5eRyzxIhjGO2ZZfiZjRp9A=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 22:36:06 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/index.y5tjm0ktzs.html">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\index.html'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/learning-paths.dm0ajp4pta.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\learning-paths.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"y5tjm0ktzs"},{"Name":"integrity","Value":"sha256-ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T\u002BQ0="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/index.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"32263"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T\u002BQ0=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 20:57:27 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dm0ajp4pta"},{"Name":"integrity","Value":"sha256-W2eyhti7wbL6E\u002BhNGGjVCBf6Ot83aZ0UFzJzD0eel0E="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/learning-paths.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"65531"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022W2eyhti7wbL6E\u002BhNGGjVCBf6Ot83aZ0UFzJzD0eel0E=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 21:15:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/learning-paths.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\learning-paths.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"64646"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 19:37:18 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/learning-paths.tflovczw8h.html">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\learning-paths.html'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tflovczw8h"},{"Name":"integrity","Value":"sha256-ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/learning-paths.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"64646"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 19:37:18 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-W2eyhti7wbL6E\u002BhNGGjVCBf6Ot83aZ0UFzJzD0eel0E="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"65531"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022W2eyhti7wbL6E\u002BhNGGjVCBf6Ot83aZ0UFzJzD0eel0E=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 21:15:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/learning.hoogltow4r.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\learning.html'))</AssetFile>
@@ -1908,17 +1908,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-D9YTRmH5ZtrUXWcxlL/ze\u002BWekz6RTP79SXeAUHzWed8="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"33203"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022D9YTRmH5ZtrUXWcxlL/ze\u002BWekz6RTP79SXeAUHzWed8=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 16:19:21 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/page-blogs.f83uiymf08.html">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\page-blogs.html'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"f83uiymf08"},{"Name":"integrity","Value":"sha256-36WNQiZM9RxE5GAe0eCwVlJ/YFOUc/3rtZ/rmvKaX/c="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/page-blogs.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"30807"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u002236WNQiZM9RxE5GAe0eCwVlJ/YFOUc/3rtZ/rmvKaX/c=\u0022"},{"Name":"Last-Modified","Value":"Tue, 29 Apr 2025 04:45:57 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/page-blogs.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\page-blogs.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-36WNQiZM9RxE5GAe0eCwVlJ/YFOUc/3rtZ/rmvKaX/c="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"30807"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u002236WNQiZM9RxE5GAe0eCwVlJ/YFOUc/3rtZ/rmvKaX/c=\u0022"},{"Name":"Last-Modified","Value":"Tue, 29 Apr 2025 04:45:57 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0qjd\u002BvY3\u002BUiGeH5YgJAvghuT8hapwksNv/qBZggV9iU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"59204"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00220qjd\u002BvY3\u002BUiGeH5YgJAvghuT8hapwksNv/qBZggV9iU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 22:41:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/page-blogs.meic7amd7c.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\page-blogs.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"meic7amd7c"},{"Name":"integrity","Value":"sha256-0qjd\u002BvY3\u002BUiGeH5YgJAvghuT8hapwksNv/qBZggV9iU="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/page-blogs.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"59204"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00220qjd\u002BvY3\u002BUiGeH5YgJAvghuT8hapwksNv/qBZggV9iU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 22:41:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/pages-account-settings-account.8lahp35mjy.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\pages-account-settings-account.js'))</AssetFile>
@@ -1926,23 +1926,23 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8lahp35mjy"},{"Name":"integrity","Value":"sha256-JDszKKuFrhzwOgkH1raBYbYIsmYuqb2pAR6IgH3uUtc="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/pages-account-settings-account.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"852"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022JDszKKuFrhzwOgkH1raBYbYIsmYuqb2pAR6IgH3uUtc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Mar 2022 05:40:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/pages-account-settings-account.f1rgc8gwke.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\pages-account-settings-account.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"f1rgc8gwke"},{"Name":"integrity","Value":"sha256-HWfmLXDnf3vt23oVAgJWmSjkELlm7vfCxVaeH71qWHg="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/pages-account-settings-account.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"43364"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022HWfmLXDnf3vt23oVAgJWmSjkELlm7vfCxVaeH71qWHg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 21:16:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/pages-account-settings-account.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\pages-account-settings-account.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN\u002BQf4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"42308"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN\u002BQf4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 20:13:38 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HWfmLXDnf3vt23oVAgJWmSjkELlm7vfCxVaeH71qWHg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"43364"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022HWfmLXDnf3vt23oVAgJWmSjkELlm7vfCxVaeH71qWHg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 21:16:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/pages-account-settings-account.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\pages-account-settings-account.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-JDszKKuFrhzwOgkH1raBYbYIsmYuqb2pAR6IgH3uUtc="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"852"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022JDszKKuFrhzwOgkH1raBYbYIsmYuqb2pAR6IgH3uUtc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 13 Mar 2022 05:40:00 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/pages-account-settings-account.su7k2huwdk.html">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\pages-account-settings-account.html'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"su7k2huwdk"},{"Name":"integrity","Value":"sha256-xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN\u002BQf4="},{"Name":"label","Value":"_content/CookingCourseAPI/sneat-1.0.0/mainhtml/pages-account-settings-account.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"42308"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN\u002BQf4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 20:13:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CookingCourseAPI/sneat-1.0.0/mainhtml/payment.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\payment.html'))</AssetFile>

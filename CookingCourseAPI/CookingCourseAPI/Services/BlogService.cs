@@ -1,6 +1,7 @@
 ﻿using CookingCourseAPI.DTOs;
 using CookingCourseAPI.Models.Entities;
 using CookingCourseAPI.Models.Responses;
+using CookingCourseAPI.Repositories;
 using CookingCourseAPI.Repositories.Interfaces;
 using CookingCourseAPI.Services.Interfaces;
 using CookingCourseAPI.Wrappers;
@@ -15,11 +16,12 @@ namespace CookingCourseAPI.Services
     {
         private readonly IBlogRepository _blogRepo;
         private readonly IBlogReportRepository _reportRepo;
-
-        public BlogService(IBlogRepository blogRepo, IBlogReportRepository reportRepo)
+        private readonly PhotoService _photoService;
+        public BlogService(IBlogRepository blogRepo, IBlogReportRepository reportRepo, PhotoService photoService)
         {
             _blogRepo = blogRepo;
             _reportRepo = reportRepo;
+            _photoService = photoService;
         }
 
         public async Task<ApiResponse<IEnumerable<Blog>>> GetAllAsync()
@@ -38,39 +40,69 @@ namespace CookingCourseAPI.Services
 
         public async Task<ApiResponse<Blog>> CreateAsync(CreateBlogDto dto)
         {
-         try { 
-            var blog = new Blog
+            try
             {
-                
-                Title = dto.Title,
-                Content = dto.Content,
-                ImageUrl = dto.ImageUrl,
-                UserId = dto.UserId,
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow,
-            };
+                string imageUrl = null;
 
-            await _blogRepo.AddAsync(blog);
-            return new ApiResponse<Blog>(true, "Tạo Blog thành công", blog);
-        }
-    
+                // Upload ảnh nếu có
+                if (dto.Image != null)
+                {
+                    imageUrl = await _photoService.UploadImageAsync(dto.Image);
+                }
+
+                var blog = new Blog
+                {
+                    Title = dto.Title,
+                    Content = dto.Content,
+                    ImageUrl = imageUrl,
+                    UserId = dto.UserId,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow,
+                };
+
+                await _blogRepo.AddAsync(blog);
+                return new ApiResponse<Blog>(true, "Tạo Blog thành công", blog);
+            }
             catch (Exception ex)
             {
                 return new ApiResponse<Blog>(false, "Đã xảy ra lỗi: " + ex.Message, null);
             }
         }
 
-        public async Task<ApiResponse<Blog>> UpdateAsync(int id, Blog blog)
+
+        //public async Task<ApiResponse<Blog>> UpdateAsync(int id, Blog blog)
+        //{
+        //    var existing = await _blogRepo.GetByIdAsync(id);
+        //    if (existing == null)
+        //        return new ApiResponse<Blog>(false, "Blog not found", null);
+
+        //    existing.Title = blog.Title;
+        //    existing.Content = blog.Content;
+        //    existing.UpdatedAt = DateTime.Now;
+
+        //    await _blogRepo.UpdateAsync(existing);
+        //    return new ApiResponse<Blog>(true, "Cập nhật blog thành công", existing);
+        //}
+        public async Task<ApiResponse<Blog>> UpdateAsync(int id, UpdateBlogDto blogDto)
         {
             var existing = await _blogRepo.GetByIdAsync(id);
             if (existing == null)
-                return new ApiResponse<Blog>(false, "Blog not found", null);
+                return new ApiResponse<Blog>(false, "Blog không tồn tại", null);
 
-            existing.Title = blog.Title;
-            existing.Content = blog.Content;
+            // Cập nhật các trường được cung cấp
+            if (!string.IsNullOrWhiteSpace(blogDto.Title))
+                existing.Title = blogDto.Title;
+
+            if (!string.IsNullOrWhiteSpace(blogDto.Content))
+                existing.Content = blogDto.Content;
+
+            if (!string.IsNullOrWhiteSpace(blogDto.ImageUrl))
+                existing.ImageUrl = blogDto.ImageUrl;
+
             existing.UpdatedAt = DateTime.Now;
 
             await _blogRepo.UpdateAsync(existing);
+
             return new ApiResponse<Blog>(true, "Cập nhật blog thành công", existing);
         }
 
@@ -81,14 +113,14 @@ namespace CookingCourseAPI.Services
                 return new ApiResponse<string>(false, "Blog not found", null);
 
             await _blogRepo.DeleteAsync(blog);
-            return new ApiResponse<string>(true ,"Blog deleted",null);
+            return new ApiResponse<string>(true, "Blog deleted", null);
         }
 
         public async Task<ApiResponse<IEnumerable<Blog>>> GetBlogsByUserIdAsync(int userId)
         {
             var blogs = await _blogRepo.GetAllAsync();
             var userBlogs = blogs.Where(b => b.UserId == userId);
-            return new ApiResponse<IEnumerable<Blog>>(true, "Lấy danh sách blog củangười dùng "+userId +"thành công", userBlogs);
+            return new ApiResponse<IEnumerable<Blog>>(true, "Lấy danh sách blog củangười dùng " + userId + "thành công", userBlogs);
         }
 
         public async Task<ApiResponse<IEnumerable<Blog>>> SearchBlogsAsync(string keyword)
@@ -123,7 +155,7 @@ namespace CookingCourseAPI.Services
             var total = await _blogRepo.CountAsync();
             var items = await _blogRepo.GetPagedAsync(page, size);
             var result = new PagedResult<Blog>(items, total, page, size);
-            return new ApiResponse<PagedResult<Blog>>(true,"",result);
+            return new ApiResponse<PagedResult<Blog>>(true, "", result);
         }
 
         //public async Task<ApiResponse<string>> ApproveBlogAsync(int blogId)
@@ -161,6 +193,28 @@ namespace CookingCourseAPI.Services
                 return new ApiResponse<string>(true, "Liked blog"); // Trả về thông báo đã like
             }
         }
+        public async Task<ApiResponse<int>> GetLikesCountAsync(int blogId)
+        {
+            // Lấy blog từ repository
+            var blog = await _blogRepo.GetByIdAsync(blogId);
 
+            if (blog == null)
+            {
+                return new ApiResponse<int>
+                {
+                    Success = false,
+                    Message = "Blog not found",
+                    Data = 0
+                };
+            }
+
+            // Trả về số lượng like
+            return new ApiResponse<int>
+            {
+                Success = true,
+                Message = "Fetched like count for the blog.",
+                Data = blog.Likes?.Count ?? 0
+            };
+        }
     }
 }

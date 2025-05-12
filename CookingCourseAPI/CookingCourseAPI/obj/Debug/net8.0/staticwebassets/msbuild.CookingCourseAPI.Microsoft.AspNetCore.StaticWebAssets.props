@@ -2676,8 +2676,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>nercvlhwa6</Fingerprint>
-      <Integrity>vxjd9vTARBFKcU+TLKZcPGq+UCe8c4rO6qjUOBTvkmc=</Integrity>
+      <Fingerprint>jyr7x3cje7</Fingerprint>
+      <Integrity>S7YQ/jj4KwVGU1eJuUB24igSM3N1+uUE4COxV6Rj9qE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\admin.html'))</OriginalItemSpec>
@@ -2784,8 +2784,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>429k8dm29g</Fingerprint>
-      <Integrity>3KYWf9tG0O1/eJfZF/2sel73qHRh/yNuLaF3P3ipj5s=</Integrity>
+      <Fingerprint>b4ubkulil7</Fingerprint>
+      <Integrity>OwmmBfuaMe4r2Yvkv94m9PmnUGWBoynjzd6M31uES6s=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\change-password.html'))</OriginalItemSpec>
@@ -2820,8 +2820,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>y5tjm0ktzs</Fingerprint>
-      <Integrity>ZnCPkHIJIotrPZ6O94jPGW0KD9wCzc5XTxtbq15T+Q0=</Integrity>
+      <Fingerprint>37fase7re2</Fingerprint>
+      <Integrity>by/aDRP8j7IhBc6dnu0GM5eRyzxIhjGO2ZZfiZjRp9A=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\index.html'))</OriginalItemSpec>
@@ -2856,8 +2856,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>tflovczw8h</Fingerprint>
-      <Integrity>ieHODcSop2srymwTvWd2ilenbeme8c/ILAgTup7IvbM=</Integrity>
+      <Fingerprint>dm0ajp4pta</Fingerprint>
+      <Integrity>W2eyhti7wbL6E+hNGGjVCBf6Ot83aZ0UFzJzD0eel0E=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\learning-paths.html'))</OriginalItemSpec>
@@ -2874,8 +2874,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f83uiymf08</Fingerprint>
-      <Integrity>36WNQiZM9RxE5GAe0eCwVlJ/YFOUc/3rtZ/rmvKaX/c=</Integrity>
+      <Fingerprint>meic7amd7c</Fingerprint>
+      <Integrity>0qjd+vY3+UiGeH5YgJAvghuT8hapwksNv/qBZggV9iU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\page-blogs.html'))</OriginalItemSpec>
@@ -2892,8 +2892,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>su7k2huwdk</Fingerprint>
-      <Integrity>xGrfaWjXtIFdIiOkZtWvu106INriWFUd/EP6krN+Qf4=</Integrity>
+      <Fingerprint>f1rgc8gwke</Fingerprint>
+      <Integrity>HWfmLXDnf3vt23oVAgJWmSjkELlm7vfCxVaeH71qWHg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\pages-account-settings-account.html'))</OriginalItemSpec>

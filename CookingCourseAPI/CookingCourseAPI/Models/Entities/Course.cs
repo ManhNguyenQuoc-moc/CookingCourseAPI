@@ -13,6 +13,7 @@
         //public ICollection<Rating> Ratings { get; set; }
         public ICollection<CourseVideo> Videos { get; set; }
 
+        public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
     }
 
 }
