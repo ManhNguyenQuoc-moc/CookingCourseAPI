@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nuy7WjENiTC9d5FW8gXGRueDXgoE7U1nNOVx7keHxzk=",
+  "Hash": "fx2ibprz4BYUGwjyk7Z4Fayu4E9DGnKU/Vh9QbadYo8=",
   "Source": "CookingCourseAPI",
   "BasePath": "_content/CookingCourseAPI",
   "Mode": "Default",
@@ -3118,8 +3118,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "oi8yb07geb",
-      "Integrity": "YEVmru08b4Sgp6G0mQLlI6VMoYpPA3YkGV+BnAGFDYQ=",
+      "Fingerprint": "une9nl1zf0",
+      "Integrity": "em0U5GnbEe19+vbDUOZcl8Or9rqScgc440aKxlDGiro=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\account-manager.html"
@@ -3139,8 +3139,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jyr7x3cje7",
-      "Integrity": "S7YQ/jj4KwVGU1eJuUB24igSM3N1+uUE4COxV6Rj9qE=",
+      "Fingerprint": "r22kp5l896",
+      "Integrity": "fXssTOPee2aKuWYnaF8vdM9JIO6wSX4g/VmwA3Z2pjE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\admin.html"
@@ -3370,8 +3370,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "meic7amd7c",
-      "Integrity": "0qjd+vY3+UiGeH5YgJAvghuT8hapwksNv/qBZggV9iU=",
+      "Fingerprint": "lvait3qzd8",
+      "Integrity": "b28EhzezMBmV+7MqKhkTPNPSoIsPmZ7asDeyJ8ELL/0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sneat-1.0.0\\mainhtml\\page-blogs.html"
@@ -17522,7 +17522,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "45668"
+          "Value": "41211"
         },
         {
           "Name": "Content-Type",
@@ -17530,11 +17530,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YEVmru08b4Sgp6G0mQLlI6VMoYpPA3YkGV+BnAGFDYQ=\""
+          "Value": "\"em0U5GnbEe19+vbDUOZcl8Or9rqScgc440aKxlDGiro=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 03:53:20 GMT"
+          "Value": "Mon, 12 May 2025 02:24:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17544,12 +17544,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YEVmru08b4Sgp6G0mQLlI6VMoYpPA3YkGV+BnAGFDYQ="
+          "Value": "sha256-em0U5GnbEe19+vbDUOZcl8Or9rqScgc440aKxlDGiro="
         }
       ]
     },
     {
-      "Route": "sneat-1.0.0/mainhtml/account-manager.oi8yb07geb.html",
+      "Route": "sneat-1.0.0/mainhtml/account-manager.une9nl1zf0.html",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\account-manager.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17559,7 +17559,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "45668"
+          "Value": "41211"
         },
         {
           "Name": "Content-Type",
@@ -17567,11 +17567,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YEVmru08b4Sgp6G0mQLlI6VMoYpPA3YkGV+BnAGFDYQ=\""
+          "Value": "\"em0U5GnbEe19+vbDUOZcl8Or9rqScgc440aKxlDGiro=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 May 2025 03:53:20 GMT"
+          "Value": "Mon, 12 May 2025 02:24:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17581,7 +17581,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "oi8yb07geb"
+          "Value": "une9nl1zf0"
         },
         {
           "Name": "label",
@@ -17589,7 +17589,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-YEVmru08b4Sgp6G0mQLlI6VMoYpPA3YkGV+BnAGFDYQ="
+          "Value": "sha256-em0U5GnbEe19+vbDUOZcl8Or9rqScgc440aKxlDGiro="
         }
       ]
     },
@@ -17604,7 +17604,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "35786"
+          "Value": "35609"
         },
         {
           "Name": "Content-Type",
@@ -17612,11 +17612,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"S7YQ/jj4KwVGU1eJuUB24igSM3N1+uUE4COxV6Rj9qE=\""
+          "Value": "\"fXssTOPee2aKuWYnaF8vdM9JIO6wSX4g/VmwA3Z2pjE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 21:48:11 GMT"
+          "Value": "Sun, 11 May 2025 23:23:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17626,12 +17626,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-S7YQ/jj4KwVGU1eJuUB24igSM3N1+uUE4COxV6Rj9qE="
+          "Value": "sha256-fXssTOPee2aKuWYnaF8vdM9JIO6wSX4g/VmwA3Z2pjE="
         }
       ]
     },
     {
-      "Route": "sneat-1.0.0/mainhtml/admin.jyr7x3cje7.html",
+      "Route": "sneat-1.0.0/mainhtml/admin.r22kp5l896.html",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\admin.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17641,7 +17641,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "35786"
+          "Value": "35609"
         },
         {
           "Name": "Content-Type",
@@ -17649,11 +17649,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"S7YQ/jj4KwVGU1eJuUB24igSM3N1+uUE4COxV6Rj9qE=\""
+          "Value": "\"fXssTOPee2aKuWYnaF8vdM9JIO6wSX4g/VmwA3Z2pjE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 21:48:11 GMT"
+          "Value": "Sun, 11 May 2025 23:23:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17663,7 +17663,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "jyr7x3cje7"
+          "Value": "r22kp5l896"
         },
         {
           "Name": "label",
@@ -17671,7 +17671,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-S7YQ/jj4KwVGU1eJuUB24igSM3N1+uUE4COxV6Rj9qE="
+          "Value": "sha256-fXssTOPee2aKuWYnaF8vdM9JIO6wSX4g/VmwA3Z2pjE="
         }
       ]
     },
@@ -18506,7 +18506,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "59204"
+          "Value": "58890"
         },
         {
           "Name": "Content-Type",
@@ -18514,11 +18514,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0qjd+vY3+UiGeH5YgJAvghuT8hapwksNv/qBZggV9iU=\""
+          "Value": "\"b28EhzezMBmV+7MqKhkTPNPSoIsPmZ7asDeyJ8ELL/0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 22:41:40 GMT"
+          "Value": "Sun, 11 May 2025 23:19:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18528,12 +18528,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0qjd+vY3+UiGeH5YgJAvghuT8hapwksNv/qBZggV9iU="
+          "Value": "sha256-b28EhzezMBmV+7MqKhkTPNPSoIsPmZ7asDeyJ8ELL/0="
         }
       ]
     },
     {
-      "Route": "sneat-1.0.0/mainhtml/page-blogs.meic7amd7c.html",
+      "Route": "sneat-1.0.0/mainhtml/page-blogs.lvait3qzd8.html",
       "AssetFile": "D:\\CookingCourseAPI\\CookingCourseAPI\\CookingCourseAPI\\wwwroot\\sneat-1.0.0\\mainhtml\\page-blogs.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -18543,7 +18543,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "59204"
+          "Value": "58890"
         },
         {
           "Name": "Content-Type",
@@ -18551,11 +18551,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0qjd+vY3+UiGeH5YgJAvghuT8hapwksNv/qBZggV9iU=\""
+          "Value": "\"b28EhzezMBmV+7MqKhkTPNPSoIsPmZ7asDeyJ8ELL/0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 11 May 2025 22:41:40 GMT"
+          "Value": "Sun, 11 May 2025 23:19:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -18565,7 +18565,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "meic7amd7c"
+          "Value": "lvait3qzd8"
         },
         {
           "Name": "label",
@@ -18573,7 +18573,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0qjd+vY3+UiGeH5YgJAvghuT8hapwksNv/qBZggV9iU="
+          "Value": "sha256-b28EhzezMBmV+7MqKhkTPNPSoIsPmZ7asDeyJ8ELL/0="
         }
       ]
     },

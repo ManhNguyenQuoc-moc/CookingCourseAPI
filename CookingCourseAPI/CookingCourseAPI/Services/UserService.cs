@@ -59,10 +59,12 @@ namespace CookingCourseAPI.Services
                 Id = u.Id,
                 Name = u.Name,
                 Email = u.Email,
-                Role = u.Role
+                Role = u.Role,
+                IsLocked = u.IsLocked // Thêm dòng này để ánh xạ trạng thái khóa
             }).ToList();
             return userDtos;
         }
+
 
         public async Task<User> SetUserLockStatusAsync(int id, bool isLocked)
         {

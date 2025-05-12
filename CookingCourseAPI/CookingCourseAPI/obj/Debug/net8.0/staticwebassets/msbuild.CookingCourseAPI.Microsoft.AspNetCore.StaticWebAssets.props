@@ -2658,8 +2658,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>oi8yb07geb</Fingerprint>
-      <Integrity>YEVmru08b4Sgp6G0mQLlI6VMoYpPA3YkGV+BnAGFDYQ=</Integrity>
+      <Fingerprint>une9nl1zf0</Fingerprint>
+      <Integrity>em0U5GnbEe19+vbDUOZcl8Or9rqScgc440aKxlDGiro=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\account-manager.html'))</OriginalItemSpec>
@@ -2676,8 +2676,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jyr7x3cje7</Fingerprint>
-      <Integrity>S7YQ/jj4KwVGU1eJuUB24igSM3N1+uUE4COxV6Rj9qE=</Integrity>
+      <Fingerprint>r22kp5l896</Fingerprint>
+      <Integrity>fXssTOPee2aKuWYnaF8vdM9JIO6wSX4g/VmwA3Z2pjE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\admin.html'))</OriginalItemSpec>
@@ -2874,8 +2874,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>meic7amd7c</Fingerprint>
-      <Integrity>0qjd+vY3+UiGeH5YgJAvghuT8hapwksNv/qBZggV9iU=</Integrity>
+      <Fingerprint>lvait3qzd8</Fingerprint>
+      <Integrity>b28EhzezMBmV+7MqKhkTPNPSoIsPmZ7asDeyJ8ELL/0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\sneat-1.0.0\mainhtml\page-blogs.html'))</OriginalItemSpec>

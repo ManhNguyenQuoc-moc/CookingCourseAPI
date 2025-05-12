@@ -1,18 +1,5 @@
 ﻿<!DOCTYPE html>
-
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
-<html lang="en"
+<html lang="vi" <!-- Thay đổi lang thành vi -->
       class="light-style layout-menu-fixed"
       dir="ltr"
       data-theme="theme-default"
@@ -23,9 +10,9 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Quản Lý Người Dùng | Cooking Master Admin</title> <!-- Thay đổi title -->
 
-    <meta name="description" content="" />
+    <meta name="description" content="Trang quản lý người dùng cho Cooking Master" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
@@ -47,23 +34,32 @@
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <!-- Thêm CSS cho Toastify nếu bạn muốn dùng nó thay vì Bootstrap Toast -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> -->
 
-    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
 
-    <!-- Page CSS -->
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <style>
+        /* Custom Toast Style (Nếu dùng Bootstrap Toast) */
+        .custom-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1090;
+        }
+        .action-btn {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
-            <!-- Menu -->
+            <!-- Menu (Giữ nguyên như file bạn cung cấp, đảm bảo link đến account-manager.html là đúng) -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
                     <a href="admin.html" class="app-brand-link">
@@ -123,99 +119,66 @@
                     <li class="menu-item">
                         <a href="admin.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="menu.home">Trang chủ</div>
+                            <div data-i18n="Trang chủ">Trang chủ</div>
                         </a>
                     </li>
                     <!-- Quan li Lộ trình -->
                     <li class="menu-item">
                         <a href="admin-learnigpaths.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-map"></i>
-                            <div data-i18n="menu.roadmap">Quản Lý lộ trình</div>
+                            <div data-i18n="Quản Lý lộ trình">Quản Lý lộ trình</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="admin-learnigpaths.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-map"></i>
-                            <div data-i18n="menu.roadmap">Quản Lý khóa học</div>
+                        <a href="coursemanager.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bxs-book-bookmark"></i>
+                            <div data-i18n="Quản Lý khóa học">Quản Lý khóa học</div>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="admin-learnigpaths.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-map"></i>
-                            <div data-i18n="menu.roadmap">Quản Lý Bản tin</div>
+                        <a href="news-manager.html" class="menu-link">
+                            <i class="menu-icon tf-icons bx bxs-news"></i>
+                            <div data-i18n="Quản Lý Bản tin">Quản Lý Bản tin</div>
                         </a>
                     </li>
                     <!-- Bài viết -->
                     <li class="menu-item">
                         <a href="page-blogs.html" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-book-content"></i>
-                            <div data-i18n="menu.posts">Bài viết</div>
-                        </a>
-                    </li>
-                    <!-- Header: Bản tin khóa học -->
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text" data-i18n="menu.news-header">Bản tin khóa học</span>
-                    </li>
-                    <li class="menu-item">
-                        <a class="menu-link" href="#" data-bs-toggle="modal" data-bs-target="#newsModal">
-                            <i class="menu-icon tf-icons bx bx-news"></i>
-                            <div data-i18n="menu.news">Bản tin</div>
+                            <div data-i18n="Bài viết">Bài viết</div>
                         </a>
                     </li>
                     <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text">Pages</span>
+                        <span class="menu-header-text">Cài đặt</span>
                     </li>
-                    <li class="menu-item active">
+                    <li class="menu-item active open">
+                        <!-- Thêm class 'open' để menu con xổ ra -->
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div data-i18n="Account Settings">Account Settings</div>
-                        </a>
-                        <ul class="menu-sub active">
-                            <li class="menu-item active">
-                                <a href="pages-account-settings-account.html" class="menu-link">
-                                    <div data-i18n="Account">Account</div>
-                                </a>
-                            </li>
-                            <li class="menu-item active">
-                                <a href="account-manager.html" class="menu-link">
-                                    <div data-i18n="Account">Quản lý tài khoản người dùng</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                            <div data-i18n="Authentications">Authentications</div>
+                            <div data-i18n="Cài đặt tài khoản">Cài đặt tài khoản</div>
                         </a>
                         <ul class="menu-sub">
+                            <li class="menu-item">
+                                <!-- Bỏ active ở đây nếu trang hiện tại là Quản lý người dùng -->
+                                <a href="pages-account-settings-account.html" class="menu-link">
+                                    <div data-i18n="Tài khoản">Tài khoản</div>
+                                </a>
+                            </li>
                             <li class="menu-item active">
-                                <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                                    <div data-i18n="Basic">Forgot Password</div>
+                                <!-- Đặt active cho trang này -->
+                                <a href="account-manager.html" class="menu-link">
+                                    <div data-i18n="Quản lý người dùng">Quản lý người dùng</div>
                                 </a>
                             </li>
                         </ul>
                     </li>
+                    <!-- ... (các mục menu khác nếu có) ... -->
                 </ul>
             </aside>
             <!-- / Menu -->
-            <!-- Modal: Hiển thị bản tin -->
-            <div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="newsModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="newsModalLabel">Bản tin hôm nay</h5>
-                        </div>
-                        <div class="modal-body">
-                            <img src="https://via.placeholder.com/800x300" class="img-fluid mb-3" alt="Tin tức">
-                            <p>Đây là nội dung bản tin chi tiết, bạn có thể cập nhật bằng nội dung thật sự hoặc load động.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- Layout container -->
             <div class="layout-page">
-                <!-- Navbar -->
+                <!-- Navbar (Giữ nguyên như file bạn cung cấp) -->
                 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                      id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -230,18 +193,15 @@
                                 <i class="bx bx-search fs-4 lh-0"></i>
                                 <input type="text"
                                        class="form-control border-0 shadow-none"
-                                       placeholder="Search..."
+                                       placeholder="Tìm kiếm..."
                                        aria-label="Search..." />
                             </div>
                         </div>
                         <!-- /Search -->
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
-                            <!-- Place this tag where you want the button to render. -->
-                            <!-- Khóa học của tôi -->
                             <li class="nav-item me-3">
                                 <h5 class="mb-0"><a href="#" class="text-gray">Khóa học của tôi</a></h5>
                             </li>
-                            <!-- Chuông thông báo -->
                             <li class="nav-item dropdown me-3">
                                 <button type="button"
                                         id="loginNofica"
@@ -265,7 +225,6 @@
                                     <i class="fas fa-user"></i>
                                 </button>
                             </li>
-                            <!-- User -->
                             <li id="userDropdown" class="nav-item navbar-dropdown dropdown-user dropdown d-none">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                     <div id="btnShowProfile" class="avatar avatar-online">
@@ -283,328 +242,502 @@
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <span id="nameuser" class="fw-semibold d-block">John Doe</span>
-                                                    <small id="roleuser" class="text-muted">Admin</small>
+                                                    <small id="roleuser" class="text-muted">User</small>
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
+                                    <li><div class="dropdown-divider"></div></li>
                                     <li>
                                         <a class="dropdown-item" href="pages-account-settings-account.html">
                                             <i class="bx bx-user me-2"></i>
                                             <span class="align-middle">Trang cá nhân</span>
                                         </a>
                                     </li>
+                                    <!-- ... (các mục dropdown khác) ... -->
+                                    <li><div class="dropdown-divider"></div></li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-pen me-2"></i>
-                                            <span class="align-middle">Viết blog</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-file me-2"></i>
-                                            <span class="align-middle">Bài viết của tôi</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="fa-solid fa-floppy-disk me-2"></i>
-                                            <span class="align-middle">Bài viết đã lưu</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-cog me-2"></i>
-                                            <span class="align-middle">Cài đặt</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                        <a class="dropdown-item" href="#" id="logoutBtnLink">
+                                            <!-- ID cho logout -->
                                             <i class="bx bx-power-off me-2"></i>
                                             <span id="logoutBtn" class="align-middle">Đăng xuất</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <!--/ User -->
                         </ul>
                     </div>
                 </nav>
-                <style>
-                    /* Ẩn dấu mũi tên của dropdown-toggle */
-                    #loginNofica::after {
-                        display: none !important;
-                    }
-                </style>
-
                 <!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Cài đặt tài khoản /</span> Quản lý người dùng</h4>
 
-                <div class="container-xxl flex-grow-1 container-p-y">
-                    <div class="row">
                         <div class="card">
-                            <h5 class="card-header">Table Basic</h5>
+                            <h5 class="card-header">Danh sách người dùng</h5>
                             <div class="table-responsive text-nowrap">
-                                <table class="table">
+                                <table class="table table-hover">
+                                    <!-- Thêm table-hover cho hiệu ứng đẹp hơn -->
                                     <thead>
                                         <tr>
-                                            <th>Project</th>
-                                            <th>Client</th>
-                                            <th>Users</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
+                                            <th>ID</th>
+                                            <th>Họ và tên</th>
+                                            <th>Email</th>
+                                            <th>Quyền</th>
+                                            <th>Trạng thái</th>
+                                            <th>Hành động</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="table-border-bottom-0">
+                                    <tbody class="table-border-bottom-0" id="userListTableBody">
+                                        <!-- Dữ liệu người dùng sẽ được load ở đây bằng JavaScript -->
                                         <tr>
-                                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
-                                            <td>Albert Cook</td>
-                                            <td>
-                                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
-                                                        <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Sophia Wilkerson">
-                                                        <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Christina Parker">
-                                                        <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td><span class="badge bg-label-primary me-1">Active</span></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>React Project</strong></td>
-                                            <td>Barry Hunter</td>
-                                            <td>
-                                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
-                                                        <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Sophia Wilkerson">
-                                                        <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Christina Parker">
-                                                        <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td><span class="badge bg-label-success me-1">Completed</span></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>VueJs Project</strong></td>
-                                            <td>Trevor Baker</td>
-                                            <td>
-                                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
-                                                        <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Sophia Wilkerson">
-                                                        <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Christina Parker">
-                                                        <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Bootstrap Project</strong>
-                                            </td>
-                                            <td>Jerry Milton</td>
-                                            <td>
-                                                <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
-                                                        <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Sophia Wilkerson">
-                                                        <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Christina Parker">
-                                                        <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td><span class="badge bg-label-warning me-1">Pending</span></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            <td colspan="6" class="text-center">Đang tải dữ liệu người dùng...</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-
-                </div>
-                <!-- / Content -->
-                <!-- Footer -->
-                <footer class="bg-light text-dark pt-5 pb-3 border-top">
-                    <div class="container-xxl">
-                        <div class="row">
-                            <!-- Thông tin liên hệ -->
-                            <div class="col-md-4 mb-4">
-                                <h5 class="fw-bold text-primary">Cooking Master</h5>
-                                <p class="small mb-2">
-                                    Điện thoại: 08 1919 1234<br>
-                                    Email: contact@cookingmaster.vn<br>
-                                    Địa chỉ: Số 123, Đường Ẩm Thực, Quận 1, TP. Hồ Chí Minh
-                                </p>
-                                <img src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-bakery-tool-clipart-hand-drawn-illustration-food-items-and-cooking-concepts-png-image_12149984.png"
-                                     class="img-fluid rounded shadow-sm mt-2"
-                                     style="max-height: 120px; object-fit: contain;">
-                            </div>
-
-                            <!-- Về Chúng Tôi -->
-                            <div class="col-md-2 mb-4">
-                                <h6 class="fw-semibold text-primary">Về Chúng Tôi</h6>
-                                <ul class="list-unstyled small">
-                                    <li><a href="#" class="footer-link">Giới thiệu</a></li>
-                                    <li><a href="#" class="footer-link">Liên hệ</a></li>
-                                    <li><a href="#" class="footer-link">Điều khoản</a></li>
-                                    <li><a href="#" class="footer-link">Chính sách bảo mật</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- Khóa Học -->
-                            <div class="col-md-3 mb-4">
-                                <h6 class="fw-semibold text-primary">Khóa Học</h6>
-                                <ul class="list-unstyled small">
-                                    <li><a href="#" class="footer-link">Nấu ăn cơ bản</a></li>
-                                    <li><a href="#" class="footer-link">Bếp Âu chuyên nghiệp</a></li>
-                                    <li><a href="#" class="footer-link">Pha chế đồ uống</a></li>
-                                    <li><a href="#" class="footer-link">Trang trí món ăn</a></li>
-                                    <li><a href="#" class="footer-link">Khóa học làm bánh</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- Công Cụ -->
-                            <div class="col-md-3 mb-4">
-                                <h6 class="fw-semibold text-primary">Công Cụ</h6>
-                                <ul class="list-unstyled small">
-                                    <li><a href="#" class="footer-link">Công thức nấu ăn</a></li>
-                                    <li><a href="#" class="footer-link">Tạo thực đơn</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <!-- Bản quyền & mạng xã hội -->
-                        <div class="d-flex justify-content-between align-items-center flex-wrap small pt-3">
-                            <div class="text-muted">
-                                ©
-                                <script>document.write(new Date().getFullYear());</script> Cooking Master. Nền tảng học nấu ăn hàng đầu Việt Nam.
-                            </div>
-                            <div>
-                                <a href="#" class="text-primary me-3 fs-5"><i class="fab fa-youtube"></i></a>
-                                <a href="#" class="text-primary me-3 fs-5"><i class="fab fa-facebook"></i></a>
-                                <a href="#" class="text-primary fs-5"><i class="fab fa-tiktok"></i></a>
-                            </div>
-                        </div>
                     </div>
-                </footer>
+                    <!-- / Content -->
+                    <!-- Footer (Giữ nguyên như file bạn cung cấp) -->
+                    <footer class="bg-light text-dark pt-5 pb-3 border-top">
+                        <div class="container-xxl">
+                            <div class="row">
+                                <!-- Thông tin liên hệ -->
+                                <div class="col-md-4 mb-4">
+                                    <h5 class="fw-bold text-primary">Cooking Master</h5>
+                                    <p class="small mb-2">
+                                        Điện thoại: 08 1919 1234<br>
+                                        Email: contact@cookingmaster.vn<br>
+                                        Địa chỉ: Số 123, Đường Ẩm Thực, Quận 1, TP. Hồ Chí Minh
+                                    </p>
+                                    <img src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-bakery-tool-clipart-hand-drawn-illustration-food-items-and-cooking-concepts-png-image_12149984.png"
+                                         class="img-fluid rounded shadow-sm mt-2"
+                                         style="max-height: 120px; object-fit: contain;">
+                                </div>
 
-                <style>
-                    .footer-link {
-                        color: #495057;
-                        text-decoration: none;
-                        transition: color 0.2s ease-in-out;
-                    }
+                                <!-- Về Chúng Tôi -->
+                                <div class="col-md-2 mb-4">
+                                    <h6 class="fw-semibold text-primary">Về Chúng Tôi</h6>
+                                    <ul class="list-unstyled small">
+                                        <li><a href="#" class="footer-link">Giới thiệu</a></li>
+                                        <li><a href="#" class="footer-link">Liên hệ</a></li>
+                                        <li><a href="#" class="footer-link">Điều khoản</a></li>
+                                        <li><a href="#" class="footer-link">Chính sách bảo mật</a></li>
+                                    </ul>
+                                </div>
 
-                        .footer-link:hover {
-                            color: #0d6efd; /* Màu primary khi hover */
-                            text-decoration: underline;
+                                <!-- Khóa Học -->
+                                <div class="col-md-3 mb-4">
+                                    <h6 class="fw-semibold text-primary">Khóa Học</h6>
+                                    <ul class="list-unstyled small">
+                                        <li><a href="#" class="footer-link">Nấu ăn cơ bản</a></li>
+                                        <li><a href="#" class="footer-link">Bếp Âu chuyên nghiệp</a></li>
+                                        <li><a href="#" class="footer-link">Pha chế đồ uống</a></li>
+                                        <li><a href="#" class="footer-link">Trang trí món ăn</a></li>
+                                        <li><a href="#" class="footer-link">Khóa học làm bánh</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Công Cụ -->
+                                <div class="col-md-3 mb-4">
+                                    <h6 class="fw-semibold text-primary">Công Cụ</h6>
+                                    <ul class="list-unstyled small">
+                                        <li><a href="#" class="footer-link">Công thức nấu ăn</a></li>
+                                        <li><a href="#" class="footer-link">Tạo thực đơn</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <!-- Bản quyền & mạng xã hội -->
+                            <div class="d-flex justify-content-between align-items-center flex-wrap small pt-3">
+                                <div class="text-muted">
+                                    ©
+                                    <script>document.write(new Date().getFullYear());</script> Cooking Master. Nền tảng học nấu ăn hàng đầu Việt Nam.
+                                </div>
+                                <div>
+                                    <a href="#" class="text-primary me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="text-primary me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                                    <a href="#" class="text-primary fs-5"><i class="fab fa-tiktok"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <style>
+                        .footer-link {
+                            color: #495057;
+                            text-decoration: none;
+                            transition: color 0.2s ease-in-out;
                         }
 
-                    footer h5, footer h6 {
-                        margin-bottom: 1rem;
-                    }
-                </style>
+                            .footer-link:hover {
+                                color: #0d6efd;
+                                text-decoration: underline;
+                            }
 
-                <!-- / Footer -->
-                <div class="content-backdrop fade"></div>
+                        footer h5, footer h6 {
+                            margin-bottom: 1rem;
+                        }
+
+                        #loginNofica::after {
+                            display: none !important;
+                        }
+                    </style>
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- / Content wrapper -->
             </div>
-            <!-- Content wrapper -->
+            <!-- / Layout page -->
         </div>
-        <!-- / Layout page -->
-    </div>
 
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle">
-
-    </div>
-
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
+    <!-- Modal Thay đổi Quyền -->
+    <div class="modal fade" id="changeRoleModal" tabindex="-1" aria-labelledby="changeRoleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changeRoleModalLabel">Thay đổi quyền người dùng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Chọn quyền mới cho người dùng: <strong id="userNameInModal"></strong></p>
+                    <input type="hidden" id="userIdToChangeRole">
+                    <select class="form-select" id="newRoleSelect">
+                        <option value="User">User</option>
+                        <option value="Admin">Admin</option>
+                        <!-- Thêm các role khác nếu có -->
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="saveRoleChangeBtn">Lưu thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container (Giữ nguyên từ code trước của bạn) -->
+    <div class="position-fixed top-0 end-0 p-3 custom-toast" style="z-index: 1090">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto" id="toastTitle">Thông báo</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toastBody">
+                Nội dung thông báo.
+            </div>
+        </div>
+    </div>
+
     <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="../assets/vendor/js/menu.js"></script>
-    <script type="module" src="script.js"></script>
-    <!-- Bootstrap 5 (nếu chưa có) -->
-    <!-- endbuild -->
     <!-- Vendors JS -->
-    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <!-- <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script> -->
     <!-- Main JS -->
     <script src="../assets/js/main.js"></script>
     <!-- Page JS -->
-    <script src="../assets/js/dashboards-analytics.js"></script>
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Bootstrap 5 Bundle (gồm cả Popper) -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>-->
+    <!-- <script src="../assets/js/dashboards-analytics.js"></script> -->
+    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
+    <!-- Thêm Toastify JS nếu bạn muốn dùng nó -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const userListTableBody = document.getElementById('userListTableBody');
+            const API_BASE_URL = 'http://localhost:5043/api';
+            const changeRoleModalEl = document.getElementById('changeRoleModal');
+            const changeRoleModal = changeRoleModalEl ? new bootstrap.Modal(changeRoleModalEl) : null;
+            const userIdToChangeRoleInput = document.getElementById('userIdToChangeRole');
+            const userNameInModalSpan = document.getElementById('userNameInModal');
+            const newRoleSelect = document.getElementById('newRoleSelect');
+            const saveRoleChangeBtn = document.getElementById('saveRoleChangeBtn');
+            const liveToastElement = document.getElementById('liveToast');
+            const toastTitleElement = document.getElementById('toastTitle');
+            const toastBodyElement = document.getElementById('toastBody');
+            const liveToast = liveToastElement ? new bootstrap.Toast(liveToastElement, { delay: 3000 }) : null;
+
+            function showToast(title, message, type = 'success') {
+                if (!liveToast) {
+                    alert(`${title}: ${message}`);
+                    return;
+                }
+                toastTitleElement.textContent = title;
+                toastBodyElement.textContent = message;
+                liveToastElement.className = 'toast align-items-center';
+                if (type === 'success') {
+                    liveToastElement.classList.add('text-bg-success', 'border-0');
+                } else if (type === 'error') {
+                    liveToastElement.classList.add('text-bg-danger', 'border-0');
+                } else if (type === 'warning') {
+                    liveToastElement.classList.add('text-bg-warning', 'border-0');
+                } else {
+                    liveToastElement.classList.add('text-bg-primary', 'border-0');
+                }
+                liveToast.show();
+            }
+
+            function getAuthToken() {
+                const token = sessionStorage.getItem('token');
+                if (!token) {
+                    showToast("Lỗi", "Không tìm thấy token xác thực. Vui lòng đăng nhập lại.", "error");
+                    window.location.href = '/login-admin.html';
+                    return null;
+                }
+                return `Bearer ${token}`;
+            }
+
+            async function loadUsers() {
+                if (!userListTableBody) return;
+                userListTableBody.innerHTML = '<tr><td colspan="6" class="text-center">Đang tải dữ liệu...</td></tr>';
+                const authToken = getAuthToken();
+                if (!authToken && API_BASE_URL.includes('localhost')) {
+                    console.warn("Bỏ qua kiểm tra token ở môi trường local.");
+                } else if (!authToken) {
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`${API_BASE_URL}/Users/users`, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': '*/*',
+                            'Authorization': authToken
+                        }
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json().catch(() => ({ message: `Lỗi HTTP: ${response.status}` }));
+                        throw new Error(errorData.message || `Lỗi ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    let users = [];
+
+                    if (result && result.$values && Array.isArray(result.$values)) {
+                        users = result.$values;
+                    } else if (Array.isArray(result)) {
+                        users = result;
+                    } else {
+                        throw new Error("Định dạng dữ liệu người dùng không hợp lệ.");
+                    }
+
+                    renderUserTable(users);
+
+                } catch (error) {
+                    console.error("Lỗi khi tải danh sách người dùng:", error);
+                    userListTableBody.innerHTML = `<tr><td colspan="6" class="text-center text-danger">Lỗi: ${error.message}</td></tr>`;
+                    showToast("Lỗi Tải Dữ Liệu", error.message, "error");
+                }
+            }
+
+            function renderUserTable(users) {
+                userListTableBody.innerHTML = '';
+                if (!users || users.length === 0) {
+                    userListTableBody.innerHTML = '<tr><td colspan="6" class="text-center">Không có người dùng nào.</td></tr>';
+                    return;
+                }
+
+                users.forEach(user => {
+                    const row = userListTableBody.insertRow();
+                    row.innerHTML = `
+                            <td><strong>${user.id}</strong></td>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td><span class="badge bg-label-${user.role === 'Admin' ? 'primary' : 'info'} me-1">${user.role}</span></td>
+                            <td>
+                                <span class="badge bg-label-${user.isLocked ? 'danger' : 'success'} me-1">
+                                    ${user.isLocked ? 'Đã khóa' : 'Hoạt động'}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item change-role-btn" href="javascript:void(0);"
+                                           data-user-id="${user.id}" data-user-name="${user.name}" data-current-role="${user.role}">
+                                            <i class="bx bx-user-check me-1"></i> Đổi quyền
+                                        </a>
+                                        <a class="dropdown-item lock-unlock-btn" href="javascript:void(0);"
+                                           data-user-id="${user.id}" data-user-name="${user.name}" data-is-locked="${user.isLocked}">
+                                            <i class="bx ${user.isLocked ? 'bx-lock-open-alt' : 'bx-lock-alt'} me-1"></i>
+                                            ${user.isLocked ? 'Mở khóa' : 'Khóa TK'}
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                        `;
+                });
+            }
+
+            userListTableBody.addEventListener('click', function (event) {
+                const target = event.target.closest('a.dropdown-item');
+                if (!target) return;
+
+                const userId = target.dataset.userId;
+                const userName = target.dataset.userName;
+
+                if (target.classList.contains('change-role-btn')) {
+                    const currentRole = target.dataset.currentRole;
+                    openChangeRoleModal(userId, userName, currentRole);
+                } else if (target.classList.contains('lock-unlock-btn')) {
+                    const isLocked = target.dataset.isLocked === 'true';
+                    handleLockUnlockUser(userId, userName, isLocked);
+                }
+            });
+
+            function openChangeRoleModal(userId, userName, currentRole) {
+                if (!changeRoleModal || !userIdToChangeRoleInput || !userNameInModalSpan || !newRoleSelect) return;
+                userIdToChangeRoleInput.value = userId;
+                userNameInModalSpan.textContent = userName;
+                newRoleSelect.value = currentRole;
+                changeRoleModal.show();
+            }
+
+            if (saveRoleChangeBtn) {
+                saveRoleChangeBtn.addEventListener('click', async function () {
+                    const userId = userIdToChangeRoleInput.value;
+                    const newRole = newRoleSelect.value;
+                    const authToken = getAuthToken();
+                    if (!userId || !newRole || !authToken) {
+                        showToast("Lỗi", "Thông tin không hợp lệ hoặc thiếu token.", "error");
+                        return;
+                    }
+
+                    saveRoleChangeBtn.disabled = true;
+                    saveRoleChangeBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Đang lưu...';
+
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/Users/users/${userId}/role`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': '*/*',
+                                'Authorization': authToken
+                            },
+                            body: JSON.stringify(newRole)
+                        });
+
+                        if (!response.ok) {
+                            const errorData = await response.json().catch(() => ({ message: "Lỗi không xác định" }));
+                            throw new Error(errorData.message || `Lỗi ${response.status}`);
+                        }
+
+                        showToast("Thành công", `Đã cập nhật quyền cho người dùng ${userId} thành ${newRole}.`, "success");
+                        changeRoleModal.hide();
+                        loadUsers();
+
+                    } catch (error) {
+                        console.error("Lỗi khi thay đổi quyền:", error);
+                        showToast("Lỗi", `Không thể thay đổi quyền: ${error.message}`, "error");
+                    } finally {
+                        saveRoleChangeBtn.disabled = false;
+                        saveRoleChangeBtn.innerHTML = 'Lưu thay đổi';
+                    }
+                });
+            }
+
+            async function handleLockUnlockUser(userId, userName, isCurrentlyLocked) {
+                const actionText = isCurrentlyLocked ? "mở khóa" : "khóa";
+                if (!confirm(`Bạn có chắc muốn ${actionText} tài khoản của "${userName}" (ID: ${userId}) không?`)) return;
+
+                const authToken = getAuthToken();
+                if (!authToken) return;
+
+                const buttonElement = document.querySelector(`.lock-unlock-btn[data-user-id="${userId}"]`);
+                if (buttonElement) {
+                    buttonElement.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Đang xử lý...`;
+                    buttonElement.classList.add('disabled');
+                }
+
+                try {
+                    const response = await fetch(`${API_BASE_URL}/Users/users/${userId}/lock`, {
+                        method: 'PUT',
+                        headers: {
+                            'Accept': '*/*',
+                            'Authorization': authToken
+                        }
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json().catch(() => ({ message: "Lỗi không xác định" }));
+                        throw new Error(errorData.message || `Lỗi ${response.status}`);
+                    }
+
+                    showToast("Thành công", `Đã ${actionText} tài khoản của "${userName}".`, "success");
+                    loadUsers();
+
+                } catch (error) {
+                    console.error(`Lỗi khi ${actionText} tài khoản:`, error);
+                    showToast("Lỗi", `Không thể ${actionText} tài khoản: ${error.message}`, "error");
+                    if (buttonElement) {
+                        buttonElement.innerHTML = `<i class="bx ${isCurrentlyLocked ? 'bx-lock-open-alt' : 'bx-lock-alt'} me-1"></i> ${isCurrentlyLocked ? 'Mở khóa' : 'Khóa TK'}`;
+                        buttonElement.classList.remove('disabled');
+                    }
+                }
+            }
+
+            const loginBtn = document.getElementById('loginBtn');
+            const userDropdown = document.getElementById('userDropdown');
+            const logoutBtnLink = document.getElementById('logoutBtnLink');
+            const nameUserSpan = document.getElementById('nameuser');
+            const roleUserSpan = document.getElementById('roleuser');
+            const avatarUserImg = document.getElementById('useravatar');
+            const avatarUser1Img = document.getElementById('avataruser1');
+
+            function checkLoginStatus() {
+                const user = JSON.parse(sessionStorage.getItem('user'));
+                const token = sessionStorage.getItem('adminToken') || sessionStorage.getItem('userToken');
+
+                if (user && token) {
+                    loginBtn.classList.add('d-none');
+                    userDropdown.classList.remove('d-none');
+                    if (nameUserSpan) nameUserSpan.textContent = user.name;
+                    if (roleUserSpan) roleUserSpan.textContent = user.role;
+                    if (avatarUserImg && user.avatarUrl) avatarUserImg.src = user.avatarUrl;
+                    if (avatarUser1Img && user.avatarUrl) avatarUser1Img.src = user.avatarUrl;
+                } else {
+                    loginBtn.classList.remove('d-none');
+                    userDropdown.classList.add('d-none');
+                }
+            }
+
+            if (loginBtn) {
+                loginBtn.addEventListener('click', () => {
+                    window.location.href = 'auth-login-basic.html';
+                });
+            }
+
+            if (logoutBtnLink) {
+                logoutBtnLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sessionStorage.removeItem('user');
+                    sessionStorage.removeItem('adminToken');
+                    sessionStorage.removeItem('userToken');
+                    showToast("Thông báo", "Bạn đã đăng xuất.", "info");
+                    checkLoginStatus();
+                    setTimeout(() => window.location.reload(), 1000);
+                });
+            }
+
+            checkLoginStatus();
+            loadUsers();
+        });
+    </script>
+    <script type="module" src="script.js"></script>
+    <!-- Custom JS cho trang này -->
+    <script src="account-manager.js"></script> <!-- Link tới file JS riêng -->
 </body>
 </html>
